@@ -1,0 +1,546 @@
+/* general style*/
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  font: 16px 'LatoWeb', sans-serif;
+  width: 100%;
+  background: #ffffff;
+  color: #000;
+  height: 100%;
+}
+
+button,input{
+ outline:none;
+}
+
+a {
+  text-decoration: none;
+  color: #201600;
+  outline: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+img {
+  outline: none;
+}
+
+
+.cf::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.header-wr{
+ opacity: 0;
+ z-index: 2;
+ 
+}
+
+
+li{
+  list-style: none;
+}
+ul {
+  list-style: none; /*убираем маркеры списка*/
+  margin: 0; /*убираем верхнее и нижнее поле, равное 1em*/
+  overflow: hidden;
+  padding-left: 0; /*убираем левый отступ, равный 40px*/
+}
+
+.logo-m{
+  display: none;
+}
+
+
+//Header//
+
+.header{
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  align-items: center;
+  border-bottom: 4px solid #ee3124;
+  transition: 0.5s;
+  
+  &__nav{
+   text-align: center;
+   li{
+    display: inline-block;
+    padding-right: 10px;
+    a{
+      font-family: 'LatoWebBold';
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 23px;
+      text-transform: uppercase;
+    }
+    .search {
+      width: 258px;
+      background-color: #FFF;
+      border: 2px solid #dddfe0;
+      transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+      ::-webkit-input-placeholder {color: #000000; text-transform: uppercase;}
+      ::-moz-placeholder          {color: #000000; text-transform: uppercase;}/* Firefox 19+ */
+      :-moz-placeholder           {color: #000000; text-transform: uppercase;}/* Firefox 18- */
+      :-ms-input-placeholder      {color: #000000; text-transform: uppercase;}
+      ::-webkit-input-placeholder       {text-indent: 0px;   transition: text-indent 0.3s ease;}
+      ::-moz-placeholder                {text-indent: 0px;   transition: text-indent 0.3s ease;}
+      :-moz-placeholder                 {text-indent: 0px;   transition: text-indent 0.3s ease;}
+      :-ms-input-placeholder            {text-indent: 0px;   transition: text-indent 0.3s ease;}
+      :focus::-webkit-input-placeholder {text-indent: 500px; transition: text-indent 0.3s ease;}
+      :focus::-moz-placeholder          {text-indent: 500px; transition: text-indent 0.3s ease;}
+      :focus:-moz-placeholder           {text-indent: 500px; transition: text-indent 0.3s ease;}
+      :focus:-ms-input-placeholder      {text-indent: 500px; transition: text-indent 0.3s ease;}
+
+      .search__input {
+       transition: 0.5s;
+       padding-left: 10px;
+       border:0;
+       width: auto;
+       height: 54px;
+       outline: none; 
+       vertical-align: middle; 
+       font-family: 'LatoWebBold';
+       font-size: 15px;
+       font-weight: 700;
+       line-height: 23px;
+     }
+     .search__btn{
+      width: 20px; 
+      height: 20px;
+      vertical-align: middle; 
+      border: none; 
+      background: url('../img/serach.png') no-repeat 50% 50%; /* Параметры фона */
+    }
+  }
+}
+}
+
+.menu-link{ 
+  display: none; 
+  height: 50px; 
+  width: 20px;
+  padding: 0;
+  background-color: transparent; 
+  position: relative; 
+  top:-1px;
+  float: right;
+
+  span, span:before, span:after{ 
+    display: block; 
+    height: 2px; 
+    width: 30px; 
+    position: absolute; 
+    right: 50%; 
+    margin-right: -15px; 
+    top: 50%; 
+    margin-top: -1px; 
+    background-color: #000; 
+  } 
+  span:before{ 
+    transition: all 0.2s; 
+    content: ''; 
+    margin-top: -9px; 
+
+  } 
+  span:after{ 
+    transition: all 0.2; 
+    content: ""; 
+    margin-top: 7px; 
+    width: 20px; 
+
+  } 
+
+  &__active span{ 
+    background-color:transparent; 
+    &:before{ 
+      transform: rotate(135deg); 
+      margin-top: 0; 
+    } 
+    &:after{ 
+      transform: rotate(-135deg); 
+      margin-top:0; 
+      width:30px; 
+
+    } 
+  } 
+
+} 
+
+
+
+
+
+
+
+
+&__call{
+  text-align: right;
+
+  .call__number{
+    color: #000000;
+    font-family: 'LatoWebBold';
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 41px;
+    text-transform: uppercase;
+  }
+
+  .icon-mobile{
+    color: #d23546;
+    font-size: 23px;
+    padding-right: 10px;
+  }
+
+  .call__btn{
+    a{
+      padding: 9px 9px 9px 9px;
+      background-color: #7cc576;
+      border-radius: 3px;
+      color: #ffffff;
+      font-family: 'LatoWebBold';
+      font-size: 9px;
+      font-weight: 700;
+      line-height: 20.1px;
+      text-transform: uppercase;
+      letter-spacing: 2.04px;
+    }
+  }
+
+}
+
+}
+
+//Fixed menu styles
+.headhesive{
+  background-color: #fff;
+  position: fixed; 
+  width: 100%; 
+  transition: all 0.6s;
+  z-index: 1;
+  opacity: 1;
+}
+
+.headhesive--stick{
+  background-color: #ac2a42;
+  .header{
+    border-bottom: 0;
+    z-index: 1;
+    &__logo{
+      img{
+        display: none
+      }
+      .logo-m{
+        display: block;
+        a {
+          width: 40px;
+          color: #fff;
+          text-transform: uppercase;
+          font-family: 'LatoWebBold';
+          font-size: 25px;
+          border-bottom: 2px solid #e094d2;
+        }
+      }
+    }
+  }
+  .header__nav li .search {width: auto; border: 2px solid rgba(195, 115, 185, 0); ::-webkit-input-placeholder {color: #525659; text-transform: uppercase;}::-moz-placeholder {color: #525659; text-transform: uppercase;}/* Firefox 19+ */:-moz-placeholder {color: #525659; text-transform: uppercase;}/* Firefox 18- */:-ms-input-placeholder {color: #525659; text-transform: uppercase;}} .search__input{height:20px!important;}
+  .header__nav li a {color: #fff!important;}
+  .header__nav {text-align: left;}
+  .call__btn{display: none;} .call__number{color: #fff;} .icon-mobile{color: #fff}
+  .header{
+    transition: 0.5s;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
+
+//Fixed menu styles
+
+
+
+
+//--Comany Block---//
+
+.company{
+  padding-top: 30px;
+  .company__info{
+    padding-right: 50px;
+    h2{
+      color: #000000;
+      font-size: 29px;
+      font-weight: 400;
+    }
+    .info_text{
+      font-size: 16px;
+      font-weight: 400;
+
+    }
+  }
+  
+  .company__advant{
+    margin-top: 34px;
+    background-color: #ebebeb;
+    border-radius: 7px;
+    text-align: center;
+    padding: 0 20px 0 20px;
+
+    h2{
+      word-wrap: break-word;
+      color: #000000;
+      font-size: 27px;
+      font-weight: 400;
+      padding-bottom: 30px;
+    }
+
+    .advant__item .img {
+      margin: 0 auto;
+    }
+    p{
+      font-size: 16px;
+      font-weight: 400;
+      padding-top: 20px;
+      padding-bottom: 20px;
+
+    }
+
+    .advant__icons{
+      display:inline-block;
+      margin-bottom: 20px;
+      img:nth-child(1){
+       vertical-align: middle;
+       padding-right: 26px;
+     }
+     img:nth-child(2){
+       vertical-align: middle;
+       padding-right: 40px;
+     }
+     img:nth-child(3){
+       vertical-align: middle;
+     }
+   }
+
+
+ }
+}
+
+
+
+//--Comany Block---//
+
+.contact{
+ padding-top: 30px;
+ padding-bottom: 20px;
+
+ .contact__person{
+   display: flex;
+   background-color: #a81d36;
+   border-radius: 5px  0px;
+   align-items: center;
+
+ }
+ .person__img{
+  width: 169px;
+  height: 169px;
+  background:url('../img/person.png') center top  no-repeat ;
+  border-radius: 50%;
+  width: 40%;
+
+}
+
+.person__info{
+  padding-top: 40px;
+  padding-bottom: 40px;
+  color: #ffffff;
+  font-family: 'LatoWeb';
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  width: 50%;
+  h3{
+    font-size: 24px;
+    font-weight: 700;
+  }
+  span{
+    font-size: 18px;
+    font-weight: 700;
+  }
+}
+
+.contact__form{
+  text-align: center;
+  font-family: 'LatoWeb';
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 0px 5px;
+  border: 1px solid #d5d5d5;
+  padding-bottom: 16px;
+  h3{
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+  span{
+    display: block;
+    padding-top: 5px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 30px;
+
+  }
+  .contact__input{ 
+   width: 316px;
+   height: 54px;
+   border: 2px solid #dddfe0;
+   background-color: #ffffff;
+ }
+
+ .contact__btn{
+  width: 271px;
+  height: 54px;
+  border: none;
+  margin-top: 20px; 
+  border-radius: 3px ;
+  background-color: #7cc576;
+  font-family: LatoWeb;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 41px;
+  text-transform: uppercase;
+  /* Text style for "П, ерезвон" */
+  letter-spacing: 3.4px;
+}
+
+}
+}
+
+
+//Maps-block//
+.maps__min{
+  background-color: #e8e8e8;
+  border-radius: 5px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+
+
+
+  img{
+    padding-left:40px; 
+    padding-right:15px; 
+    float: left;
+  }
+
+  .min__info{
+    color: #000000;
+    font-family: 'LatoWeb';
+    font-size: 18px;
+    font-weight: 400;
+    width: 70%;
+
+    h3{
+     margin: 0;
+     font-size: 26px;
+     font-weight: 700;
+     position: relative;
+   }
+
+ }
+
+ .maps__btn{
+   border: 0;
+   width: 218px;
+   margin-right: 40px;
+   height:40px;
+   border-radius: 3px;
+   background-color: #ffffff;
+   position: relative;
+   transition: all 0.5s;
+   font-family: 'LatoWebBold';
+   font-size: 12px;
+   font-weight: 700;
+   text-transform: uppercase;
+   letter-spacing: 3.4px;
+   
+   
+ }
+
+}
+
+.maps__full{
+  transition:all 0.5s;
+  overflow:hidden;
+  padding-bottom:35%;
+  position:relative;
+  display: none;
+  height:0;
+}
+.maps__full iframe{
+  left:0;
+  top:0;
+  height: 100%;
+  width:100%;
+  position:absolute;
+}
+
+
+
+
+footer{
+  min-height: 210px;
+  margin-bottom: 50px;
+  margin-top: 30px;
+  .nav__block{
+    padding-top: 30px;
+    border-top: 1px solid #acacac;
+    padding-bottom: 30px;
+
+  }
+  .footer__mobile{
+    color: #767676;
+    font-family: "LatoWeb";
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 21px;
+  }
+  li{
+    padding-top: 10px;
+
+  }
+  ul{
+    max-width: 230px;
+    
+  }
+  a{
+    color: #767676;
+    font-family: 'LatoWeb';
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+  }
+  span{
+    color: #b64155;
+    font-size: 17px;
+    vertical-align: middle;
+  }
+
+  .nav__1,.nav__2,.nav__3,.nav__4,.nav__5{
+    background-color: #fff;
+  }
+
+}
+
+.icon-clock{
+  padding-right: 5px;
+}
