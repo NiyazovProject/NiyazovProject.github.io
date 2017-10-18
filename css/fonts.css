@@ -38,14 +38,19 @@
 
 
 
-/*icomoon*/
+
+
+
+
+
+
 @font-face {
   font-family: 'icomoon';
-  src:  url('../fonts/icomoon/icomoon.eot?umsu11');
-  src:  url('../fonts/icomoon/icomoon.eot?umsu11#iefix') format('embedded-opentype'),
-    url('../fonts/icomoon/icomoon.ttf?umsu11') format('truetype'),
-    url('../fonts/icomoon/icomoon.woff?umsu11') format('woff'),
-    url('../fonts/icomoon/icomoon.svg?umsu11#icomoon') format('svg');
+  src:  url('../fonts/icomoon/icomoon.eot?brrh77');
+  src:  url('../fonts/icomoon/icomoon.eot?brrh77#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon/icomoon.ttf?brrh77') format('truetype'),
+    url('../fonts/icoomoon/icomoon.woff?brrh77') format('woff'),
+    url('../fonts/icoomoon/icomoon.svg?brrh77#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -65,79 +70,113 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-email-(1):before {
+.icon-clock:before {
   content: "\e900";
 }
-.icon-email:before {
+.icon-down:before {
   content: "\e901";
 }
-.icon-maps:before {
+.icon-e-mail:before {
   content: "\e902";
 }
-.icon-Mastercard-logo .path1:before {
+.icon-gps:before {
   content: "\e903";
-  color: rgb(35, 31, 32);
 }
-.icon-Mastercard-logo .path2:before {
+.icon-mastercard .path1:before {
   content: "\e904";
-  margin-left: -1.28515625em;
-  color: rgb(247, 148, 16);
+  color: rgb(247, 159, 26);
 }
-.icon-Mastercard-logo .path3:before {
+.icon-mastercard .path2:before {
   content: "\e905";
   margin-left: -1.28515625em;
-  color: rgb(255, 95, 0);
+  color: rgb(234, 0, 27);
 }
-.icon-Mastercard-logo .path4:before {
+.icon-mastercard .path3:before {
   content: "\e906";
   margin-left: -1.28515625em;
-  color: rgb(235, 0, 27);
+  color: rgb(255, 95, 1);
 }
-.icon-Mastercard-logo .path5:before {
+.icon-mastercard .path4:before {
   content: "\e907";
   margin-left: -1.28515625em;
-  color: rgb(247, 158, 27);
+  color: rgb(247, 159, 26);
 }
-.icon-visa .path1:before {
+.icon-mastercard .path5:before {
   content: "\e908";
-  color: rgb(0, 87, 159);
+  margin-left: -1.28515625em;
+  color: rgb(0, 0, 0);
 }
-.icon-visa .path2:before {
+.icon-mastercard .path6:before {
   content: "\e909";
-  margin-left: -3.08984375em;
-  color: rgb(0, 87, 159);
+  margin-left: -1.28515625em;
+  color: rgb(0, 0, 0);
 }
-.icon-visa .path3:before {
+.icon-mastercard .path7:before {
   content: "\e90a";
-  margin-left: -3.08984375em;
-  color: rgb(0, 87, 159);
+  margin-left: -1.28515625em;
+  color: rgb(0, 0, 0);
 }
-.icon-visa .path4:before {
+.icon-mastercard .path8:before {
   content: "\e90b";
-  margin-left: -3.08984375em;
-  color: rgb(0, 87, 159);
+  margin-left: -1.28515625em;
+  color: rgb(0, 0, 0);
 }
-.icon-visa .path5:before {
+.icon-mastercard .path9:before {
   content: "\e90c";
-  margin-left: -3.08984375em;
-  color: rgb(250, 166, 26);
+  margin-left: -1.28515625em;
+  color: rgb(0, 0, 0);
 }
-.icon-wifi-2:before {
+.icon-mastercard .path10:before {
   content: "\e90d";
+  margin-left: -1.28515625em;
+  color: rgb(0, 0, 0);
 }
-.icon-clock:before {
-  content: "\e94e";
+.icon-mastercard .path11:before {
+  content: "\e90e";
+  margin-left: -1.28515625em;
+  color: rgb(0, 0, 0);
 }
-.icon-mobile:before {
-  content: "\e958";
+.icon-mastercard .path12:before {
+  content: "\e90f";
+  margin-left: -1.28515625em;
+  color: rgb(0, 0, 0);
 }
-.icon-ctrl:before {
-  content: "\ea50";
+.icon-mastercard .path13:before {
+  content: "\e910";
+  margin-left: -1.28515625em;
+  color: rgb(0, 0, 0);
 }
-.icon-search:before {
-  content: "\e986";
+.icon-mastercard .path14:before {
+  content: "\e911";
+  margin-left: -1.28515625em;
+  color: rgb(0, 0, 0);
 }
-.icon-menu:before {
-  content: "\e9bd";
+.icon-mastercard .path15:before {
+  content: "\e912";
+  margin-left: -1.28515625em;
+  color: rgb(0, 0, 0);
 }
+.icon-Phone:before {
+  content: "\e913";
+}
+.icon-Search:before {
+  content: "\e914";
+}
+.icon-up:before {
+  content: "\e915";
+}
+.icon-Visa .path1:before {
+  content: "\e916";
+  color: rgb(0, 91, 172);
+}
+.icon-Visa .path2:before {
+  content: "\e917";
+  margin-left: -1em;
+  color: rgb(246, 172, 29);
+}
+.icon-Wi-fi:before {
+  content: "\e918";
+}
+
+
 

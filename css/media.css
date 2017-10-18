@@ -2,114 +2,26 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px) {
-	.header__nav li .search{width: auto!important; } 
-	.search__btn{margin-right:8px ;}
-	.headhesive--stick, .headhesive{display: none!important;}
-	.header-wr{opacity: 1!important;}
-	.header{border-bottom: 0px solid #ee3124;}
+
 }
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
-	.header__call .call__number {font-size: 21px!important;}
-	.header__nav li .search{width: auto!important; } 
-	.search__btn{margin-right:8px ;}
 
 }
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
-	.header__call .call__number {font-size: 20px!important;  line-height: 30px!important;}
-	.header__nav li .search{width: 200px!important; } .search__input{height:25px!important;}
-	.search__btn{ margin-top: -23px!important; margin-left: 65px;  position: absolute;}
-	.call__btn {text-align: none!important;}
-	.company {padding-top: 0px!important;}
-	.company__info{padding-right: 0!important;}
-	.contact__person{border-radius: 0px!important;} .contact__form {border-radius: 0px!important;}   
-}
-@media only screen and (max-width : 767px) {
-	.advant__block{
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-	}
-	.advant__item{
-		max-width: 230px;
-		margin: 0 auto;
-
-
-	}
-
-
-
-	.nav__1,.nav__2,.nav__3,.nav__4,.nav__5{ background-color: #eee!important; border: 2px solid #e3e3e3; padding: 10px 5px 10px 5px; margin-bottom: 0px; } footer{margin-bottom: 0px!important;} .nav__block{padding-bottom: 0px!important; }
-
-
-
-
 	
 }
 
-@media only screen and (max-width : 717px) {
-	.header{flex-wrap: wrap;} .header__nav li .search{width: auto !important;}  .header__call{text-align: left!important;} .header__logo{padding-right: 10px;}   
-} 
-
-@media only screen and (max-width : 680px) {
-	.header{display: block!important;}   .header__nav ul {display: none;} .menu-link{display: block!important;}
-	/*  //Menu styles  */
-	.nav{
-		background-color: #eee;
-		border-radius:10px;
-		border: 1px solid #e3e3e3;
-		padding: 10px 0px 10px 0px;
-		margin-bottom: 10px;
-
-	}
-	/*  //Menu styles  */
-
-	.header__nav li .search{position: relative;   ::-webkit-input-placeholder {color: #eee!important; text-transform: uppercase;}
-
-} 
-}
-
-
-@media only screen and (max-width : 580px) { .maps__btn{display: none!important;} .maps__min img{padding: 0!important; float: none!important;}  .min__info {width: 100%!important; text-align: center;} .maps__min{ padding: 20px 10px 20px 10px!important; margin-bottom: 0!important; }   .maps__full{display: block!important;}     }
-
-
-
-
-
-
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
-	.header{display: block!important;} 
-	.header__call{text-align: left!important;}
-	.header__logo{padding-bottom: 8px;}
-	.contact__person{display: block!important; padding-top: 20px;} .person__img{margin: 0 auto!important;  width: 169px!important; } .person__info{text-align: center!important; width: auto!important; padding: 0px  10px 0px 10px} .contact__input{width: 250px!important;}
-
-
-	/*  //Menu styles  */
-	.nav{
-		background-color: #rgba(224, 224, 224, 0.49);
-		border-radius:10px;
-		
-		padding: 10px 0px 10px 0px;
-		margin-bottom: 10px;
-	}
-	.nav li{display:block!important; margin-bottom: 5px;}
-	.header__nav li .search {width: 200px!important; margin: 0 auto;}
-
-
-	/*  //Menu styles  */
-
 
 }
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px) {
-	.header__call .call__number {font-size: 22px!important; margin-bottom:5px;}
 
 }
-
-
 
