@@ -2,18 +2,36 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px) {
-
+ .header .nav .form input[type="text"] {width: auto!important ;max-width:258px!important;
 }
+
+@media only screen and (max-width : 1024px) {
+ .header-wr_sticky{display: none;} 
+}
+
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
-
+ .contact{font-size: 20px!important;
 }
+
+
+@media only screen and (max-width : 960px) {
+.header .nav .form{display: block!important;} .header .nav .form input[type="text"] {width: 212px!important;} .header .nav .form button[type="submit"]{right:35px!important} .header .nav li:nth-child(2){padding-right: 0px!important;}
+}
+
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
 	
 }
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 720px) {
+ .header{display:block!important;} .nav{display: none!important;} .menu-link{display: block!important;}
+ .c-btn{float: none!important;} .menu-link{float: right;} .header{padding-top: 15px; padding-bottom: 15px;}
+}
+
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
