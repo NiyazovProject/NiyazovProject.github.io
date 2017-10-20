@@ -30,6 +30,7 @@
 @media only screen and (max-width : 720px) {
  .header{display:block!important;} .nav{display: none!important;} .menu-link{display: block!important;}
  .c-btn{float: none!important;} .menu-link{float: right;} .header{padding-top: 15px; padding-bottom: 15px;}
+ .company{flex-wrap:wrap;} .company__info{width: 100%!important;}  .company__advant{width: 100%!important;}  .company__advant p {max-width: 300px!important; margin: 0 auto;} 
 }
 
 
