@@ -48,6 +48,6 @@
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px) {
  .info-text h2{margin: 10px!important;} .contact__input{width: 260px!important;}
-  .company__advant{height: 740px!important;}
+  .company__advant{height: 760px!important;}
 }
 
