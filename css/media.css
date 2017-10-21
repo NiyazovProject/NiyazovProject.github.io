@@ -2,22 +2,28 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px) {
- .header .nav .form input[type="text"] {width: auto!important ;max-width:258px!important;
+  .header-wr_sticky .header .nav .form{    display: inline-block; position: relative; width: 244px; background-color: #ffffff;} .header-wr_sticky .header .nav .form input[type="text"]{width:206px!important; border:0;}
 }
 
-@media only screen and (max-width : 1024px) {
+@media only screen and (max-width : 1023px) {
  .header-wr_sticky{display: none;} 
+ .header .nav .form{display: block!important;} .header-wr .header .nav .form input[type="text"] { max-width: 168px!important; height: 35px!important;} .header .nav .form button[type="submit"]{right:3px!important; top:3px!important;} .header .nav li:nth-child(2){padding-right: 0px!important;}
+ .form {width: auto!important;}
+ .phone__number{line-height: 32px!important;}
+
+
 }
 
 
 /* Medium Devices, Desktops */
-@media only screen and (max-width : 992px) {
- .contact{font-size: 20px!important;
+@media only screen and (max-width : 991px) {
+ .phone__number{font-size: 20px!important;}
+ .contact{flex-wrap: wrap;} .contact__info{width: 100%!important; justify-content: center;border-radius: 5px 5px 0px 0px!important;} .info-text{max-width: none!important;}
+ .contact__form{width: 100%!important; border-radius: 0px 0px 5px 5px!important;} .contact__btn{display: initial!important;}
 }
 
 
-@media only screen and (max-width : 960px) {
-.header .nav .form{display: block!important;} .header .nav .form input[type="text"] {width: 212px!important;} .header .nav .form button[type="submit"]{right:35px!important} .header .nav li:nth-child(2){padding-right: 0px!important;}
+@media only screen and (max-width : 960px) { 
 }
 
 
@@ -27,20 +33,20 @@
 }
 
 /* Small Devices, Tablets */
-@media only screen and (max-width : 720px) {
- .header{display:block!important;} .nav{display: none!important;} .menu-link{display: block!important;}
- .c-btn{float: none!important;} .menu-link{float: right;} .header{padding-top: 15px; padding-bottom: 15px;}
+@media only screen and (max-width : 767px) {
+ .header{display:block!important;} .nav{display: none!important;} .menu-link{display: block!important;} 
+ .phone-btn{float: none!important;} .menu-link{float: right;} .header{padding-top: 15px; padding-bottom: 15px;}
  .company{flex-wrap:wrap;} .company__info{width: 100%!important;}  .company__advant{width: 100%!important;}  .company__advant p {max-width: 300px!important; margin: 0 auto;} 
 }
 
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
-
+.contact__info{flex-wrap:wrap; } .info-text{padding-bottom: 20px!important;margin-left: 0px!important;padding-top:15px!important; padding-left:5px; padding-right: 5px;} .contact__info{padding-left: 0px!important; text-align: center;} .contact__info img{padding-top: 20px;}
 }
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px) {
-
+ .info-text h2{margin: 10px!important;} .contact__input{width: 260px!important;}
 }
 

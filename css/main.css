@@ -81,6 +81,11 @@ ul {
     .header-wr .header .nav .form {
       display: inline-block;
       position: relative;
+      width: 258px;
+      display: inline-block;
+      position: relative;
+      border: 2px solid #dddfe0;
+      background-color: #ffffff;
       /* Firefox 19+ */
       /* Firefox 18- */ }
       .header-wr .header .nav .form ::-webkit-input-placeholder {
@@ -117,17 +122,16 @@ ul {
         color: #737373; }
       .header-wr .header .nav .form input[type="text"] {
         padding-left: 15px;
-        width: 258px;
+        width: 210px;
         height: 54px;
-        border: 2px solid #dddfe0;
-        background-color: #ffffff; }
+        border: 0; }
       .header-wr .header .nav .form button[type="submit"] {
-        height: 20px;
-        width: 20px;
+        height: 30px;
+        width: 40px;
         position: absolute;
         border: none;
         top: 13px;
-        right: 20px;
+        right: 5px;
         background-color: transparent;
         cursor: pointer; }
       .header-wr .header .nav .form button:before {
@@ -139,17 +143,19 @@ ul {
         background-color: transparent; }
     .header-wr .header .header__right .icon-Phone {
       color: #d23546;
-      font-size: 23px;
-      padding-right: 10px; }
-    .header-wr .header .header__right .contact {
+      font-size: 25px;
+      padding-right: 10px;
+      vertical-align: middle; }
+    .header-wr .header .header__right .phone__number {
       font-family: 'LatoWebBold';
-      font-size: 24px;
+      font-size: 25px;
       font-weight: 700;
       line-height: 41px;
-      text-transform: uppercase; }
-    .header-wr .header .header__right .c-btn {
+      text-transform: uppercase;
+      vertical-align: middle; }
+    .header-wr .header .header__right .phone-btn {
       float: right; }
-      .header-wr .header .header__right .c-btn a {
+      .header-wr .header .header__right .phone-btn a {
         color: #ffffff;
         background-color: #7cc576;
         padding: 7px 12px 7px 12px;
@@ -228,6 +234,8 @@ ul {
     .header-wr_sticky .header .nav .form {
       display: inline-block;
       position: relative;
+      width: 244px;
+      background-color: #ffffff;
       /* Firefox 19+ */
       /* Firefox 18- */ }
       .header-wr_sticky .header .nav .form ::-webkit-input-placeholder {
@@ -264,8 +272,9 @@ ul {
         color: #737373; }
       .header-wr_sticky .header .nav .form input[type="text"] {
         padding-left: 15px;
-        width: 244px;
+        width: 206px;
         height: 34px;
+        border: none;
         background-color: #ffffff; }
       .header-wr_sticky .header .nav .form button[type="submit"] {
         height: 20px;
@@ -285,20 +294,24 @@ ul {
         background-color: transparent; }
     .header-wr_sticky .header .header__right .icon-Phone {
       color: #fff;
-      font-size: 23px;
-      padding-right: 10px; }
-    .header-wr_sticky .header .header__right .contact {
+      font-size: 24px;
+      padding-right: 10px;
+      vertical-align: middle; }
+    .header-wr_sticky .header .header__right .phone-link {
+      display: inline-block;
+      vertical-align: middle; }
+    .header-wr_sticky .header .header__right .phone__number {
       color: #fff;
       vertical-align: middle;
-      display: inline-block;
-      padding-right: 20px;
       font-family: 'LatoWebBold';
-      font-size: 24px;
+      font-size: 23px;
       font-weight: 700;
       text-transform: uppercase; }
-    .header-wr_sticky .header .header__right .c-btn {
-      display: inline-block; }
-      .header-wr_sticky .header .header__right .c-btn a {
+    .header-wr_sticky .header .phone-btn {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 20px; }
+      .header-wr_sticky .header .phone-btn a {
         color: #ffffff;
         background-color: #7fc477;
         padding: 7px 12px 7px 12px;
@@ -324,7 +337,7 @@ ul {
   .company .company__info {
     width: 75%;
     padding-right: 20px; }
-    .company .company__info h2 {
+    .company .company__info h1 {
       color: #000000;
       font-size: 29px;
       font-weight: 400; }
@@ -364,4 +377,80 @@ ul {
       .company .company__advant .advant__icons img:nth-child(3) {
         vertical-align: middle; }
 
+.contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 270px;
+  padding-bottom: 20px; }
+  .contact .contact__info {
+    width: 50%;
+    background-color: #a81d36;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-radius: 5px 0px 0px 5px;
+    padding-left: 35px; }
+    .contact .contact__info .info-text {
+      max-width: 300px;
+      margin-left: 30px;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      color: #ffffff;
+      font-family: 'LatoWeb';
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 23px; }
+      .contact .contact__info .info-text h2 {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 3px; }
+      .contact .contact__info .info-text span {
+        display: block;
+        margin-top: 15px;
+        font-size: 18px;
+        font-weight: 700; }
+  .contact .contact__form {
+    width: 50%;
+    text-align: center;
+    font-family: 'LatoWeb';
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 0px 5px 5px 0px;
+    border: 1px solid #d5d5d5;
+    padding-bottom: 16px; }
+    .contact .contact__form h2 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 0; }
+    .contact .contact__form span {
+      display: block;
+      text-transform: uppercase;
+      padding-top: 5px;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 30px; }
+    .contact .contact__form .contact__input {
+      width: 316px;
+      height: 54px;
+      border: 2px solid #dddfe0;
+      background-color: #ffffff; }
+    .contact .contact__form .contact__btn {
+      display: block;
+      margin: 0 auto;
+      width: 271px;
+      height: 54px;
+      border: none;
+      margin-top: 20px;
+      border-radius: 3px;
+      background-color: #7cc576;
+      font-family: 'LatoWeb';
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 41px;
+      text-transform: uppercase;
+      letter-spacing: 3.4px; }
 /*# sourceMappingURL=main.css.map */

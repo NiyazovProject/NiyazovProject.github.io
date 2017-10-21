@@ -91,28 +91,32 @@ ul {
       .form{
         display: inline-block;
         position: relative;
+        width: 258px;
+        display: inline-block;
+        position: relative;
+        border: 2px solid #dddfe0;
+        background-color: #ffffff;
 
         ::-webkit-input-placeholder { font-family: 'LatoWebBold'; vertical-align:middle; line-height: 23px; font-size: 15px; font-weight: 700;  text-transform: uppercase;color: #737373;}
         ::-moz-placeholder          {font-family: 'LatoWebBold'; vertical-align:middle; line-height: 23px; font-size: 15px; font-weight: 700;  text-transform: uppercase;color: #737373;}/* Firefox 19+ */
         :-moz-placeholder           {font-family: 'LatoWebBold'; vertical-align:middle; line-height: 23px; font-size: 15px; font-weight: 700;  text-transform: uppercase;color: #737373;}/* Firefox 18- */
         :-ms-input-placeholder      {font-family: 'LatoWebBold'; vertical-align:middle; line-height: 23px; font-size: 15px; font-weight: 700;  text-transform: uppercase;color: #737373;}
         input[type="text"]{
-          padding-left: 15px;
-          width: 258px;
-          height: 54px;
-          border: 2px solid #dddfe0;
-          background-color: #ffffff;
+              padding-left: 15px;
+              width: 210px;
+              height: 54px;
+              border: 0;
 
         }
         button[type="submit"]{
-          height: 20px;
-          width: 20px;
-          position: absolute;
-          border: none;
-          top: 13px;
-          right: 20px;
-          background-color: transparent;
-          cursor: pointer; 
+          height: 30px;
+        width: 40px;
+        position: absolute;
+        border: none;
+        top: 13px;
+        right: 5px;
+        background-color: transparent;
+        cursor: pointer;
         }
         button:before{
           content: "\e914";
@@ -128,19 +132,21 @@ ul {
     .header__right{
       .icon-Phone{
         color: #d23546;
-        font-size: 23px;
+        font-size: 25px;
         padding-right: 10px;
+       vertical-align: middle;
       }
 
-      .contact{
+      .phone__number{
         font-family: 'LatoWebBold';
-        font-size: 24px;
+        font-size: 25px;
         font-weight: 700;
         line-height: 41px;
         text-transform: uppercase;
+            vertical-align: middle;
       }
 
-      .c-btn{
+      .phone-btn{
         float: right;
         a { 
           color: #ffffff;
@@ -234,6 +240,9 @@ ul {
     .form{
       display: inline-block;
       position: relative;
+       width: 244px;
+       background-color: #ffffff;
+
 
       ::-webkit-input-placeholder { font-family: 'LatoWebBold'; vertical-align:middle; line-height: 23px; font-size: 15px; font-weight: 700;  text-transform: uppercase;color: #737373;}
       ::-moz-placeholder          {font-family: 'LatoWebBold'; vertical-align:middle; line-height: 23px; font-size: 15px; font-weight: 700;  text-transform: uppercase;color: #737373;}/* Firefox 19+ */
@@ -241,8 +250,9 @@ ul {
       :-ms-input-placeholder      {font-family: 'LatoWebBold'; vertical-align:middle; line-height: 23px; font-size: 15px; font-weight: 700;  text-transform: uppercase;color: #737373;}
       input[type="text"]{
         padding-left: 15px;
-        width: 244px;
+        width: 206px;
         height: 34px;
+        border: none;
         background-color: #ffffff;
 
       }
@@ -270,23 +280,27 @@ ul {
   .header__right{
     .icon-Phone{
       color: #fff;
-      font-size: 23px;
+      font-size: 24px;
       padding-right: 10px;
+      vertical-align: middle;
     }
-
-    .contact{
+      .phone-link{
+        display: inline-block;
+        vertical-align: middle;
+      }
+    .phone__number{   
       color: #fff;
       vertical-align: middle;
-      display: inline-block;
-      padding-right: 20px;
       font-family: 'LatoWebBold';
-      font-size: 24px;
+      font-size: 23px;
       font-weight: 700;
-      text-transform: uppercase;
+      text-transform: uppercase;}
     }
 
-    .c-btn{
+    .phone-btn{
      display: inline-block;
+     vertical-align: middle;
+      margin-left: 20px;
 
 
      a { 
@@ -308,8 +322,6 @@ ul {
 }
 
 
-}
-
 //Company 
 
 .company{ 
@@ -322,7 +334,7 @@ ul {
     width: 75%;
     padding-right: 20px;
    
-    h2{
+    h1{
       color: #000000;
       font-size: 29px;
       font-weight: 400;
@@ -381,3 +393,89 @@ ul {
  } 
 
 }
+
+//Contact
+
+
+.contact{
+  display: flex;
+  min-height: 270px;
+  padding-bottom: 20px;
+   .contact__info{
+    width: 50%;
+    background-color: #a81d36;
+    display:flex;
+    align-items: center;
+    border-radius: 5px 0px 0px 5px;
+    padding-left: 35px;
+     .info-text{
+      max-width: 300px;
+      margin-left: 30px;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      color: #ffffff;
+      font-family: 'LatoWeb';
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 23px;
+      h2{
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 3px;
+
+      }
+      span{
+        display: block;
+        margin-top: 15px;
+       font-size: 18px;
+       font-weight: 700;
+        }
+      }
+     }
+     .contact__form{
+      width: 50%;
+      text-align: center;
+      font-family: 'LatoWeb';
+      font-size: 18px;
+      font-weight: 400;
+      border-radius: 0px 5px 5px 0px;
+      border: 1px solid #d5d5d5;
+      padding-bottom: 16px;
+      h2{
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 0;
+      }
+      span{
+      display: block;
+      text-transform: uppercase;
+      padding-top: 5px;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 30px;
+      }
+      .contact__input{
+       width: 316px;
+      height: 54px;
+      border: 2px solid #dddfe0;
+      background-color: #ffffff;
+      }
+      .contact__btn{
+        display: block;
+        margin: 0 auto;
+        width: 271px;
+        height: 54px;
+        border: none;
+        margin-top: 20px;
+        border-radius: 3px;
+        background-color: #7cc576;
+        font-family: 'LatoWeb';
+        font-size: 17px;
+        font-weight: 700;
+        line-height: 41px;
+        text-transform: uppercase;
+        letter-spacing: 3.4px;
+      }
+     }
+     
+   }
