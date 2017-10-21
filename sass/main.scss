@@ -257,12 +257,10 @@ ul {
 
       }
       button[type="submit"]{
-        height: 20px;
-        width: 20px;
         position: absolute;
         border: none;
         top: 3px;
-        right: 20px;
+        right: 0px;
         background-color: transparent;
         cursor: pointer; 
       }
@@ -321,12 +319,14 @@ ul {
 }
 }
 
+//Mobile-menu
+
 
 //Company 
 
 .company{ 
   padding-top: 20px;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
   display: flex;
   justify-content: space-between;
 
@@ -349,21 +349,23 @@ ul {
 
   .company__advant{
     width: 300px;
-    max-height: 900px;
+    height:max-content;
     background-color: #ebebeb;
     border-radius: 7px;
     text-align: center;
     padding: 0 20px 0 20px;
-    margin-top: 20px;
+    margin-top: 10px;
 
     h2{
       word-wrap: break-word;
       color: #000000;
       font-size: 27px;
       font-weight: 400;
-      padding-bottom: 30px;
     }
-
+      
+      .advant__item {
+        padding-top: 15px;
+      }
     .advant__item .img {
       margin: 0 auto;
     }
@@ -372,12 +374,15 @@ ul {
       font-weight: 400;
       padding-top: 20px;
       padding-bottom: 20px;
+      margin: 0 auto!important;
 
     }
 
     .advant__icons{
       display:inline-block;
-      margin-bottom: 20px;
+      padding-bottom: 20px;
+      
+
       img:nth-child(1){
        vertical-align: middle;
        padding-right: 26px;
@@ -417,11 +422,11 @@ ul {
       font-family: 'LatoWeb';
       font-size: 16px;
       font-weight: 400;
-      line-height: 23px;
+      line-height: 26px;
       h2{
       font-size: 24px;
       font-weight: 700;
-      margin-bottom: 3px;
+      margin-bottom: 0px;
 
       }
       span{
@@ -457,6 +462,7 @@ ul {
       .contact__input{
        width: 316px;
       height: 54px;
+      padding-left: 5px;
       border: 2px solid #dddfe0;
       background-color: #ffffff;
       }

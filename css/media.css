@@ -5,11 +5,11 @@
   .header-wr_sticky .header .nav .form{    display: inline-block; position: relative; width: 244px; background-color: #ffffff;} .header-wr_sticky .header .nav .form input[type="text"]{width:206px!important; border:0;}
 }
 
-@media only screen and (max-width : 1023px) {
+@media only screen and (max-width : 1024px) {
  .header-wr_sticky{display: none;} 
  .header .nav .form{display: block!important;} .header-wr .header .nav .form input[type="text"] { max-width: 168px!important; height: 35px!important;} .header .nav .form button[type="submit"]{right:3px!important; top:3px!important;} .header .nav li:nth-child(2){padding-right: 0px!important;}
  .form {width: auto!important;}
- .phone__number{line-height: 32px!important;}
+ .phone__number{line-height: 38px!important;}
 
 
 }
@@ -48,5 +48,6 @@
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px) {
  .info-text h2{margin: 10px!important;} .contact__input{width: 260px!important;}
+  .company__advant{height: 740px!important;}
 }
 
