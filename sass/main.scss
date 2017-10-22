@@ -63,7 +63,7 @@ ul {
 
 
 .header-wr{ 
-  transition: all 0.5s;
+  transition: 0.5s;
 
   .header{
     display: flex;
@@ -72,7 +72,8 @@ ul {
     border-bottom: 4px solid #ee3124; 
     min-height: 90px;
 
-    .nav{
+    .nav {
+      display: inline-block;
       ul{
         display: inline-block;
         vertical-align: middle;
@@ -88,78 +89,82 @@ ul {
           text-transform: uppercase;
         }
       }
-      .form{
-        display: inline-block;
-        position: relative;
-        width: 258px;
-        display: inline-block;
-        position: relative;
-        border: 2px solid #dddfe0;
-        background-color: #ffffff;
+    }
 
-        ::-webkit-input-placeholder { font-family: 'LatoWebBold'; vertical-align:middle; line-height: 23px; font-size: 15px; font-weight: 700;  text-transform: uppercase;color: #737373;}
-        ::-moz-placeholder          {font-family: 'LatoWebBold'; vertical-align:middle; line-height: 23px; font-size: 15px; font-weight: 700;  text-transform: uppercase;color: #737373;}/* Firefox 19+ */
-        :-moz-placeholder           {font-family: 'LatoWebBold'; vertical-align:middle; line-height: 23px; font-size: 15px; font-weight: 700;  text-transform: uppercase;color: #737373;}/* Firefox 18- */
-        :-ms-input-placeholder      {font-family: 'LatoWebBold'; vertical-align:middle; line-height: 23px; font-size: 15px; font-weight: 700;  text-transform: uppercase;color: #737373;}
-        input[type="text"]{
-              padding-left: 15px;
-              width: 210px;
-              height: 54px;
-              border: 0;
+    .header__form{
+      display: inline-block;
+      position: relative;
+      width: 258px;
+      display: inline-block;
+      position: relative;
+      border: 2px solid #dddfe0;
+      background-color: #ffffff;
 
-        }
-        button[type="submit"]{
-          height: 30px;
-        width: 40px;
+      ::-webkit-input-placeholder { font-family: 'LatoWebBold'; vertical-align:middle; line-height: 23px; font-size: 15px; font-weight: 700;  text-transform: uppercase;color: #737373;}
+      ::-moz-placeholder          {font-family: 'LatoWebBold'; vertical-align:middle; line-height: 23px; font-size: 15px; font-weight: 700;  text-transform: uppercase;color: #737373;}/* Firefox 19+ */
+      :-moz-placeholder           {font-family: 'LatoWebBold'; vertical-align:middle; line-height: 23px; font-size: 15px; font-weight: 700;  text-transform: uppercase;color: #737373;}/* Firefox 18- */
+      :-ms-input-placeholder      {font-family: 'LatoWebBold'; vertical-align:middle; line-height: 23px; font-size: 15px; font-weight: 700;  text-transform: uppercase;color: #737373;}
+      .header__input{
+        padding-left: 15px;
+        width: 210px;
+        height: 54px;
+        border: 0;
+
+      }
+      .header__search-btn{
+        height: 54px;
+        width: 45px;
         position: absolute;
         border: none;
-        top: 13px;
-        right: 5px;
         background-color: transparent;
         cursor: pointer;
-        }
-        button:before{
-          content: "\e914";
-          font-family: 'icomoon';
-          color: black;
-          font-size: 26px;
-          vertical-align: middle;
-          background-color: transparent;
-        }
+      }
+      .header__search-btn:before{
+        content: "\e914";
+        font-family: 'icomoon';
+        color: black;
+        font-size: 26px;
+        vertical-align: middle;
+        background-color: transparent;
       }
     }
 
     .header__right{
-      .icon-Phone{
+      text-align: right;
+      .phone-link{
+        display: block;
+      }
+      .icon-phone{
         color: #d23546;
         font-size: 25px;
         padding-right: 10px;
-       vertical-align: middle;
+        vertical-align: middle;
       }
 
-      .phone__number{
+      .number-phone{
         font-family: 'LatoWebBold';
         font-size: 25px;
         font-weight: 700;
         line-height: 41px;
         text-transform: uppercase;
-            vertical-align: middle;
+        vertical-align: middle;
       }
 
       .phone-btn{
-        float: right;
-        a { 
-          color: #ffffff;
-          background-color: #7cc576;
-          padding: 7px 12px 7px 12px;
-          border-radius: 3px;
-          font-family: 'LatoWebBold';
-          font-size: 11px;
-          font-weight: 700;
-          line-height: 20.1px;
-          text-transform: uppercase;
-          /* Text style for "В, АМ ПЕРЕ" */
-          letter-spacing: 2.04px;
+        color: #ffffff;
+        background-color: #7cc576;
+        padding: 7px 12px 7px 12px;
+        border-radius: 3px;
+        font-family: 'LatoWebBold';
+        font-size: 11px;
+        font-weight: 700;
+        line-height: 20.1px;
+        text-transform: uppercase;
+        /* Text style for "В, АМ ПЕРЕ" */
+        letter-spacing: 2.04px;
+        transition: 0.2s;
+        &:hover{
+          background-color: #32bc5d;
         }
       }
     }
@@ -221,7 +226,8 @@ ul {
    }
    
    .nav{
-    ul{
+     display: inline-block;
+     ul{
       display: inline-block;
       vertical-align: middle;
     }
@@ -237,56 +243,56 @@ ul {
         text-transform: uppercase;
       }
     }
-    .form{
-      display: inline-block;
-      position: relative;
-       width: 244px;
-       background-color: #ffffff;
+  }
+
+  .header__form{
+    display: inline-block;
+    position: relative;
+    width: 244px;
+    background-color: #ffffff;
 
 
-      ::-webkit-input-placeholder { font-family: 'LatoWebBold'; vertical-align:middle; line-height: 23px; font-size: 15px; font-weight: 700;  text-transform: uppercase;color: #737373;}
-      ::-moz-placeholder          {font-family: 'LatoWebBold'; vertical-align:middle; line-height: 23px; font-size: 15px; font-weight: 700;  text-transform: uppercase;color: #737373;}/* Firefox 19+ */
-      :-moz-placeholder           {font-family: 'LatoWebBold'; vertical-align:middle; line-height: 23px; font-size: 15px; font-weight: 700;  text-transform: uppercase;color: #737373;}/* Firefox 18- */
-      :-ms-input-placeholder      {font-family: 'LatoWebBold'; vertical-align:middle; line-height: 23px; font-size: 15px; font-weight: 700;  text-transform: uppercase;color: #737373;}
-      input[type="text"]{
-        padding-left: 15px;
-        width: 206px;
-        height: 34px;
-        border: none;
-        background-color: #ffffff;
+    ::-webkit-input-placeholder { font-family: 'LatoWebBold'; vertical-align:middle; line-height: 23px; font-size: 15px; font-weight: 700;  text-transform: uppercase;color: #737373;}
+    ::-moz-placeholder          {font-family: 'LatoWebBold'; vertical-align:middle; line-height: 23px; font-size: 15px; font-weight: 700;  text-transform: uppercase;color: #737373;}/* Firefox 19+ */
+    :-moz-placeholder           {font-family: 'LatoWebBold'; vertical-align:middle; line-height: 23px; font-size: 15px; font-weight: 700;  text-transform: uppercase;color: #737373;}/* Firefox 18- */
+    :-ms-input-placeholder      {font-family: 'LatoWebBold'; vertical-align:middle; line-height: 23px; font-size: 15px; font-weight: 700;  text-transform: uppercase;color: #737373;}
+    .header__input{
+      padding-left: 15px;
+      width: 206px;
+      height: 34px;
+      border: none;
+      background-color: #ffffff;
 
-      }
-      button[type="submit"]{
-        position: absolute;
-        border: none;
-        top: 3px;
-        right: 0px;
-        background-color: transparent;
-        cursor: pointer; 
-      }
-      button:before{
-        content: "\e914";
-        font-family: 'icomoon';
-        color: black;
-        font-size: 26px;
-        vertical-align: middle;
-        background-color: transparent;
-      }
+    }
+    .header__search-btn{
+      position: absolute;
+      border: none;
+      height: 34px;;
+      background-color: transparent;
+      cursor: pointer; 
+    }
+    .header__search-btn:before{
+      content: "\e914";
+      font-family: 'icomoon';
+      color: black;
+      font-size: 26px;
+      vertical-align: middle;
+      background-color: transparent;
     }
   }
 
   .header__right{
-    .icon-Phone{
+    .icon-phone{
       color: #fff;
       font-size: 24px;
       padding-right: 10px;
       vertical-align: middle;
     }
-      .phone-link{
-        display: inline-block;
-        vertical-align: middle;
-      }
-    .phone__number{   
+    .phone-link{
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .number-phone{   
       color: #fff;
       vertical-align: middle;
       font-family: 'LatoWebBold';
@@ -298,23 +304,24 @@ ul {
     .phone-btn{
      display: inline-block;
      vertical-align: middle;
-      margin-left: 20px;
-
-
-     a { 
-      color: #ffffff;
-      background-color: #7fc477;
-      padding: 7px 12px 7px 12px;
-      border-radius: 3px;
-      font-family: 'LatoWebBold';
-      font-size: 11px;
-      font-weight: 700;
-      vertical-align: middle;
-      line-height: 20.1px;
-      text-transform: uppercase;
-      /* Text style for "В, АМ ПЕРЕ" */
-      letter-spacing: 2.04px;
+     margin-left: 20px;
+     color: #ffffff;
+     background-color: #7fc477;
+     padding: 7px 12px 7px 12px;
+     border-radius: 3px;
+     font-family: 'LatoWebBold';
+     font-size: 11px;
+     font-weight: 700;
+     vertical-align: middle;
+     text-transform: uppercase;
+     letter-spacing: 2.04px;
+     
+     &:hover{
+      background-color: #32bc5d;
+        transition: 0.2s;
     }
+
+    
   }
 }
 }
@@ -333,13 +340,13 @@ ul {
   .company__info{
     width: 75%;
     padding-right: 20px;
-   
-    h1{
+
+    .h1{
       color: #000000;
       font-size: 29px;
       font-weight: 400;
     }
-    .info_text{
+    .company__content{
       font-size: 16px;
       font-weight: 400;
 
@@ -356,17 +363,17 @@ ul {
     padding: 0 20px 0 20px;
     margin-top: 10px;
 
-    h2{
+    .company-h2{
       word-wrap: break-word;
       color: #000000;
       font-size: 27px;
       font-weight: 400;
     }
-      
-      .advant__item {
-        padding-top: 15px;
-      }
-    .advant__item .img {
+
+    .company__item {
+      padding-top: 15px;
+    }
+    .company__item .img {
       margin: 0 auto;
     }
     p{
@@ -378,7 +385,7 @@ ul {
 
     }
 
-    .advant__icons{
+    .company__icons{
       display:inline-block;
       padding-bottom: 20px;
       
@@ -406,14 +413,14 @@ ul {
   display: flex;
   min-height: 270px;
   padding-bottom: 20px;
-   .contact__info{
+  .contact__info{
     width: 50%;
     background-color: #a81d36;
     display:flex;
     align-items: center;
     border-radius: 5px 0px 0px 5px;
     padding-left: 35px;
-     .info-text{
+    .info-text{
       max-width: 300px;
       margin-left: 30px;
       padding-top: 40px;
@@ -422,66 +429,79 @@ ul {
       font-family: 'LatoWeb';
       font-size: 16px;
       font-weight: 400;
-      line-height: 26px;
-      h2{
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 0px;
+      
+      .h2{
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 0px;
 
       }
-      span{
+      .c-link{
+        color: #ffffff;
         display: block;
         margin-top: 15px;
-       font-size: 18px;
-       font-weight: 700;
-        }
-      }
-     }
-     .contact__form{
-      width: 50%;
-      text-align: center;
-      font-family: 'LatoWeb';
-      font-size: 18px;
-      font-weight: 400;
-      border-radius: 0px 5px 5px 0px;
-      border: 1px solid #d5d5d5;
-      padding-bottom: 16px;
-      h2{
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 0;
-      }
-      span{
-      display: block;
-      text-transform: uppercase;
-      padding-top: 5px;
-      font-size: 14px;
-      font-weight: 700;
-      line-height: 30px;
-      }
-      .contact__input{
-       width: 316px;
-      height: 54px;
-      padding-left: 5px;
-      border: 2px solid #dddfe0;
-      background-color: #ffffff;
-      }
-      .contact__btn{
-        display: block;
-        margin: 0 auto;
-        width: 271px;
-        height: 54px;
-        border: none;
-        margin-top: 20px;
-        border-radius: 3px;
-        background-color: #7cc576;
-        font-family: 'LatoWeb';
-        font-size: 17px;
+        font-size: 18px;
         font-weight: 700;
-        line-height: 41px;
-        text-transform: uppercase;
-        letter-spacing: 3.4px;
       }
+      .c-email{
+       color: #ffffff;
+       font-family: 'LatoWeb';
+       font-size: 16px;
+       font-weight: 400;
+       line-height: 26px;
      }
-     
    }
+ }
+ .contact__form{
+  width: 50%;
+  text-align: center;
+  font-family: 'LatoWeb';
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 0px 5px 5px 0px;
+  border: 1px solid #d5d5d5;
+  padding-bottom: 16px;
+  .h2{
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+  span{
+    display: block;
+    text-transform: uppercase;
+    padding-top: 5px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 30px;
+  }
+  .contact__input{
+   width: 316px;
+   height: 54px;
+   padding-left: 10px;
+   padding-right: 10px;
+   border: 2px solid #dddfe0;
+   background-color: #ffffff;
+ }
+ .contact__btn{
+  display: block;
+  margin: 0 auto;
+  width: 271px;
+  height: 54px;
+  border: none;
+  margin-top: 20px;
+  border-radius: 3px;
+  background-color: #7cc576;
+  font-family: 'LatoWeb';
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 41px;
+  text-transform: uppercase;
+  transition: 0.2s;
+  letter-spacing: 3.4px;
+  &:hover{
+    background-color: #32bc5d;
+  }
+}
+}
+
+}

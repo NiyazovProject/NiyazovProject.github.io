@@ -52,8 +52,8 @@ ul {
   /*╤Г╨▒╨╕╤А╨░╨╡╨╝ ╨╗╨╡╨▓╤Л╨╣ ╨╛╤В╤Б╤В╤Г╨┐, ╤А╨░╨▓╨╜╤Л╨╣ 40px*/ }
 
 .header-wr {
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s; }
+  -webkit-transition: 0.5s;
+  transition: 0.5s; }
   .header-wr .header {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -66,19 +66,21 @@ ul {
             align-items: center;
     border-bottom: 4px solid #ee3124;
     min-height: 90px; }
-    .header-wr .header .nav ul {
-      display: inline-block;
-      vertical-align: middle; }
-    .header-wr .header .nav li {
-      display: inline-block;
-      padding-right: 16px; }
-      .header-wr .header .nav li a {
-        font-family: 'LatoWebBold';
-        font-size: 15px;
-        font-weight: 700;
-        line-height: 23px;
-        text-transform: uppercase; }
-    .header-wr .header .nav .form {
+    .header-wr .header .nav {
+      display: inline-block; }
+      .header-wr .header .nav ul {
+        display: inline-block;
+        vertical-align: middle; }
+      .header-wr .header .nav li {
+        display: inline-block;
+        padding-right: 16px; }
+        .header-wr .header .nav li a {
+          font-family: 'LatoWebBold';
+          font-size: 15px;
+          font-weight: 700;
+          line-height: 23px;
+          text-transform: uppercase; }
+    .header-wr .header .header__form {
       display: inline-block;
       position: relative;
       width: 258px;
@@ -88,7 +90,7 @@ ul {
       background-color: #ffffff;
       /* Firefox 19+ */
       /* Firefox 18- */ }
-      .header-wr .header .nav .form ::-webkit-input-placeholder {
+      .header-wr .header .header__form ::-webkit-input-placeholder {
         font-family: 'LatoWebBold';
         vertical-align: middle;
         line-height: 23px;
@@ -96,7 +98,7 @@ ul {
         font-weight: 700;
         text-transform: uppercase;
         color: #737373; }
-      .header-wr .header .nav .form ::-moz-placeholder {
+      .header-wr .header .header__form ::-moz-placeholder {
         font-family: 'LatoWebBold';
         vertical-align: middle;
         line-height: 23px;
@@ -104,7 +106,7 @@ ul {
         font-weight: 700;
         text-transform: uppercase;
         color: #737373; }
-      .header-wr .header .nav .form :-moz-placeholder {
+      .header-wr .header .header__form :-moz-placeholder {
         font-family: 'LatoWebBold';
         vertical-align: middle;
         line-height: 23px;
@@ -112,7 +114,7 @@ ul {
         font-weight: 700;
         text-transform: uppercase;
         color: #737373; }
-      .header-wr .header .nav .form :-ms-input-placeholder {
+      .header-wr .header .header__form :-ms-input-placeholder {
         font-family: 'LatoWebBold';
         vertical-align: middle;
         line-height: 23px;
@@ -120,42 +122,42 @@ ul {
         font-weight: 700;
         text-transform: uppercase;
         color: #737373; }
-      .header-wr .header .nav .form input[type="text"] {
+      .header-wr .header .header__form .header__input {
         padding-left: 15px;
         width: 210px;
         height: 54px;
         border: 0; }
-      .header-wr .header .nav .form button[type="submit"] {
-        height: 30px;
-        width: 40px;
+      .header-wr .header .header__form .header__search-btn {
+        height: 54px;
+        width: 45px;
         position: absolute;
         border: none;
-        top: 13px;
-        right: 5px;
         background-color: transparent;
         cursor: pointer; }
-      .header-wr .header .nav .form button:before {
+      .header-wr .header .header__form .header__search-btn:before {
         content: "\e914";
         font-family: 'icomoon';
         color: black;
         font-size: 26px;
         vertical-align: middle;
         background-color: transparent; }
-    .header-wr .header .header__right .icon-Phone {
-      color: #d23546;
-      font-size: 25px;
-      padding-right: 10px;
-      vertical-align: middle; }
-    .header-wr .header .header__right .phone__number {
-      font-family: 'LatoWebBold';
-      font-size: 25px;
-      font-weight: 700;
-      line-height: 41px;
-      text-transform: uppercase;
-      vertical-align: middle; }
-    .header-wr .header .header__right .phone-btn {
-      float: right; }
-      .header-wr .header .header__right .phone-btn a {
+    .header-wr .header .header__right {
+      text-align: right; }
+      .header-wr .header .header__right .phone-link {
+        display: block; }
+      .header-wr .header .header__right .icon-phone {
+        color: #d23546;
+        font-size: 25px;
+        padding-right: 10px;
+        vertical-align: middle; }
+      .header-wr .header .header__right .number-phone {
+        font-family: 'LatoWebBold';
+        font-size: 25px;
+        font-weight: 700;
+        line-height: 41px;
+        text-transform: uppercase;
+        vertical-align: middle; }
+      .header-wr .header .header__right .phone-btn {
         color: #ffffff;
         background-color: #7cc576;
         padding: 7px 12px 7px 12px;
@@ -166,7 +168,11 @@ ul {
         line-height: 20.1px;
         text-transform: uppercase;
         /* Text style for "╨Т, ╨Р╨Ь ╨Я╨Х╨а╨Х" */
-        letter-spacing: 2.04px; }
+        letter-spacing: 2.04px;
+        -webkit-transition: 0.2s;
+        transition: 0.2s; }
+        .header-wr .header .header__right .phone-btn:hover {
+          background-color: #32bc5d; }
   .header-wr .menu-link {
     display: none;
     width: 50px;
@@ -218,27 +224,29 @@ ul {
     padding: 5px 0px 5px 0px; }
     .header-wr_sticky .header .header__left img {
       display: none; }
-    .header-wr_sticky .header .nav ul {
-      display: inline-block;
-      vertical-align: middle; }
-    .header-wr_sticky .header .nav li {
-      display: inline-block;
-      padding-right: 16px; }
-      .header-wr_sticky .header .nav li a {
-        color: #fff;
-        font-family: 'LatoWebBold';
-        font-size: 15px;
-        font-weight: 700;
-        line-height: 23px;
-        text-transform: uppercase; }
-    .header-wr_sticky .header .nav .form {
+    .header-wr_sticky .header .nav {
+      display: inline-block; }
+      .header-wr_sticky .header .nav ul {
+        display: inline-block;
+        vertical-align: middle; }
+      .header-wr_sticky .header .nav li {
+        display: inline-block;
+        padding-right: 16px; }
+        .header-wr_sticky .header .nav li a {
+          color: #fff;
+          font-family: 'LatoWebBold';
+          font-size: 15px;
+          font-weight: 700;
+          line-height: 23px;
+          text-transform: uppercase; }
+    .header-wr_sticky .header .header__form {
       display: inline-block;
       position: relative;
       width: 244px;
       background-color: #ffffff;
       /* Firefox 19+ */
       /* Firefox 18- */ }
-      .header-wr_sticky .header .nav .form ::-webkit-input-placeholder {
+      .header-wr_sticky .header .header__form ::-webkit-input-placeholder {
         font-family: 'LatoWebBold';
         vertical-align: middle;
         line-height: 23px;
@@ -246,7 +254,7 @@ ul {
         font-weight: 700;
         text-transform: uppercase;
         color: #737373; }
-      .header-wr_sticky .header .nav .form ::-moz-placeholder {
+      .header-wr_sticky .header .header__form ::-moz-placeholder {
         font-family: 'LatoWebBold';
         vertical-align: middle;
         line-height: 23px;
@@ -254,7 +262,7 @@ ul {
         font-weight: 700;
         text-transform: uppercase;
         color: #737373; }
-      .header-wr_sticky .header .nav .form :-moz-placeholder {
+      .header-wr_sticky .header .header__form :-moz-placeholder {
         font-family: 'LatoWebBold';
         vertical-align: middle;
         line-height: 23px;
@@ -262,7 +270,7 @@ ul {
         font-weight: 700;
         text-transform: uppercase;
         color: #737373; }
-      .header-wr_sticky .header .nav .form :-ms-input-placeholder {
+      .header-wr_sticky .header .header__form :-ms-input-placeholder {
         font-family: 'LatoWebBold';
         vertical-align: middle;
         line-height: 23px;
@@ -270,27 +278,26 @@ ul {
         font-weight: 700;
         text-transform: uppercase;
         color: #737373; }
-      .header-wr_sticky .header .nav .form input[type="text"] {
+      .header-wr_sticky .header .header__form .header__input {
         padding-left: 15px;
         width: 206px;
         height: 34px;
         border: none;
         background-color: #ffffff; }
-      .header-wr_sticky .header .nav .form button[type="submit"] {
+      .header-wr_sticky .header .header__form .header__search-btn {
         position: absolute;
         border: none;
-        top: 3px;
-        right: 0px;
+        height: 34px;
         background-color: transparent;
         cursor: pointer; }
-      .header-wr_sticky .header .nav .form button:before {
+      .header-wr_sticky .header .header__form .header__search-btn:before {
         content: "\e914";
         font-family: 'icomoon';
         color: black;
         font-size: 26px;
         vertical-align: middle;
         background-color: transparent; }
-    .header-wr_sticky .header .header__right .icon-Phone {
+    .header-wr_sticky .header .header__right .icon-phone {
       color: #fff;
       font-size: 24px;
       padding-right: 10px;
@@ -298,7 +305,7 @@ ul {
     .header-wr_sticky .header .header__right .phone-link {
       display: inline-block;
       vertical-align: middle; }
-    .header-wr_sticky .header .header__right .phone__number {
+    .header-wr_sticky .header .header__right .number-phone {
       color: #fff;
       vertical-align: middle;
       font-family: 'LatoWebBold';
@@ -308,20 +315,21 @@ ul {
     .header-wr_sticky .header .phone-btn {
       display: inline-block;
       vertical-align: middle;
-      margin-left: 20px; }
-      .header-wr_sticky .header .phone-btn a {
-        color: #ffffff;
-        background-color: #7fc477;
-        padding: 7px 12px 7px 12px;
-        border-radius: 3px;
-        font-family: 'LatoWebBold';
-        font-size: 11px;
-        font-weight: 700;
-        vertical-align: middle;
-        line-height: 20.1px;
-        text-transform: uppercase;
-        /* Text style for "╨Т, ╨Р╨Ь ╨Я╨Х╨а╨Х" */
-        letter-spacing: 2.04px; }
+      margin-left: 20px;
+      color: #ffffff;
+      background-color: #7fc477;
+      padding: 7px 12px 7px 12px;
+      border-radius: 3px;
+      font-family: 'LatoWebBold';
+      font-size: 11px;
+      font-weight: 700;
+      vertical-align: middle;
+      text-transform: uppercase;
+      letter-spacing: 2.04px; }
+      .header-wr_sticky .header .phone-btn:hover {
+        background-color: #32bc5d;
+        -webkit-transition: 0.2s;
+        transition: 0.2s; }
 
 .company {
   padding-top: 20px;
@@ -335,11 +343,11 @@ ul {
   .company .company__info {
     width: 75%;
     padding-right: 20px; }
-    .company .company__info h1 {
+    .company .company__info .h1 {
       color: #000000;
       font-size: 29px;
       font-weight: 400; }
-    .company .company__info .info_text {
+    .company .company__info .company__content {
       font-size: 16px;
       font-weight: 400; }
   .company .company__advant {
@@ -352,14 +360,14 @@ ul {
     text-align: center;
     padding: 0 20px 0 20px;
     margin-top: 10px; }
-    .company .company__advant h2 {
+    .company .company__advant .company-h2 {
       word-wrap: break-word;
       color: #000000;
       font-size: 27px;
       font-weight: 400; }
-    .company .company__advant .advant__item {
+    .company .company__advant .company__item {
       padding-top: 15px; }
-    .company .company__advant .advant__item .img {
+    .company .company__advant .company__item .img {
       margin: 0 auto; }
     .company .company__advant p {
       font-size: 16px;
@@ -367,16 +375,16 @@ ul {
       padding-top: 20px;
       padding-bottom: 20px;
       margin: 0 auto !important; }
-    .company .company__advant .advant__icons {
+    .company .company__advant .company__icons {
       display: inline-block;
       padding-bottom: 20px; }
-      .company .company__advant .advant__icons img:nth-child(1) {
+      .company .company__advant .company__icons img:nth-child(1) {
         vertical-align: middle;
         padding-right: 26px; }
-      .company .company__advant .advant__icons img:nth-child(2) {
+      .company .company__advant .company__icons img:nth-child(2) {
         vertical-align: middle;
         padding-right: 40px; }
-      .company .company__advant .advant__icons img:nth-child(3) {
+      .company .company__advant .company__icons img:nth-child(3) {
         vertical-align: middle; }
 
 .contact {
@@ -404,17 +412,23 @@ ul {
       color: #ffffff;
       font-family: 'LatoWeb';
       font-size: 16px;
-      font-weight: 400;
-      line-height: 26px; }
-      .contact .contact__info .info-text h2 {
+      font-weight: 400; }
+      .contact .contact__info .info-text .h2 {
         font-size: 24px;
         font-weight: 700;
         margin-bottom: 0px; }
-      .contact .contact__info .info-text span {
+      .contact .contact__info .info-text .c-link {
+        color: #ffffff;
         display: block;
         margin-top: 15px;
         font-size: 18px;
         font-weight: 700; }
+      .contact .contact__info .info-text .c-email {
+        color: #ffffff;
+        font-family: 'LatoWeb';
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 26px; }
   .contact .contact__form {
     width: 50%;
     text-align: center;
@@ -424,7 +438,7 @@ ul {
     border-radius: 0px 5px 5px 0px;
     border: 1px solid #d5d5d5;
     padding-bottom: 16px; }
-    .contact .contact__form h2 {
+    .contact .contact__form .h2 {
       font-size: 24px;
       font-weight: 700;
       margin-bottom: 0; }
@@ -438,7 +452,8 @@ ul {
     .contact .contact__form .contact__input {
       width: 316px;
       height: 54px;
-      padding-left: 5px;
+      padding-left: 10px;
+      padding-right: 10px;
       border: 2px solid #dddfe0;
       background-color: #ffffff; }
     .contact .contact__form .contact__btn {
@@ -455,6 +470,9 @@ ul {
       font-weight: 700;
       line-height: 41px;
       text-transform: uppercase;
+      -webkit-transition: 0.2s;
+      transition: 0.2s;
       letter-spacing: 3.4px; }
-
+      .contact .contact__form .contact__btn:hover {
+        background-color: #32bc5d; }
 /*# sourceMappingURL=main.css.map */

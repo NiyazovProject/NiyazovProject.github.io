@@ -27,7 +27,7 @@ window.onload = function () {
     
 
   $(window).scroll(function(){
-    if ($(window).scrollTop() >=10 ){
+    if ($(window).scrollTop() >=91 ){
        $('.header-wr').addClass('header-wr_sticky').removeClass('header-wr');
     }
     else {

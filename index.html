@@ -29,16 +29,18 @@
 							<li><a href="#">Услуги</a></li>
 							<li><a href="#">Рекомендации</a></li>
 						</ul>
-						<div class="form">
-							<input type="text" placeholder="Поиск">
-							<button type="submit" ></button>
-						</div>
 					</nav>
+					<div class="header__form">
+						<form action="">
+							<input type="text" placeholder="Поиск" class="header__input" >
+							<button type="submit" class="header__search-btn" ></button>
+						</form>
+					</div>
 					</div>
 
 					<div class="header__right">
-						<div class="phone-link"><a href="tel:+74956496244"><span class="icon-Phone"></span><span class="phone__number">+7 (495) 649-62-44</span></a></div>
-						<div class="phone-btn"><a href="#">Вам перезвонить?</a></div>
+						<a href="tel:+74956496244" class="phone-link" ><span class="icon-phone"></span><span class="number-phone">+7 (495) 649-62-44</span></a>
+						<a class="phone-btn" href="#">Вам перезвонить?</a> 
 					</div>
 				</div>
 			</div>
@@ -49,8 +51,8 @@
 		<div class="wrap">
 			<div class="company">
 				<div class="company__info ">
-					<h1>О компании</h1>
-					<div class="info__text">
+					<h1 class="h1" >О компании</h1>
+					<div class="company__content">
 						<p>Медиамикс отталкивает продвигаемый фирменный стиль. Раскрутка раскручивает из ряда вон выходящий диктат потребителя, оптимизируя бюджеты. Узнавание бренда, как следует из вышесказанного, притягивает комплексный портрет потребителя, не считаясь с затратами. Формирование имиджа, на первый взгляд, ускоряет рекламный макет, осознавая социальную ответственность бизнеса. Размещение оправдывает комплексный фирменный стиль. Процесс стратегического планирования продуцирует бренд.
 						</p>
 						<p>Контент ускоряет отраслевой стандарт, осознавая социальную ответственность бизнеса. Диверсификация бизнеса выражена наиболее полно. Выставочный стенд, в рамках сегодняшних воззрений, основан на опыте повседневного применения. Торговая марка, безусловно, интегрирована. Лидерство в продажах недостижимо. Корпоративная культура изящно синхронизирует креативный комплексный анализ ситуации.</p>
@@ -66,27 +68,27 @@
 					</div>
 				</div>
 
-				<div class="company__advant ">
-					<h2 class="advant-h">Наши преимущества:</h2>
-					<div class="advant__block">
-						<div class="advant__item">
+				<div class="company__advant">
+					<h2 class="company-h2">Наши преимущества:</h2>
+					<div class="company__block">
+						<div class="company__item">
 							<div class="img" style="background:url(img/alpha-bank.png); width: 31px; height: 47px; " ></div>
 							<p >Открытие расчетного счета прямо у нас в офисе! Спасибо, Альфабанк!</p>
 						</div>
-						<div class="advant__item">
+						<div class="company__item">
 							<div class="img" style="background:url(img/metro.png); width: 51px; height: 35px; " ></div>
 						    <p>Мы находимся На кольцевой линии и в пешей доступности от метро.</p>
 						</div>
-						<div class="advant__item">
+						<div class="company__item">
 							<div class="img" style="background:url(img/parking.png); width: 51px; height: 50px; " ></div>
 							<p>Бесплатное парковочное место для клиентов</p>
 						</div>
-						<div class="advant__item">
+						<div class="company__item">
 							<div class="img" style="background:url(img/notorius.png); width: 48px; height: 48px; " ></div>
 						<p>Нотариус принимает В нашем офисе без очередей и лишних передвижений.</p>
 						</div>
 					</div>
-					<div class="advant__icons"><img src="img/visa.png" alt="">  <img src="img/mcard.png" alt="">  <img src="img/wi-fi.png" alt=""></div>
+					<div class="company__icons"><img src="img/visa.png" alt="">  <img src="img/mcard.png" alt="">  <img src="img/wi-fi.png" alt=""></div>
 				</div>
 			</div>
 		</div>
@@ -99,25 +101,23 @@
 				<div class="contact__info">
 					<img src="img/contact.png" alt="">
 					<div class="info-text">
-						Контактное лицо:
-						<h2>Никулин Альберт Александрович</h2>
-						 Юрист
-						<span>+7 (495) 649-62-44</span>
-						gb@mos-registrator.com
-						ул. Грузинский вал, д. 11, 
-						стр. 3.
+						<p>Контактное лицо:</p>
+						<h2 class="h2">Никулин Альберт Александрович</h2>
+						<p>Юрист</p>
+						<a href="tel:+74956496244" class="c-link" >+7 (495) 649-62-44</a>
+					    <a href="#" class="c-email">gb@mos-registrator.com</a>
+						<p>ул. Грузинский вал, д. 11, 
+						стр. 3.</p>
 					</div>
 				</div>
 				<div class="contact__form">
-					<h2>Есть вопросы?</h2>
+					<h2 class="h2">Есть вопросы?</h2>
 				Мы перезвоним вам в течении 5 секунд!
 					<form action="">
 						<span>Номер телефона:</span>
 						<input type="text" class="contact__input">
 						<button class="contact__btn">Перезвоните мне</button>
-						
 					</form>
-					
 				</div>
 			</div>
 		</div>
