@@ -44,8 +44,8 @@ img {
 .wrap {
   max-width: 1320px;
   position: relative;
-  padding-left: 3.5%;
-  padding-right: 3.5%;
+  padding-left: 15px;
+  padding-right: 15px;
   margin: 0 auto;
 
 }
@@ -63,7 +63,7 @@ ul {
 
 
 .header-wr{ 
-  transition: 0.5s;
+  background-color:#fff;
 
   .header{
     display: flex;
@@ -105,15 +105,16 @@ ul {
       :-moz-placeholder           {font-family: 'LatoWebBold'; vertical-align:middle; line-height: 23px; font-size: 15px; font-weight: 700;  text-transform: uppercase;color: #737373;}/* Firefox 18- */
       :-ms-input-placeholder      {font-family: 'LatoWebBold'; vertical-align:middle; line-height: 23px; font-size: 15px; font-weight: 700;  text-transform: uppercase;color: #737373;}
       .header__input{
-        padding-left: 15px;
-        width: 210px;
+        padding-left: 10px;
+        width: 79%;
         height: 54px;
         border: 0;
 
       }
       .header__search-btn{
         height: 54px;
-        width: 45px;
+        width: 54px;
+        right: -1px;
         position: absolute;
         border: none;
         background-color: transparent;
@@ -174,11 +175,12 @@ ul {
 .menu-link{ 
   display: none; 
   width: 50px; 
-  height: 50px; 
+  height: 37px; 
+  top:3px;
+      margin-right: -9px;
   background-color: transparent; 
-  position: relative; 
-  top:-2px; 
-  right:2%; 
+  position: relative;  
+  border:none;
   span, span:before, span:after{ 
     display: block; 
     height: 2px; 
@@ -187,7 +189,6 @@ ul {
     right: 50%; 
     margin-right: -15px; 
     top: 50%; 
-    margin-top: -1px; 
     background-color: #000; 
   } 
   span:before{ 
@@ -207,301 +208,175 @@ ul {
 
 }
 
-//Header-sticky
 
-.header-wr_sticky{
-  background-color: #ad2640;
-  width:100%;
-  height: 45px;
-  z-index: 99;
-  transition:  0.4s top ease-in;
-  position: fixed;
-  .header{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 0px 5px 0px;
-    .header__left img{
-     display: none;
-   }
-   
-   .nav{
-     display: inline-block;
-     ul{
-      display: inline-block;
-      vertical-align: middle;
-    }
+//Menu stiles
+
+.mobile-menu{
+
+  .m-ul{
+     padding-left: 10px;
     li{
-      display: inline-block;
-      padding-right: 16px;
       a{
-        color: #fff;
-        font-family: 'LatoWebBold';
-        font-size: 15px;
-        font-weight: 700;
-        line-height: 23px;
-        text-transform: uppercase;
+         font-family: 'LatoWebBold';
+          font-size: 15px;
+          font-weight: 700;
+          line-height: 23px;
+          text-transform: uppercase;
       }
     }
   }
-
-  .header__form{
-    display: inline-block;
-    position: relative;
-    width: 244px;
-    background-color: #ffffff;
-
-
-    ::-webkit-input-placeholder { font-family: 'LatoWebBold'; vertical-align:middle; line-height: 23px; font-size: 15px; font-weight: 700;  text-transform: uppercase;color: #737373;}
-    ::-moz-placeholder          {font-family: 'LatoWebBold'; vertical-align:middle; line-height: 23px; font-size: 15px; font-weight: 700;  text-transform: uppercase;color: #737373;}/* Firefox 19+ */
-    :-moz-placeholder           {font-family: 'LatoWebBold'; vertical-align:middle; line-height: 23px; font-size: 15px; font-weight: 700;  text-transform: uppercase;color: #737373;}/* Firefox 18- */
-    :-ms-input-placeholder      {font-family: 'LatoWebBold'; vertical-align:middle; line-height: 23px; font-size: 15px; font-weight: 700;  text-transform: uppercase;color: #737373;}
-    .header__input{
-      padding-left: 15px;
-      width: 206px;
-      height: 34px;
-      border: none;
+  .menu-form{
+     margin-left: 10px;
+     display: inline-block;
+      position: relative;
+      width: 229px;
+      display: inline-block;
+      position: relative;
+      border-bottom: 2px solid #000;
       background-color: #ffffff;
 
-    }
-    .header__search-btn{
-      position: absolute;
-      border: none;
-      height: 34px;;
-      background-color: transparent;
-      cursor: pointer; 
-    }
-    .header__search-btn:before{
-      content: "\e914";
-      font-family: 'icomoon';
-      color: black;
-      font-size: 26px;
-      vertical-align: middle;
-      background-color: transparent;
-    }
+      ::-webkit-input-placeholder { font-family: 'LatoWebBold'; vertical-align:middle; line-height: 23px; font-size: 15px; font-weight: 700;  text-transform: uppercase;color: #737373;}
+      ::-moz-placeholder          {font-family: 'LatoWebBold'; vertical-align:middle; line-height: 23px; font-size: 15px; font-weight: 700;  text-transform: uppercase;color: #737373;}/* Firefox 19+ */
+      :-moz-placeholder           {font-family: 'LatoWebBold'; vertical-align:middle; line-height: 23px; font-size: 15px; font-weight: 700;  text-transform: uppercase;color: #737373;}/* Firefox 18- */
+      :-ms-input-placeholder      {font-family: 'LatoWebBold'; vertical-align:middle; line-height: 23px; font-size: 15px; font-weight: 700;  text-transform: uppercase;color: #737373;}
+
+      .m__input{
+        padding-left: 10px;
+
+        width: 84%;
+        height: 35px;
+        border: 0;
+      }
+      .m__search-btn{
+        height: 35px;
+        width: 35px;
+        
+        position: absolute;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+      }
+      .m__search-btn:before{
+        content: "\e914";
+        font-family: 'icomoon';
+        color: black;
+        font-size: 26px;
+        vertical-align: middle;
+        background-color: transparent;
+      }
   }
 
-  .header__right{
-    .icon-phone{
-      color: #fff;
-      font-size: 24px;
-      padding-right: 10px;
-      vertical-align: middle;
-    }
-    .phone-link{
-      display: inline-block;
-      vertical-align: middle;
-    }
-    .number-phone{   
-      color: #fff;
-      vertical-align: middle;
-      font-family: 'LatoWebBold';
-      font-size: 23px;
-      font-weight: 700;
-      text-transform: uppercase;}
-    }
-
-    .phone-btn{
-     display: inline-block;
-     vertical-align: middle;
-     margin-left: 20px;
-     color: #ffffff;
-     background-color: #7fc477;
-     padding: 7px 12px 7px 12px;
-     border-radius: 3px;
-     font-family: 'LatoWebBold';
-     font-size: 11px;
-     font-weight: 700;
-     vertical-align: middle;
-     text-transform: uppercase;
-     letter-spacing: 2.04px;
-     
-     &:hover{
-      background-color: #32bc5d;
-        transition: 0.2s;
-    }
-
+  .m-info{
+     padding-left: 4px;
+      .m-number{
+    color: #000;
+    font-family: "LatoWeb";
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 21px;
+  }
+  .icon-phone{
+    font-size: 25px;
     
   }
-}
-}
-
-//Mobile-menu
-
-
-//Company 
-
-.company{ 
-  padding-top: 20px;
-  padding-bottom: 20px;
-  display: flex;
-  justify-content: space-between;
-
-  .company__info{
-    width: 75%;
-    padding-right: 20px;
-
-    .h1{
-      color: #000000;
-      font-size: 29px;
-      font-weight: 400;
-    }
-    .company__content{
-      font-size: 16px;
-      font-weight: 400;
-
-    }
+  .icon-clock, {
+    font-size: 19px;
+       padding-left: 4px;
   }
+  .icon-gps{
+    font-size: 25px;
+   padding-left: 4px;
+  }
+  .icon-e-mail{
+    font-size: 25px;
+    padding-left: 4px;
+  }
+  li{
+    padding-top: 10px;
+      padding-left: 5px;
 
-
-  .company__advant{
-    width: 300px;
-    height:max-content;
-    background-color: #ebebeb;
-    border-radius: 7px;
-    text-align: center;
-    padding: 0 20px 0 20px;
-    margin-top: 10px;
-
-    .company-h2{
-      word-wrap: break-word;
-      color: #000000;
-      font-size: 27px;
-      font-weight: 400;
-    }
-
-    .company__item {
-      padding-top: 15px;
-    }
-    .company__item .img {
-      margin: 0 auto;
-    }
-    p{
-      font-size: 16px;
-      font-weight: 400;
-      padding-top: 20px;
-      padding-bottom: 20px;
-      margin: 0 auto!important;
-
-    }
-
-    .company__icons{
-      display:inline-block;
-      padding-bottom: 20px;
-      
-
-      img:nth-child(1){
-       vertical-align: middle;
-       padding-right: 26px;
-     }
-     img:nth-child(2){
-       vertical-align: middle;
-       padding-right: 40px;
-     }
-     img:nth-child(3){
-       vertical-align: middle;
-     }
-   }
- } 
-
-}
-
-//Contact
-
-
-.contact{
-  display: flex;
-  min-height: 270px;
-  padding-bottom: 20px;
-  .contact__info{
-    width: 50%;
-    background-color: #a81d36;
-    display:flex;
-    align-items: center;
-    border-radius: 5px 0px 0px 5px;
-    padding-left: 35px;
-    .info-text{
-      max-width: 300px;
-      margin-left: 30px;
-      padding-top: 40px;
-      padding-bottom: 40px;
-      color: #ffffff;
-      font-family: 'LatoWeb';
-      font-size: 16px;
-      font-weight: 400;
-      
-      .h2{
-        font-size: 24px;
-        font-weight: 700;
-        margin-bottom: 0px;
-
-      }
-      .c-link{
-        color: #ffffff;
-        display: block;
-        margin-top: 15px;
-        font-size: 18px;
-        font-weight: 700;
-      }
-      .c-email{
-       color: #ffffff;
-       font-family: 'LatoWeb';
-       font-size: 16px;
-       font-weight: 400;
-       line-height: 26px;
-     }
-   }
- }
- .contact__form{
-  width: 50%;
-  text-align: center;
-  font-family: 'LatoWeb';
-  font-size: 18px;
-  font-weight: 400;
-  border-radius: 0px 5px 5px 0px;
-  border: 1px solid #d5d5d5;
-  padding-bottom: 16px;
-  .h2{
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 0;
+  }
+  ul{
+    max-width: 230px;
+    
+  }
+  a{
+    color: #000;
+    font-family: 'LatoWeb';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px;
   }
   span{
-    display: block;
-    text-transform: uppercase;
-    padding-top: 5px;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 30px;
+    color: #b64155;
+    font-size: 17px;
+    vertical-align: middle;
   }
-  .contact__input{
-   width: 316px;
-   height: 54px;
-   padding-left: 10px;
-   padding-right: 10px;
-   border: 2px solid #dddfe0;
-   background-color: #ffffff;
- }
- .contact__btn{
-  display: block;
-  margin: 0 auto;
-  width: 271px;
-  height: 54px;
-  border: none;
-  margin-top: 20px;
-  border-radius: 3px;
-  background-color: #7cc576;
-  font-family: 'LatoWeb';
-  font-size: 17px;
-  font-weight: 700;
-  line-height: 41px;
-  text-transform: uppercase;
-  transition: 0.2s;
-  letter-spacing: 3.4px;
-  &:hover{
-    background-color: #32bc5d;
   }
-}
 }
 
+
+
+
+.mobile-menu{
+  display: none
+}
+
+
+
+@media only screen and (max-width : 767px) {
+
+
+  .m-menu{
+    background-color: #eee;
+    
+
+  }
+.mobile-menu{
+  display: block;
+}
+
+
+
+
+
+
+html.slideout-open .fixed-open-right #header__left.menu-link span {
+  background: none; }
+html.slideout-open .fixed-open-right #header__left.menu-link span::before {
+  top: 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg); }
+html.slideout-open .fixed-open-right #header__left.menu-link span::after {
+  bottom: 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg); }
+html.slideout-open .fixed-open-right #header__left.menu-link span::before,
+html.slideout-open .fixed-open-right #header__left.menu-link span::after {
+  -webkit-transition-delay: 0s, 0.3s;
+          transition-delay: 0s, 0.3s; }
+
+
+ .slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+  overflow: hidden; 
+}
+.slideout-open .slideout-menu {
+  display: block; 
+}
+
+.fixed {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  position: relative;
+  z-index: 2;
+  -webkit-transition: -webkit-transform 300ms ease;
+  transition: -webkit-transform 300ms ease;
+  transition: transform 300ms ease;
+  transition: transform 300ms ease, -webkit-transform 300ms ease; }
+
+.fixed.fixed-open-right {
+  -webkit-transform: translate3d(-256px, 0px, 0px);
+  transform: translate3d(-256px, 0px, 0px); }
 }
