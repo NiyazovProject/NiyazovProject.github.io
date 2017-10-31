@@ -93,6 +93,10 @@
   content: "\e915";
 }
 
+.icon-row-right:before {
+  content: "\ea3c";
+}
+
 
 
 

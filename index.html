@@ -34,39 +34,51 @@
 						</nav>
 
 						<div class="m-menu">
+							<button class="m-menu__btn" id="m-js-btn">Вернуться на страницу <span class="icon-row-right"></span></button>
+
 							<nav class="m-menu__nav">
 								<li><a href="#">Услуги</a></li>
 								<li><a href="#">Рекомендации</a></li>
 							</nav>
-							<div class="m-search-form">
-								<form action="#">
-									<input type="text" placeholder="Поиск" class="m-search-form__input">
-									<button type="submit" class="m-search-form__btn"></button>
-								</form>
+							<div class="m-menu__form">
+								<div class="mobile-form">
+									<form action="#">
+										<input type="text" placeholder="Поиск" class="mobile-form__input" onfocus="this.placeholder=''" onblur="this.placeholder='Поиск'">
+										<button type="submit" class="mobile-form__btn"></button>
+									</form>
+								</div>
 							</div>
-							<a href="tel:+74956496244" class="m-phone-link">
-								<span class="phone-link__icon icon-phone"></span>
-								<span class="m-phone-link__number">+7 (495) 649-62-44</span>
-							</a>
-							<div class="time-info">
-								<span class="icon-clock"></span>
-								<span class="icon-clock-text">
-									Время работы:<br/>
-									с 9:00 до 19:00
-								</span>
-							</div>
-							<div class="gps-info">
-								<span class="icon-gps"></span>
-								<span class="icon-gps-text">
-									123056, Москва,<br/>   
-									ул. Грузинский вал, д. 11, стр. 3
-								</span>
-							</div>
-							<a href="mailto:gb@mos-registrator.com" class="mail-info"><span class="icon-e-mail"></span>
-								gb@mos-registrator.com
-							</a>
+
+							<div class="m-menu__info cf">
 								
+								<a href="tel:+74956496244" class="mobile-phone">
+									<span class="mobile-phone__icon icon-phone"></span>
+									<span class="mobile-phone__number">+7 (495) 649-62-44</span>
+								</a>
+
+								<a class="time-info">
+									<span class="icon-clock"></span>
+									<span class="icon-clock-text">
+										Время работы:<br/>
+										с 9:00 до 19:00
+									</span>
+								</a>
+
+								<a class="gps-info">
+									<span class="icon-gps"></span>
+									<span class="icon-gps-text">
+										123056, Москва <br/>ул. Грузинский вал, д. 11, стр. 3
+									</span>
+								</a>
+
+								<a href="mailto:gb@mos-registrator.com" class="mail-info">
+									<span class="icon-e-mail"></span>
+									gb@mos-registrator.com
+								</a>
+
 							</div>
+
+						</div>
 
 						<div class="search-form">
 							<form action="#">
@@ -268,6 +280,11 @@
 	<!-- Scripts -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="js/common.js"></script>
+	<script type="text/javascript">
+		{
+			if (screen.width > 1024) document.write ('<script type="text/javascript" src="js/common.js" ></script>');
+		}
+	
 
 </body>	
 </html>

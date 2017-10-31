@@ -15,7 +15,7 @@
 	.header-wr .header .search-form{width: 206px!important;}
 	.header-wr .header .search-form .search-form__input{width: 83%!important; height: 34px!important;}
 	.header-wr .header .search-form .search-form__btn{ height: 34px!important; width: 37px!important; right: -1px!important;}
-
+  ._sticky{display: none!important;}
 }
 
 
@@ -59,6 +59,9 @@
 	.maps-min__info .h2{padding-bottom: 5px;}
 	.nav-2{display: none!important;}
 	.m-menu{position: absolute!important; display: block!important;}
+	 .m-open {
+        position:fixed;
+   }
 
 }
 
@@ -83,7 +86,7 @@
 	.company__advant{height: 770px!important;}
 	.header__right{text-align: left!important;}
 	.maps-min{padding: 20px 10px 20px 10px!important;}
-	.header-wr .menu-btn{right: -11px;}
+	.header-wr .menu-btn{right: -10px;}
 
 }
 

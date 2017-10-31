@@ -1,19 +1,13 @@
-//Sticky-header
-/*  $(window).scroll(function(){
+
+$(window).scroll(function(){
     if ($(window).scrollTop() >=91 ){
-       $('.header-wr').addClass('header-wr _sticky');
-        $('.header').css("min-height", "0"), ("border-bottom", "0px");
+       $('.header-wr').addClass('header-wr _sticky').removeClass('header-wr');;
     }
     else {
        $('._sticky').addClass('header-wr').removeClass('_sticky');
     }
-      if ($(window).scrollTop() >=91 ){
-       $('.company-wr').addClass('-m');
-    }
-     else {
-       $('.-m').addClass('company-wr').removeClass('-m');
-    }
-});*/
+  
+});
 
 
 
@@ -72,6 +66,11 @@ function openbox(id, toggler) {
 $(".js-menu-btn").click(function () {
         $("body").toggleClass("m-open" );
     });
+
+$("#m-js-btn").click(function () {
+        $("body").removeClass("m-open" );
+    });
+
 
 
 
