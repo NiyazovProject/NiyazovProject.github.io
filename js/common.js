@@ -72,5 +72,3 @@ $("#m-js-btn").click(function () {
     });
 
 
-
-
