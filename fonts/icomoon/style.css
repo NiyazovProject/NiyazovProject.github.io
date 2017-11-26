@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?7t31t7');
-  src:  url('fonts/icomoon.eot?7t31t7#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?7t31t7') format('truetype'),
-    url('fonts/icomoon.woff?7t31t7') format('woff'),
-    url('fonts/icomoon.svg?7t31t7#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?2wgmgs');
+  src:  url('fonts/icomoon.eot?2wgmgs#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?2wgmgs') format('truetype'),
+    url('fonts/icomoon.woff?2wgmgs') format('woff'),
+    url('fonts/icomoon.svg?2wgmgs#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,27 +24,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-clock:before {
-  content: "\e900";
-}
-.icon-down:before {
-  content: "\e901";
-}
-.icon-e-mail:before {
-  content: "\e902";
-}
-.icon-gps:before {
-  content: "\e903";
-}
-.icon-Phone:before {
-  content: "\e913";
-}
 .icon-Search:before {
   content: "\e914";
 }
-.icon-up:before {
-  content: "\e915";
+.icon-facebook2:before {
+  content: "\ea91";
 }
-.icon-arrow-right2:before {
-  content: "\ea3c";
+.icon-vk:before {
+  content: "\ea98";
+}
+.icon-skype:before {
+  content: "\eac5";
 }
