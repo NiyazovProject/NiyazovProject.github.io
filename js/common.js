@@ -1,12 +1,15 @@
 $(document).ready(function() {
 
-	 	$(".btn-hamburger").click(function() {
-		$(".nav").slideToggle(300, function(){
-			if($(this).css('display') === 'none'){
-				$(this).removeAttr('style');
-			}
-		});
+	$("body").niceScroll({
+		horizailenabled : false
 	});
+    
+    //btn-menu
+	$(".btn_mnu").click(function() {
+		$(this).toggleClass("active");
+		$("aside").toggleClass("active");
+	});
+	//btn-menu end
 
 	//Цели для Яндекс.Метрики и Google Analytics
 	$(".count_element").on("click", (function() {
@@ -15,10 +18,16 @@ $(document).ready(function() {
 		return true;
 	}));
 
+	//SVG Fallback
+	if(!Modernizr.svg) {
+		$("img[src*='svg']").attr("src", function() {
+			return $(this).attr("src").replace(".svg", ".png");
+		});
+	};
 
 	//Аякс отправка форм
 	//Документация: http://api.jquery.com/jquery.ajax/
-	$("#form").submit(function() {
+	$("#callback").submit(function() {
 		$.ajax({
 			type: "POST",
 			url: "mail.php",

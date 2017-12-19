@@ -1,0 +1,100 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../libs/icomoon/fonts/icomoon.eot?b2ir63');
+  src:  url('../libs/icomoon/fonts/icomoon.eot?b2ir63#iefix') format('embedded-opentype'),
+    url('../libs/icomoon/fonts/icomoon.ttf?b2ir63') format('truetype'),
+    url('../libs/icomoon/fonts/icomoon.woff?b2ir63') format('woff'),
+    url('../libs/icomoon/fonts/icomoon.svg?b2ir63#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-1486640684 .path1:before {
+  content: "\e900";
+  color: rgb(212, 184, 48);
+}
+.icon-1486640684 .path2:before {
+  content: "\e901";
+  margin-left: -0.8818359375em;
+  color: rgb(253, 216, 60);
+}
+.icon-1486640684 .path3:before {
+  content: "\e902";
+  margin-left: -0.8818359375em;
+  color: rgb(77, 77, 77);
+}
+.icon-1486640684 .path4:before {
+  content: "\e903";
+  margin-left: -0.8818359375em;
+  color: rgb(0, 0, 0);
+}
+.icon-Boostrap_logo .path1:before {
+  content: "\e904";
+  color: rgb(0, 0, 0);
+}
+.icon-Boostrap_logo .path2:before {
+  content: "\e905";
+  margin-left: -0.99609375em;
+  color: rgb(255, 255, 255);
+}
+.icon-CSS3_Logo .path1:before {
+  content: "\e906";
+  color: rgb(21, 114, 182);
+}
+.icon-CSS3_Logo .path2:before {
+  content: "\e907";
+  margin-left: -0.8896484375em;
+  color: rgb(51, 169, 220);
+}
+.icon-CSS3_Logo .path3:before {
+  content: "\e908";
+  margin-left: -0.8896484375em;
+  color: rgb(255, 255, 255);
+}
+.icon-HTML5_Badge .path1:before {
+  content: "\e909";
+  color: rgb(227, 79, 38);
+}
+.icon-HTML5_Badge .path2:before {
+  content: "\e90a";
+  margin-left: -1em;
+  color: rgb(239, 101, 42);
+}
+.icon-HTML5_Badge .path3:before {
+  content: "\e90b";
+  margin-left: -1em;
+  color: rgb(235, 235, 235);
+}
+.icon-HTML5_Badge .path4:before {
+  content: "\e90c";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-logo:before {
+  content: "\e90d";
+  color: #cf649a;
+}
+.icon-sql-file-symbol:before {
+  content: "\e90e";
+}
+.icon-wordpress:before {
+  content: "\e90f";
+  color: #fff;
+}

@@ -7,166 +7,89 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
-  .search-form__input {width:110px!important;}  .nav__item{ padding-right: 5px!important; } .header__right{padding-left: 18px!important;} .personal-room{padding-right: 0px!important;} .nav__link{font-size: 11px!important;}
+
 }
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
-  .search-form__input {width:80px!important;}  .nav__item{ padding-right: 8px!important; } .header__right{padding-left: 18px!important;} .personal-room{padding-right: 0px!important;} .nav__link{font-size: 11px!important;} .soc-buttons__link{padding-left: 4px!important;}
-  .b-block__bottom{ background:url('../img/768-bg-top.png') no-repeat bottom!important;}
-  /*.................................*/
-  .content__right{width: inherit; padding-left: 0px!important;} .our-services__block{padding-top:20px; padding-left: 50px!important; padding-bottom: 50px; } .content__left{min-width: 100%; float:none!important;} .partners__img{padding-right: ;}
-  .feedback{max-width: 50%; float: left;} .partners{display: inline-block;    float: right;}
-  .content__left .news-company__item{padding-top: 20px ;width: 32%; display: inline-block!important; float: left;} .news-company{padding-bottom: 20px;    min-height: 170px;} .name-news{margin-bottom: 0px!important;}
+
+	.content__item .h2 {  
+		text-align: center;
+		display: block;
+		
+	}
+
+	.contacts__form  form {
+		background-color: #111;
+		padding: 20px;
+	}
+}
+
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+	.about {
+		padding-bottom: 10px;
+	}
+
+	.about-item h2 {
+		text-align: center;
+		display: block;
+	}
+
+	.about-item {
+		margin-left:5px ;
+		margin-right: 5px;
+	}
+	.about__header img {
+		width: 180px;
+		height: 180px;
+	}
+	.about__header h1 {
+		margin-bottom: 10px;
+	}
+
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+.contacts__form  form {
+		background-color: #111;
+		padding: 20px!important;
+	}
+
+
+	.contacts__header h1{font-size: 2rem;} .contacts__header p {font-size: 14px;}  .ul_contacts h3 {font-size: 19px;}
+
+	}
+
+}
+
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
 
 }
 
 /* Extra Small Devices, Phones */
-@media only screen and (max-width : 767px) {
-  html{
-    font-size: 13px!important;
-  }
-  .p{
-    font-size: 17px!important;
-  }
-  .logo{
-    float: none!important;
-    text-align: center;
-    display: block;
-  }
-  .phone{
-    float:none!important;
-    text-align: center!important;
-  }
-  .search-form__input {width:110px!important;}
-
-  .btn-hamburger{display: block!important;} .search-form__btn{height: 28px!important;}
-  /* Mobile menu*/
-  .nav{
-   display: none;
-   position: absolute;
-   margin-top: 2px;
-   background-color: #20a2c1;
-   width: 300px;
-   padding-left: 10px;
- }
- .nav__item{
-   display: block!important;
- } 
-
- .nav__link{
-  color: #ffffff!important;
-  font-size: 14px!important;
-  font-weight: 400;
-
-}
-.nav__link:hover{
- background-color: #fff!important;
- padding: 5px 6px 5px 9px;
- color: #20a2c1!important;
- text-decoration: none;
-
+@media only screen and (min-width : 480px) {
 
 }
 
-.nav__link:hover::after{
- content: '';
- position: absolute;
- top: 0px!important;
- bottom: 0px;
- right: -5px;
- background-color: #ffffff!important;
- width: 10px;
- transform: skew(200deg);
- /* border: 1px solid #333; */
- border-left: none;
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
 
 }
 
-.active{
-  background-color: #fff!important;
-  padding: 5px 6px 5px 9px;
-  color: #20a2c1!important;
-  text-decoration: none;
-  position: relative;
-}
-
-.active::after{
- content: '';
- position: absolute;
- top: 0px!important;
- bottom: 0px;
- right: -5px;
- background-color: #fff!important;
- width: 10px;
- transform: skew(200deg);
- /* border: 1px solid #333; */
- border-left: none;
-}
-
-.nav__item{
- padding-top: 5px;
- border-bottom: 2px solid #4db5cd;
- padding-bottom: 5px;
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
 
 }
 
-.nav__item .active{
-	display: inline-block;
-	position: relative;
-  margin-top: 14px!important;
-  margin-bottom: 5px;
-}
-
-.footer__right img{display: none;}
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
 
 }
-
-
-@media only screen and (max-width : 480px) {
- .search-form__input {width:0px!important; padding-left: 0px!important;} .search-form__btn::before{font-size: 21px!important;}  .personal-room{padding-right: 5px!important;}
- .b-block__bottom{min-height: 292px!important}
- .stamp-text{padding-top: 10px!important; padding-left: 20px!important; } .stamp-text .h1{line-height: 26px!important}
-
- /*..................*/
-
- .our-services__block{
-  padding-top: 10px!important;
-  padding-left: 10px!important;
-  padding-bottom: 30px!important;
-}
-.our-services__item{width: 100%!important;} .news-company{padding-bottom: 20px!important;} .news-company__item{ padding-left: 0px!important; padding-top: 20px!important; width: 100%!important; float: none!important;}
-.news-company__h2{margin-bottom: 0;}
-.feedback{max-width: 100%!important; float: none!important;padding-bottom: 10px!important;}
-.partners{float: none!important;} .partners .partners__img{padding:0px!important; padding-right: 10px!important;}
-
-html{
-  font-size: 10px!important;
-}
-.p{
-  font-size: 15px!important;
-}
-
-.footer{
-  padding-bottom: 30px!important;
-}
-}
-
-
-
-/*ДОПОЛНИТЕЛЬНЫЕ МЕДИА*/
-
-@media only screen and (max-width : 701px) {
-  .partners{
-    float: none!important;
-  }
-  .feedback{
-   max-width: 100%!important;
- }
-}
-
-@media only screen and (max-width : 900px) {
-.footer__right img{display: none;}
-}
-
-
