@@ -1,0 +1,108 @@
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+	.services-block{
+		margin-bottom: 10%;
+	}
+	.prev, .next{
+		display: none!important;
+	}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+	.services-block{
+		margin-bottom: 10%;
+	}
+
+	.Newsletter .content-wr .form-block .title{
+		margin-bottom: 3%!important;
+	}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	/*Top-block*/
+	.text-block__items-h1{
+		font-size: 62px!important;
+	}
+	.services-block{
+		margin-bottom: 10%;
+	}
+
+	.Newsletter .content-wr .form-block .title{
+		margin-bottom: 3%!important;
+	}
+	
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+
+	/*Top-block*/
+	.text-block__items-h1{
+		font-size: 50px!important;
+		line-height: 63px;
+		margin-bottom:-5px!important;
+	}
+
+	.text-block__items-p{
+		font-size: 20px!important;
+	}
+
+	.text-block__btn {
+		margin-bottom: 3%;
+	}
+	.nabar__item{
+		font-size: 35px!important;
+	}
+	.Logo{
+		padding-top: 44px!important;
+	}
+
+	.Newsletter .content-wr .form-block .submit{
+		width: 35%!important;
+	}
+	 .Contact .content-wr .Form-block .form .social-block a:nth-of-type(1), a:nth-of-type(2), a:nth-of-type(3),  a:nth-of-type(4) {margin-right: 10px!important;}
+	
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+
+	/*Top-block*/
+	.text-block__items-h1{
+		font-size: 40px!important;
+		line-height: 46px!important;
+	}
+
+	.text-block__items-p{
+		font-size: 16px!important;
+	}
+
+	.circle{
+		margin-top: 23px;
+		padding-bottom: 23px;
+	}
+
+	.nabar__item{
+		font-size: 28px!important;
+	}
+
+	.author-text{
+		font-size: 21px;
+		line-height: 32px;
+	}
+	.Our-team .content-wr .Team-main-block .team-block li{
+		margin-bottom: 0px!important;
+	}
+ .Contact .content-wr .Form-block .form .social-block a:nth-of-type(2)  {margin-right: 10px!important;}
+ .Contact .content-wr .Form-block .form [type="submit"] {margin: 0 auto;}
+.Contact .content-wr .Contact__text-block p{font-size: 15px!important;}
+.Contact .content-wr .Contact__text-block h2{padding-top: 10%!important; margin-bottom: 3%!important;}
+.top-block .content-wr .header .menu .nabar__item:last-child:before{ width: 140px!important; }
+
+
+}
+

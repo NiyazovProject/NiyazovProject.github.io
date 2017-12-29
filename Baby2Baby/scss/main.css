@@ -1,0 +1,60 @@
+@charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html {
+  overflow-x: hidden; }
+
+body {
+  font: 28px 'LatoWeb', sans-serif;
+  width: 100%;
+  min-width: 320px;
+  background: #ffffff;
+  color: #000;
+  height: 100%;
+  line-height: 1.42857;
+  overflow-x: hidden; }
+
+button, input {
+  outline: none; }
+
+a {
+  text-decoration: none;
+  color: #201600;
+  outline: none; }
+
+a:hover {
+  text-decoration: none; }
+
+p {
+  margin: 0 0 10px; }
+
+img {
+  outline: none; }
+
+.cf::after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.wrap {
+  max-width: 1320px;
+  position: relative;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto; }
+
+li {
+  list-style: none; }
+
+ul {
+  list-style: none;
+  /*убираем маркеры списка*/
+  margin: 0;
+  /*убираем верхнее и нижнее поле, равное 1em*/
+  overflow: hidden;
+  padding-left: 0;
+  /*убираем левый отступ, равный 40px*/ }
+
+/*# sourceMappingURL=main.css.map */
