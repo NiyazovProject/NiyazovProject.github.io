@@ -30,17 +30,14 @@ $(function() {
         });
  });
 
-if($(document).scrollTop()>=$('.dial').scrollTop()+500){
-$(«.dial»).knob();
-$({animatedVal: 0}).animate({animatedVal: 60}, {
-duration: 2000,
-easing: «swing»,
-step: function() {
-$(«.dial»).val(Math.ceil(this.animatedVal)).trigger(«change»);
-}
-});
 
-}
-
+$(".dial").knob();
+  $({animatedVal: 0}).animate({animatedVal: 70}, {
+    duration: 2000,
+    easing: "swing",
+  step: function() {
+    $(".dial").val(Math.ceil(this.animatedVal)).trigger("change");
+  }
+  });
 
 
