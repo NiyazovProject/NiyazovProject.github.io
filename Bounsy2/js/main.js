@@ -69,7 +69,7 @@ $(window).scroll(
 		if($(this).scrollTop() > start)
         if ((($(this).scrollTop() > start)&($(this).scrollTop() < start+200))) {
 			var currentNumber = $(".dial").val();
-			$({numberValue: currentNumber}).animate({numberValue: 85}, {
+			$({numberValue: currentNumber}).animate({numberValue: 60}, {
 				duration: 3500,
 				easing: "linear",
 				step: function() {
@@ -82,7 +82,7 @@ $(window).scroll(
         if($(this).scrollTop() > start)
         if ((($(this).scrollTop() > start)&($(this).scrollTop() < start+200))) {
             var currentNumber = $(".dia2").val();
-            $({numberValue: currentNumber}).animate({numberValue: 85}, {
+            $({numberValue: currentNumber}).animate({numberValue: 75}, {
                 duration: 3500,
                 easing: "linear",
                 step: function() {
@@ -95,7 +95,7 @@ $(window).scroll(
         if($(this).scrollTop() > start)
         if ((($(this).scrollTop() > start)&($(this).scrollTop() < start+200))) {
             var currentNumber = $(".dia3").val();
-            $({numberValue: currentNumber}).animate({numberValue: 85}, {
+            $({numberValue: currentNumber}).animate({numberValue: 80}, {
                 duration: 3500,
                 easing: "linear",
                 step: function() {
