@@ -1,0 +1,29 @@
+@font-face {
+	font-family: "LatoRegular";
+	src: url("../fonts/Lato/Lato-Regular/Lato-Regular.eot.");
+	src: url("../fonts/Lato/Lato-Regular/Lato-Regular.eot.eot?#iefix") format("embedded-opentype"),
+			 url("../fonts/Lato/Lato-Regular/Lato-Regular.woff") format("woff"),
+			 url("../fonts/Lato/Lato-Regular/Lato-Regular.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "YesevaOne";
+	src: url("../fonts/YesevaOne/YesevaOne.eot");
+	src: url("../fonts/YesevaOne/YesevaOne.eot?#iefix") format("embedded-opentype"),
+			 url("../fonts/YesevaOne/YesevaOne.woff") format("woff"),
+			 url("../fonts/YesevaOne/YesevaOne.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "GentiumBookBasic";
+	src: url("../fonts/GentiumBookBasic/GenBkBasBold.eot");
+	src: url("../fonts/GentiumBookBasic/GenBkBasBold.eot?#iefix") format("embedded-opentype"),
+			 url("../fonts/GentiumBookBasic/GenBkBasBold.woff") format("woff"),
+			 url("../fonts/GentiumBookBasic/GenBkBasBold.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}

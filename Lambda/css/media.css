@@ -1,0 +1,129 @@
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+  html{font-size: 10px;}
+  .soc-buttons{display: none;}
+  .header-content .header-btns{padding-top: 50px;}
+    /*ingred-block*/
+  .ingred .main-block{    padding: 45px 25px;}
+      /*reserve*/
+  .reserve__img-block img:first-child{
+  display: none;
+
+  }
+
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+  html{font-size: 9px;}
+  .logo{display: block; text-align: center; margin-bottom: 20px;}
+  .nav{display: block;} .nav__item{ padding-right: 40px;} .nav__list{justify-content: center;}
+  .header-content .header-btns{padding-top: 50px;}
+  /*ingred-block*/
+  .ingred .main-block{    padding: 80px 40px;}
+  /*reserve*/
+  .reserve{padding: 50px 0px}
+   .reserve__img-block img{
+  display: none;
+
+  }
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 767px) {
+  html{font-size: 8px;}
+  .logo{display: inline-block; margin-bottom: 0;}
+  .nav{display: none; }
+  .menu-btn{display: inline-block; vertical-align: middle; float: right; margin-top: 35px;} 
+
+  /*mobile-menu*/
+  .nav__list{flex-direction: column;}
+  .nav__link{ border-bottom:2px solid #fff; }
+  .nav__item{padding-right: 0px; padding-bottom: 10px;}
+  .nav { 
+    box-shadow: #dedada 0px 0px 10px 0px;
+    padding:10px ;
+    border:2px solid #fff;
+    z-index: 99; position: absolute;
+    right: 20px; 
+    background-color: rgba(27, 27, 27, 0.91);
+    text-align: center; }
+
+  /*mobile-menu-end*/  
+
+  /*Ingred*/
+    .ingred .main-block{    padding: 40px 20px;}
+    /*Review*/
+    .reviews__main-block {padding: 50px 30px;}
+    .reviews .reviews__main-block p {font-size: 20px;}
+    .reviews .reviews__main-block p::before {font-size: 30px; left:-10px;}
+
+}
+
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 580px) {
+ html{font-size: 7px;}
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+.header-content .book-btn{margin-right: 0px; margin-bottom:15px;}
+.header-content .header-btns{ padding-top: 90px;}
+/*Ingred-block*/
+.ingred .main-block .img-block__item{display: block; margin-right: 0px; margin-bottom: 10px;}
+ /*Review*/
+    .reviews__main-block {padding: 20px 30px;}
+
+     /*Reserve*/
+     .reserve .contacts-form label{
+       display: block;
+       margin: 20px auto!important;
+     }
+
+    }
+  
+
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+
+}
+
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+ /* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}
+
+
+
