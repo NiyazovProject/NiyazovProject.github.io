@@ -19,7 +19,7 @@ ul { list-style: none; /*убираем маркеры списка*/ margin: 0;
 
 body { background-color: #eee; font-family: "LatoRegular", Arial; font-size: 16px; margin: 0; color: #000; overflow-x: hidden; }
 
-.header { background: url("../img/header/header-bg.jpg") center top fixed; background-size: cover; -webkit-box-shadow: inset #000 0px 18px 60px -9px; box-shadow: inset #000 0px 18px 60px -9px; padding-bottom: 100px; }
+.header { background: url("../img/header/header-bg.jpg") center top fixed; background-size: cover; padding-bottom: 100px; }
 
 .header-top { padding-top: 10px; }
 
