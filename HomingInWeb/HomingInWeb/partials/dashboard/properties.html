@@ -1,0 +1,72 @@
+﻿	<!-- Dashboard -->
+<div class="db-container clearfix">
+
+    <id ng-include="'/partials/dashboard/sidebar.html'"></id>
+
+    <!-- Dashboard Content -->
+    <main class="db-content">
+
+        <div class="db_top-panel clearfix">
+            <h2 class="db_title"><span class="pe-7s-home"></span>Estimate Requests</h2>
+
+            <a href="/" class="edit-profile" ng-show="!currentUser.IsAgent"><span class="pe-7s-plus"></span> Add new property</a>
+        </div>
+
+        <!-- Properties Filter -->
+        <div class="properties-filter">
+
+            <div class="properties-filter_field clearfix">
+                <input type="text" placeholder="Filter Estimates" ng-model="query">
+            </div>
+
+            <!-- Properties Filter Table -->
+            <div class="properties-filter_table-wrap">
+
+                <table class="properties-filter_table">
+                    <thead>
+                        <tr>
+                            <th>Address</th>
+                            <th>City</th>
+                            <th>State</th>
+                            <th>Postal Code</th>
+                            <th ng-if="!currentUser.IsAgent">Responses</th>
+                            <th ng-if="currentUser.IsAgent">My Valuation</th>
+                            <th ng-if="!currentUser.IsAgent">Average Valuation</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr ng-repeat="estimate in estimates | filter: query | limitTo: pageSize: current * pageSize" ng-click="RowClick(estimate)">
+                            <div>
+                                <td><div>{{estimate.Address}} {{estimate.UnitNumber}}</div></td>
+                                <td><div>{{estimate.City}}</div></td>
+                                <td><div>{{estimate.State}}</div></td>
+                                <td><div>{{estimate.PostalCode}}</div></td>
+
+                                <td ng-if="!currentUser.IsAgent"><div>{{estimate.agentCount}}</div></td>
+
+                                <td ng-if="currentUser.IsAgent && estimate.MyValuation != null"><div>{{estimate.MyValuation | currency:undefined:0}}</div></td>
+                                <td ng-if="currentUser.IsAgent && estimate.MyValuation == null"><div>Pending</div></td>
+
+                                <td ng-if="!currentUser.IsAgent && estimate.averagePrice == null"><div>Pending</div></td>
+                                <td ng-if="!currentUser.IsAgent && estimate.averagePrice != null"><div>{{estimate.averagePrice | currency:undefined:0}}</div></td>
+                            </div>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+                <pagination current="current" total="(estimates | filter: query).length" size="pageSize"></pagination>
+
+
+            </div>
+            <!-- END Properties Filter Table-->
+
+        </div>
+        <!-- END Properties Filter -->
+
+    </main>
+    <!-- END Dashboard Content -->
+
+</div>
+<!-- END Dashboard -->

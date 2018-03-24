@@ -1,0 +1,24 @@
+﻿<!-- Login -->
+<main class="login-page">
+    <div class="container">
+
+        <form class="login-form homingin-form">
+            <h2 class="homingin-form_title">
+                <span class="pe-7s-lock"></span>
+                Login
+            </h2>
+
+            <input type="email" placeholder="Email Address" ng-model="email" >
+            <input type="password" placeholder="Password" ng-model="password">
+            <button class="btn" ng-click="DoLogin()" id="loginButton" ng-disabled="form.$invalid || dataLoading">Login</button>
+
+            <a href="/signup" class="gray-link">Don't have an account?</a>
+            <a href="/signup" class="blue-link">Sign Up for Free!</a>
+            <a href="/forgotPassword" class="gray-link">Forgot password?</a>
+        </form>
+
+    </div>
+</main>
+<!-- END Login -->
+
+

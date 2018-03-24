@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="homingApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="homingApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="homingApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html lang="en" xmlns:fb="http://ogp.me/ns/fb#" ng-app="homingApp" class="ng-scope">  <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title>Homing In | Whats My Home Worth</title>
+        <meta name="description" content="Accurate, real world home values from 1,000s of real estate professionals. Find out what your house, condo, townhouse is really worth? Enter your address, take a few photos, add the improvements, and watch the real estate brokers, agents, and appraisers in your area compete to be closest to the actual value of your home">
+        <base href="/">
+        
+        <!-- Libs -->
+        <script src="node_modules/jquery/dist/jquery.js"></script>
+        <script src="node_modules/angular/angular.js"></script>  
+        <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="node_modules/angular-route/angular-route.js"></script>
+        <script src="node_modules/angular-cookies/angular-cookies.js"></script>
+        <script src="node_modules/angular-resource/angular-resource.js"></script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDg-UvozLFZ76yxouZXzU02IFGLTLQHsqI&amp;libraries=places"></script>
+
+        <!-- Google Analytics-->
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-82308502-1', 'auto');
+        ga('send', 'pageview');
+
+        </script>
+
+        <!-- App -->
+        <script src="~/js/app.js"></script>
+        <script src="~/js/filters.js"></script>
+        <script src="~/js/home/controller.js"></script>
+        <script src="~/js/search/controller.js"></script>
+        <script src="~/js/login/controller.js"></script>
+        <script src="~/js/signup/controller.js"></script>
+        <script src="~/js/passwords/controller.js"></script>
+        <script src="~/js/promo/controller.js"></script>
+        <script src="~/js/create_estimate/controller.js"></script>
+        <script src="~/js/anonymous_view/anonymous_view_controller.js"></script>
+
+        <!-- not updated yet-->
+        <script src="~/js/pricing/controller.js"></script>
+        <script src="~/js/promo/controller.js"></script>
+        <script src="~/js/dashboard/controller.js"></script>
+        <script src="~/js/navigation/controllers.js"></script>
+        <script src="~/js/photos/controller.js"></script>
+        <script src="~/js/bio/controller.js"></script>
+        
+        <!-- parts/head.html -->
+        <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="libs/jQueryFormStyler-master/jquery.formstyler.css">
+        <link rel="stylesheet" href="css/Pe-icon-7-stroke.css">
+        <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="css/styles.css">
+
+    </head>
+
+
+
+    <body>
+
+        <!-- Last step popup -->
+        <div class="popup-body submit-review-popup" style="display: none;" id="genericMessageBoxPopup">
+
+            <div class="popup-window">
+                <span class="pe-7s-close-circle close-popup" ng-click="HideGenericMessageBox()"></span>
+                <h3 class="popup_title" id="genericMessageBoxPopupTitle">Error!</h3>
+
+                <p class="popup_caption" id="genericMessageBoxPopupMessage">Something happened!</p>
+
+                <button class="btn" ng-click="HideGenericMessageBox()">Ok</button>
+
+            </div>
+
+        </div>
+        <!-- Last step popup -->
+
+
+        <!-- Header -->
+
+        <header class="header clearfix">
+
+            <a href="/" class="header_logo">
+                Homing <span>in</span>
+            </a>
+
+            <h1 class="header_title">What's my home worth?</h1>
+
+            <nav class="header_nav clearfix">
+                <a href="/homeowners" class="header_nav-item">Homeowners</a>
+                <a href="/agents" class="header_nav-item">Agents</a>
+                @*<a href="/pricing" class="header_nav-item">Pricing</a>
+                <a href="/promo" class="header_nav-item">Promo</a>*@
+                
+                <id ng-if="currentUser == null || currentUser.FirstName == 'Anonymous' && currentUser.LastName =='Anonymous'">
+                    <a href="/login" class="header_nav-item login-link" ><span class="pe-7s-unlock"></span> Login</a>
+                </id>
+                
+                
+                <id ng-if="currentUser != null && currentUser.FirstName != 'Anonymous' && currentUser.LastName != 'Anonymous'">
+                    <a href="/dashboard/properties" class="header_nav-item header_user">
+                        <div class="header_user-avatar">
+                            <img ng-src="{{currentUser.Picture.URL}}">
+                        </div>
+                        <span class="header_user-name">{{currentUser.FirstName}} {{currentUser.LastName}}</span>
+                    </a>
+                </id>
+                
+
+                <a href="{{AndroidURL}}" class="header_nav-item get-app-link" ng-if="IsAndroid">Get the app</a>
+                <a href="{{IOSUrl}}" class="header_nav-item get-app-link" ng-if="IsIOS">Get the app</a>
+
+            </nav>
+
+            <id ng-if="currentUser != null">
+                <a href="/dashboard/properties" class="header_user header_user-mobile">
+                    <div class="header_user-avatar">
+                        <img ng-src="{{currentUser.Picture.URL}}">
+                    </div>
+                    <span class="header_user-name">{{currentUser.FirstName}} {{currentUser.LastName}}</span>
+                </a>
+            </id>
+
+            <div class="mobile-tgl">
+                <span></span>
+            </div>
+
+        </header>
+
+        <!-- END Header -->
+
+        <div class="control_container" ng-view></div>
+
+        <!-- Social -->
+        <section class="social-btns">
+
+            <div class="container">
+
+                <h3 class="subtitle">Follow Us</h3>
+
+                <a href="http://facebook.com/hominginapp/" target ="_blank" class="social-btn fb">
+                    <img src="img/fb.svg" alt="Homingin Facebook">
+                </a>
+
+                <a href="http://twitter.com/homingin/" target="_blank" class="social-btn tw">
+                    <img src="img/tw.svg" alt="Homingin Twitter">
+                </a>
+
+                <a href="https://www.youtube.com/channel/UCgK1davGaoTf-8ktF7JknzQ/" target="_blank"  class="social-btn youtube">
+                    <img src="img/yt.svg" alt="Homingin Youtube">
+                </a>
+            </div>
+
+        </section>
+        <!-- END Social -->
+
+
+        <!-- Contact form -->
+
+        <section class="contact-us">
+
+            <div class="container">
+
+                <h3 class="subtitle">
+                    Contact Us
+                </h3>
+
+                <a href="mailto:support@homingin.co" class="contact-us_mail">support@homingin.co</a>
+
+
+                <!--<form class="contact-form clearfix"> 
+
+                    <input class="contact-form-item" type="text" placeholder="Name">
+                    <input class="contact-form-item" type="email" placeholder="Email">
+                    <textarea class="contact-form-item" placeholder="Message"></textarea>
+                    <button>Send Message</button>
+
+                </form> -->
+
+            </div>
+
+        </section>
+
+        <!-- END Contact form -->
+
+
+    </body>
+</html>

@@ -1,0 +1,78 @@
+<!-- Dashboard -->
+<div class="db-container clearfix">
+
+    <id ng-include="'/partials/dashboard/sidebar.html'"></id>
+    <!-- Dashboard Content -->
+    <main class="db-content">
+
+        <div class="db_top-panel clearfix">
+            <h2 class="db_title"><span class="pe-7s-display2"></span> Profile</h2>
+
+            <a href="#" class="edit-profile" ng-click="SaveProfile()"><span class="pe-7s-config"></span> Save</a>
+        </div>
+
+        <!-- Profile -->
+        <div class="db-profile clearfix">
+
+            <!-- Avatar -->
+            <div class="db-profile_avatar" ng-click="SelectPicture()">
+                <!-- TODO: This should be a more generic pic (this html is fine, just replace the image) -->
+                <id ng-if="currentUser.Picture == null"> <img src="img/db-avatar.jpg"> </id> 
+                <id ng-if="currentUser.Picture != null"> <img ng-src="{{currentUser.Picture.URL}}"> </id>
+            </div>
+            <!-- END Avatar -->
+
+            <div class="db-profile_info clearfix">
+
+                <input type="text" placeholder="First Name" ng-model="currentUser.FirstName">
+                <input type="text" placeholder="Last Name" ng-model="currentUser.LastName">
+                <input type="email" placeholder="Email" ng-model="currentUser.Email">
+                <input type="text" placeholder="123-456-789" ng-model="currentUser.PhoneNumber">
+                <input type="password"  placeholder="Password" ng-model="newPassword">
+                <input type="password" placeholder="Confirm Password" ng-model="confirmationPassword">
+                <br />
+
+                <!-- Is Agent -->
+                <div class="db-isagent clearfix"  ng-show="currentUser.IsAgent">
+                    <h3 class="db-isagent_title">Agent</h3>
+                    <div class="clearfix">
+                        <input type="text" placeholder="Company Name" ng-model="currentUser.Company">
+                        <!-- TODO: Implement this -->
+                        <input type="text" placeholder="License #" ng-model="licenseNumber">
+                    </div>
+                </div>
+                <!-- END Is Agent -->
+            </div>
+            <!-- END Profile -->
+        </div>
+
+        <!-- Postal Code -->
+        <div class="db-postal-code" ng-show="currentUser.IsAgent">
+
+            <h3 class="db-postal-code_title">Enter a Postal Code to add your service area</h3>
+
+            <div class="postal-code_field clearfix">
+                <input type="text" placeholder="Add Postal code" ng-model="newPostalCode">
+                <button class="btn" ng-click="AddPostalCode()">Add</button>
+            </div>
+
+            <h3 class="db-postal-code_title">Service area list</h3>
+            <ul class="service-area-list">
+                
+                
+                <li class="service-area-list_item" ng-repeat="postalCode in currentUser.PostalCodes">
+                    <span>{{postalCode}}</span>
+                    <span class="pe-7s-trash delete-list-item" ng-click="RemovePostalCode(postalCode)"></span>
+                </li>
+
+            </ul>
+
+        </div>
+        <!-- END Postal Code -->
+
+
+    </main>
+    <!-- END Dashboard Content -->
+
+</div>
+<!-- END Dashboard -->

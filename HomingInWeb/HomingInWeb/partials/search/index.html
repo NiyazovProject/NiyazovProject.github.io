@@ -1,0 +1,34 @@
+﻿
+<main class="confirm-address">
+
+    <div class="container" ng-repeat="result in searchResults">
+
+        <div class="confirm-card clearfix">
+
+            <div class="confirm-card_map">
+                <iframe ng-src="{{result.mapEmbedUrl}}" width="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+
+            <div class="confirm-card_details">
+
+                <h3 class="confirm-card_title">Address</h3>
+
+                <span class="confirm-card_address">{{result.address}}</span>
+
+                <h3 class="confirm-card_title">Is this correct?</h3>
+
+                <div class="confirm-card_btns clearfix">
+                    <a href="#" class="btn" ng-click="SelectAddress(result)">Yes, Correct</a>
+                    <button class="btn btn-light" ng-click="goBack()">No, Try again</button>
+                </div>
+
+                <img ng-src="{{result.imageUrl}}">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+

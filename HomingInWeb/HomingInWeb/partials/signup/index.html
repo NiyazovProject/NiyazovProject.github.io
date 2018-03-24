@@ -1,0 +1,101 @@
+﻿<!-- Postal Code Popup -->
+<div class="popup-body postal-code-popup" id="serviceAreaPopup">
+
+    <div class="popup-window">
+        <span class="pe-7s-close-circle close-popup" ng-click="HideServiceAreaPopup()"></span>
+        <h3 class="popup_title">
+            Enter a Postal Code to add to
+            your service area
+        </h3>
+
+        <div class="postal-code_field clearfix">
+            <form ng-submit="AddPostalCode()">
+                <input type="text" placeholder="Add Postal code" ng-model="newPostalCode">
+                <button class="btn" type="submit">Add</button>
+            </form>
+        </div>
+
+        <h3 class="popup_title">Service area list</h3>
+        <ul class="service-area-list clearfix">
+            
+            <li class="service-area-list_item" ng-repeat="postalCode in serviceArea">
+                <span>{{postalCode}}</span>
+                <span class="pe-7s-trash delete-list-item" ng-click="RemovePostalCode(postalCode)"></span>
+            </li>
+
+        </ul>
+
+        <div class="postal-code_field postal-code_done clearfix" ng-show="serviceArea.length">
+            <button class="btn" ng-click="HideServiceAreaPopup()">Done</button>
+        </div>
+    </div>
+</div>
+<!-- END Postal Code Popup -->
+	
+<!-- Sign Up -->
+<main class="sign-up-page">
+    <div class="container">
+
+        <form class="sign-up-form homingin-form">
+            <h2 class="homingin-form_title">
+                <span class="pe-7s-note"></span>
+                Sign Up
+            </h2>
+
+            <input type="email" placeholder="Email Address" ng-model="email">
+            <input type="password" placeholder="Password" ng-model="password">
+
+            <div class="homingin-form_group clearfix">
+                <input type="text" placeholder="First Name" ng-model="firstName">
+                <input type="text" placeholder="Last Name" ng-model="lastName">
+            </div>
+
+            <div class="homingin-form_radio">
+
+                <div class="radio-item">
+                    <input type="radio" name="profileType" class="form_radio" id="signUpHomeowner" ng-model="isAgent" value="homeowner" checked />
+                    <label for="signUpHomeowner">Homeowner</label>
+                </div>
+
+                <div class="radio-item">
+                    <input type="radio" name="profileType" class="form_radio" id="signUpAgent" ng-model="isAgent" value="agent" />
+                    <label for="signUpAgent">Agent</label>
+                </div>
+
+
+            </div>
+
+            <div ng-show="isAgent == 'agent'">
+                <div class="homingin-form_group clearfix">
+                    <button class="sign-up_button" ng-click="ShowServiceAreaPopup()">Service Area</button>
+                    <div class="profile-img-upload">
+                        <label>
+                            <!--ngf-select="UploadFile($file, $invalidFiles)"-->                            
+                            <input type="file"
+                                   accept="image/*"
+                                   ng-model="agentPic"
+                                   ngf-select
+                                   ngf-max-height="2000"
+                                   ngf-max-size="3MB"
+                                   ngf-multiple="false" /> 
+                            <span>Profile Image</span>
+                        </label>
+                    </div>
+                </div>
+
+
+                <div class="homingin-form_group clearfix">
+                    <input type="text" placeholder="Company Name" ng-model="company">
+                    <input type="text" placeholder="Phone Number" ng-model="phone" intl-tel-input>
+                </div>
+            </div>
+
+            <button class="btn" ng-click="DoSignup()">Sign Up</button>
+
+            <a href="/login" class="gray-link">Do you have an account?</a>
+            <a href="/login" class="blue-link">Login</a>
+        </form>
+
+    </div>
+</main>
+<!-- END Sign Up -->

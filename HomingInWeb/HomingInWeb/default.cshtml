@@ -1,0 +1,285 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="homingApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="homingApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="homingApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html lang="en" xmlns:fb="http://ogp.me/ns/fb#" ng-app="homingApp" class="ng-scope">  <!--<![endif]-->
+    <head>
+        <!-- Google Tag Manager -->
+        <script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5JGVKG');</script>
+        <!-- End Google Tag Manager -->
+        <meta charset="utf-8">
+        <title>Homing In | Whats My Home Worth</title>
+        <meta name="description" content="Accurate, real world home values from 1,000s of real estate professionals. Find out what your house, condo, townhouse is really worth? Enter your address, take a few photos, add the improvements, and watch the real estate brokers, agents, and appraisers in your area compete to be closest to the actual value of your home">
+        <base href="/">
+        
+        <!-- Libs -->
+        <script src="node_modules/jquery/dist/jquery.js"></script>
+        <script src="node_modules/angular/angular.js"></script>  
+        <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="node_modules/angular-route/angular-route.js"></script>
+        <script src="node_modules/angular-cookies/angular-cookies.js"></script>
+        <script src="node_modules/angular-resource/angular-resource.js"></script>
+        <script src="node_modules/angular-filter/dist/angular-filter.min.js"></script>
+        <script src="node_modules/ng-file-upload/dist/ng-file-upload.min.js"></script>
+        <script src="node_modules/angular-loading-bar/build/loading-bar.min.js"></script>
+        <script src="node_modules/intl-tel-input/build/js/intlTelInput.min.js"></script>
+        <script src="node_modules/intl-tel-input/build/js/utils.js"></script>
+
+        <script src="node_modules/braintree-web/dist/braintree.js"></script>
+        <script src="js/common/braintree-angular-dist/braintree-angular.dist.js"></script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDg-UvozLFZ76yxouZXzU02IFGLTLQHsqI&amp;libraries=places"></script>
+
+        <!-- Google Analytics-->
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-82308502-1', 'auto');
+        ga('send', 'pageview');
+
+        </script>
+        
+        @{ string cacheBuster = "v1022"; };
+        <!-- App -->
+        <script src="~/js/app.js?@cacheBuster"></script>
+        <script src="~/js/filters.js?@cacheBuster"></script>
+        <script src="~/js/directives.js?@cacheBuster"></script>
+        <script src="~/js/home/controller.js?@cacheBuster"></script>
+        <script src="~/js/search/controller.js?@cacheBuster"></script>
+        <script src="~/js/login/controller.js?@cacheBuster"></script>
+        <script src="~/js/signup/controller.js?@cacheBuster"></script>
+        <script src="~/js/passwords/controller.js?@cacheBuster"></script>
+        <script src="~/js/promo/controller.js?@cacheBuster"></script>
+        <script src="~/js/create_estimate/controller.js?@cacheBuster"></script>
+        <script src="~/js/anonymous_view/anonymous_view_controller.js?@cacheBuster"></script>
+        <script src="~/js/messages/controller.js?@cacheBuster"></script>
+
+        <!-- not updated yet-->
+        <script src="~/js/pricing/controller.js?@cacheBuster"></script>
+        <script src="~/js/promo/controller.js?@cacheBuster"></script>
+        <script src="~/js/dashboard/controller.js?@cacheBuster"></script>
+        <script src="~/js/navigation/controllers.js?@cacheBuster"></script>
+        <script src="~/js/photos/controller.js?@cacheBuster"></script>
+        <script src="~/js/bio/controller.js?@cacheBuster"></script>
+        
+        <!-- parts/head.html -->
+        <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="libs/jQueryFormStyler-master/jquery.formstyler.css">
+        <link href="node_modules/intl-tel-input/build/css/intlTelInput.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/Pe-icon-7-stroke.css">
+        <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="css/styles.css">
+
+        <!-- Facebook Pixel Code -->
+        <script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1851668931782921'); // Insert your pixel ID here.
+fbq('track', 'PageView');
+        </script>
+        <noscript>
+            <img height="1" width="1" style="display:none"
+                 src="https://www.facebook.com/tr?id=1851668931782921&ev=PageView&noscript=1" />
+        </noscript>
+        <!-- DO NOT MODIFY -->
+        <!-- End Facebook Pixel Code -->
+
+
+    </head>
+
+<script>
+  window.intercomSettings = {
+    app_id: "u4zxxs32"
+  };
+</script>
+<script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/u4zxxs32';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
+
+    <body>
+
+        <!-- Google Tag Manager (noscript) -->
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5JGVKG"
+                    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        </noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
+        <!-- Last step popup -->
+        <div class="popup-body submit-review-popup" style="display: none;" id="genericMessageBoxPopup">
+
+            <div class="popup-window">
+                <span class="pe-7s-close-circle close-popup" ng-click="HideGenericMessageBox()"></span>
+                <h3 class="popup_title" id="genericMessageBoxPopupTitle">Error!</h3>
+
+                <p class="popup_caption" id="genericMessageBoxPopupMessage">Something happened!</p>
+
+                <button class="btn" ng-click="HideGenericMessageBox()">Ok</button>
+
+            </div>
+
+        </div>
+    
+        <div class="popup-body submit-review-popup" style="display: none;" id="genericConfirmBoxPopup">
+
+            <div class="popup-window">
+                <span class="pe-7s-close-circle close-popup js-close-popup"></span>
+
+                <h3 class="popup_title" id="genericConfirmBoxPopupTitle">Error!</h3>
+                <p class="popup_caption" id="genericConfirmBoxPopupMessage">Something happened!</p>
+
+                <button class="btn btn-text js-close-popup" id="genericConfirmBoxPopupCancel">Cancel</button>
+                <button class="btn btn-danger js-close-popup" id="genericConfirmBoxPopupConfirm">Confirm</button>
+
+            </div>
+
+        </div>
+        <!-- Last step popup -->
+
+
+        <!-- Header -->
+
+        <header class="header clearfix">
+
+            <a href="/" class="header_logo">
+                Homing <span>in</span>
+            </a>
+
+            <h1 class="header_title">What's my home worth?</h1>
+
+            <nav id="main-header" class="header_nav clearfix">
+                <id ng-if="currentUser == null || currentUser.FirstName == 'Anonymous' && currentUser.LastName =='Anonymous'">
+                    <a href="/homeowners" class="header_nav-item">Homeowners</a>
+                    <a href="/pricing" class="header_nav-item">Agents</a>
+                    <a href="http://blog.homingin.co" class="header_nav-item">Blog</a>
+                    @*<a href="/promo" class="header_nav-item">Promo</a>*@
+                </id>
+                
+                <id ng-if="currentUser.IsAgent && !currentUser.IsPremium">
+                    <a href="/pricing" class="header_nav-item">UPGRADE TO PREMIUM NOW</a>
+                    <a href="http://blog.homingin.co" class="header_nav-item">Blog</a>
+                </id>
+
+                <id ng-if="currentUser.IsAgent && currentUser.IsPremium">
+                    <a href="http://blog.homingin.co" class="header_nav-item">Blog</a>
+                </id>
+                  
+                    <id ng-if="currentUser == null || currentUser.FirstName == 'Anonymous' && currentUser.LastName =='Anonymous'">
+                        <a href="/login" class="header_nav-item login-link"><span class="pe-7s-unlock"></span> Login</a>
+                    </id>
+
+
+                    <id ng-if="currentUser != null && currentUser.FirstName != 'Anonymous' && currentUser.LastName != 'Anonymous'">
+                        <a href="/dashboard/properties" class="header_nav-item header_user">
+                            <div class="header_user-avatar">
+                                <span user-pic="{{currentUser.Picture.URL}}"></span>
+                            </div>
+                            <span class="header_user-name">{{currentUser.FirstName}} {{currentUser.LastName}}</span>
+                        </a>
+                    </id>
+
+
+                    <a href="{{AndroidURL}}" class="header_nav-item get-app-link" ng-if="IsAndroid">Get the app</a>
+                    <a href="{{IOSUrl}}" class="header_nav-item get-app-link" ng-if="IsIOS">Get the app</a>
+
+</nav>
+
+            <id ng-if="currentUser != null && currentUser.FirstName != 'Anonymous' && currentUser.LastName != 'Anonymous'">
+                <a href="/dashboard/properties" class="header_user header_user-mobile">
+                    <div class="header_user-avatar">
+                        <span user-pic="{{currentUser.Picture.URL}}"></span>
+                    </div>
+                    <span class="header_user-name">{{currentUser.FirstName}} {{currentUser.LastName}}</span>
+                </a>
+            </id>
+
+            <div class="mobile-tgl" data-toggle="dropdown" data-target="#main-header">
+                <span></span>
+            </div>
+
+        </header>
+
+        <!-- END Header -->
+
+        <div class="control_container" ng-view></div>
+
+        <!-- Social -->
+        <section class="social-btns">
+
+            <div class="container">
+
+                <h3 class="subtitle">Follow Us</h3>
+
+                <a href="http://facebook.com/hominginapp/" target ="_blank" class="social-btn fb">
+                    <img src="img/fb.svg" alt="Homingin Facebook">
+                </a>
+
+                <a href="http://twitter.com/homingin/" target="_blank" class="social-btn tw">
+                    <img src="img/tw.svg" alt="Homingin Twitter">
+                </a>
+
+                <a href="https://www.youtube.com/channel/UCgK1davGaoTf-8ktF7JknzQ/" target="_blank"  class="social-btn youtube">
+                    <img src="img/yt.svg" alt="Homingin Youtube">
+                </a>
+            </div>
+
+        </section>
+        <!-- END Social -->
+
+
+        <!-- Contact form -->
+
+        <section class="contact-us">
+
+            <div class="container">
+
+                <h3 class="subtitle">
+                    Contact Us
+                </h3>
+
+                <a href="mailto:support@homingin.co" class="contact-us_mail">support@homingin.co</a>
+
+                <div class="contact-us_list">
+                    <div class="container">
+
+                        <a href="/terms" class="contact-us_link">Terms of use</a>
+                        <a href="/refunds" class="contact-us_link">Refund policy</a>
+                        <a href="/privacypolicy" class="contact-us_link">Privacy policy</a>
+
+                    </div>
+                </div>
+
+
+                <!--<form class="contact-form clearfix"> 
+
+                    <input class="contact-form-item" type="text" placeholder="Name">
+                    <input class="contact-form-item" type="email" placeholder="Email">
+                    <textarea class="contact-form-item" placeholder="Message"></textarea>
+                    <button>Send Message</button>
+
+                </form> -->
+
+            </div>
+
+        </section>
+
+        <!-- END Contact form -->
+
+
+    </body>
+</html>

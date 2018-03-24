@@ -1,0 +1,18 @@
+﻿    <!-- Sidebar -->
+<aside class="db-sb" ng-controller="sidebarController">
+
+    <span class="db-sb_toggle pe-7s-angle-up"></span>
+
+    <nav class="db-sb_nav" ng-show="IsLogged()">
+
+        <!--<a href="#" class="db-sb_nav-item"><span class="pe-7s-display2"></span> Dashboard</a>-->
+        <a href="/dashboard/properties" class="db-sb_nav-item" ng-class="{sidebarSelected: currentPage == 'properties'}"><span class="pe-7s-home"></span>{{propertiesLabel}}</a>
+        <a href="/dashboard/profile" class="db-sb_nav-item" ng-class="{sidebarSelected: currentPage == 'profile'}"><span class="pe-7s-user"></span> Profile</a>
+        <a href ng-click="OpenMenuMessage()" class="db-sb_nav-item" ng-class="{sidebarSelected: currentPage == 'message'}"><span class="pe-7s-mail"></span> Messages</a>
+        <!--<a href="#" class="db-sb_nav-item"><span class="pe-7s-config"></span> Settings</a>-->
+        <a href="#" class="db-sb_nav-item" ng-click="Logout()"><span class="pe-7s-power"></span> Logout</a>
+
+    </nav>
+
+</aside>
+<!-- END Sidebar -->

@@ -1,0 +1,201 @@
+﻿	<!-- Dashboard -->
+<div class="db-container clearfix">
+
+    <id ng-if="currentUser != null && currentUser.FirstName != 'Anonymous' && currentUser.LastName != 'Anonymous'">
+        <id ng-include="'/partials/dashboard/sidebar.html'"></id>
+    </id>
+    
+    <!-- Dashboard Content -->
+    <main class="db-content">
+
+        <div class="db_top-panel clearfix">
+            <h2 class="db_title"><span class="pe-7s-home"></span> My Property</h2>
+        </div>
+
+        <!-- House Card -->
+        <div class="house-card clearfix">
+
+            <div class="house-card_photo">
+                <img ng-src="{{estimate.Pictures[0].URL || 'img/no-home.jpg'}}">
+            </div>
+
+            <div class="house-card_items clearfix">
+                <div class="house-card_address house-card_item">
+                    <h4 class="house-card_title">Address</h4>
+                    <span class="house-card_info">{{estimate.Address}}, {{estimate.City}}, {{estimate.State}}, {{estimate.PostalCode}}</span>
+                </div>
+
+                <div class="house-card_requests house-card_item">
+                    <h4 class="house-card_title">Responses</h4>
+                    <span class="house-card_info">{{agentCount}} Agents</span>
+                </div>
+
+                <div class="house-card_address house-card_item">
+                    <h4 class="house-card_title">Average Price</h4>
+                    <span class="house-card_info">{{averagePrice | currency:undefined:0}}</span>
+                </div>
+            </div>
+
+        </div>
+        <!-- END House Card -->
+
+
+        <div class="db-agent-est-wrap clearfix">
+
+            <!-- Agent Card -->
+            <div class="db-agent-single clearfix">
+
+                <div class="db-agent-single_ava">
+                    <id ng-if="!response.User.Picture.URL"> <img src="img/no-avatar.jpg"> </id>
+                    <id ng-if="response.User.Picture.URL"> <img ng-src="{{response.User.Picture.URL}}"> </id>
+                </div>
+
+                <div class="db-agent-single_info">
+
+                    <h4 class="db-agent-single_name">{{response.User.FirstName}} {{response.User.LastName}}</h4>
+
+                    <span class="agent-bage" ng-if="response.User.IsPremium">Premium</span>
+
+                    <!--<span class="db-agent-single_cma-link">cloudcma.com/brandon</span>-->
+
+                    <p class="db-agent-single_company">{{response.User.Company}}</p>
+
+                    <a href="" class="db-agent-single_license">{{response.User.AgentLicense}}</a>
+
+                    <a href="" class="db-agent-single_phone">{{response.User.PhoneNumber}}</a>
+
+                    <a href="" class="db-agent-single_mail">{{response.User.Email}}</a>
+                    <br />
+                    
+                    <p ng-if="response.User.PremiumInfo.WorkAddress">
+                        Work Address:
+                        <span ng-bind="response.User.PremiumInfo.WorkAddress"></span>
+                    </p>
+
+                    <p ng-if="response.User.PremiumInfo.MailingAddress">
+                        Mailing Address:
+                        <span ng-bind="response.User.PremiumInfo.MailingAddress"></span>
+                    </p>
+
+                    <p ng-if="response.User.PremiumInfo.MobilePhone">
+                        Mobile Phone:
+                        <span ng-bind="response.User.PremiumInfo.MobilePhone"></span>
+                    </p>
+
+                    <p ng-if="response.User.PremiumInfo.OfficePhone">
+                        Office Phone:
+                        <span ng-bind="response.User.PremiumInfo.OfficePhone"></span>
+                    </p>
+
+                    <p ng-if="response.User.PremiumInfo.Email">
+                        Email:
+                        <span ng-bind="response.User.PremiumInfo.Email"></span>
+                    </p>
+
+                    <p ng-if="response.User.PremiumInfo.AltEmail">
+                        Alt Email:
+                        <span ng-bind="response.User.PremiumInfo.AltEmail"></span>
+                    </p>
+
+                    <p ng-if="response.User.PremiumInfo.DateOfBirth">
+                        Date of Birth:
+                        <span ng-bind="response.User.PremiumInfo.DateOfBirth"></span>
+                    </p>
+
+                    <p ng-if="response.User.PremiumInfo.YearsLicensed">
+                        Years Licensed:
+                        <span ng-bind="response.User.PremiumInfo.YearsLicensed"></span>
+                    </p>
+
+                    <p ng-if="response.User.PremiumInfo.Bio">
+                        Bio:
+                        <span ng-bind="response.User.PremiumInfo.Bio"></span>
+                    </p>
+
+                    <p ng-if="response.User.PremiumInfo.Video">
+                        Video:
+                        <span ng-bind="response.User.PremiumInfo.Video"></span>
+                    </p>
+
+                    <p ng-if="response.User.PremiumInfo.Website">
+                        Website:
+                        <span ng-bind="response.User.PremiumInfo.Website"></span>
+                    </p>
+
+                    <p ng-if="response.User.PremiumInfo.LinkedIn">
+                        Linked In:
+                        <span ng-bind="response.User.PremiumInfo.LinkedIn"></span>
+                    </p>
+
+                    <p ng-if="response.User.PremiumInfo.YelpReviews">
+                        Yelp Reviews:
+                        <span ng-bind="response.User.PremiumInfo.YelpReviews"></span>
+                    </p>
+
+                    <p ng-if="response.User.PremiumInfo.ZillowReviews">
+                        Zillow Reviews:
+                        <span ng-bind="response.User.PremiumInfo.ZillowReviews"></span>
+                    </p>
+
+                    <p ng-if="response.User.PremiumInfo.OtherReviews">
+                        Other Reviews:
+                        <span ng-bind="response.User.PremiumInfo.OtherReviews"></span>
+                    </p>
+
+                    <p ng-if="response.User.PremiumInfo.Facebook">
+                        Facebook Page:
+                        <span ng-bind="response.User.PremiumInfo.Facebook"></span>
+                    </p>
+
+                    <p ng-if="response.User.PremiumInfo.Youtube">
+                        YouTube Channel:
+                        <span ng-bind="response.User.PremiumInfo.Youtube"></span>
+                    </p>
+
+                    <p ng-if="response.User.PremiumInfo.Twitter">
+                        Twitter:
+                        <span ng-bind="response.User.PremiumInfo.Twitter"></span>
+                    </p>
+
+                    <p ng-if="response.User.PremiumInfo.Instagram">
+                        Instagram:
+                        <span ng-bind="response.User.PremiumInfo.Instagram"></span>
+                    </p>
+
+                    <p ng-if="response.User.PremiumInfo.Snapchat">
+                        Snapchat:
+                        <span ng-bind="response.User.PremiumInfo.Snapchat"></span>
+                    </p>
+                    
+
+
+                    <button class="btn btn-message" ng-click="StartConversation(response.User, estimate)" ng-show="response.User && estimate">Send message</button>
+
+                </div>
+            </div>
+            <!-- END Agent Card -->
+
+            <!-- Agent estimate -->
+            <div class="db-agent-single_est">
+
+                <div class="db-agent-single_est-top clearfix">
+                    <h2 class="db-agent-single_est-title"><span class="pe-7s-ribbon"></span> Estimate</h2>
+                    <span class="db-agent-single_est-value">{{response.EstimateValue | currency:undefined:0}}</span>
+                </div>
+
+                <p>
+                    {{response.Notes}}
+                </p>
+
+            </div>
+            <!-- END Agent estimate -->
+
+            <button class="db-agent-single_est-btn" back-button>Back</button>
+
+        </div>
+
+
+    </main>
+    <!-- END Dashboard Content -->
+
+</div>

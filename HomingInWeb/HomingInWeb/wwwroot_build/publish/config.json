@@ -1,0 +1,6 @@
+{
+	"iisApp": "HomingInWeb",
+	"serverAddress": "deploy-server.example.com",
+	"userName": "{WebDeployUserName}",
+	"password" : "{WebDeployPassword}"
+}

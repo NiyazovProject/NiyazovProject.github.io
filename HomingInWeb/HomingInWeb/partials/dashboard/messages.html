@@ -1,0 +1,109 @@
+﻿<!-- Dashboard -->
+<div class="db-container clearfix">
+
+    <id ng-include="'/partials/dashboard/sidebar.html'"></id>
+
+    <!-- Dashboard Content -->
+    <main class="db-content db_messages">
+
+
+        <!-- Messages Users -->
+        <div class="db_messages-users clearfix">
+            <h2 class="db_title"><span class="pe-7s-mail"></span> Messages</h2>
+
+            <span class="open-conv" data-toggle="collapse" data-target=".db_messages-users_body">Conversations <span class="pe-7s-angle-down"></span></span>
+            <div class="db_messages-users_body collapse">
+
+
+                <input type="text" class="db_messages_input" placeholder="Find conversation" ng-model="search">
+
+                <div class="db_messages-users-list chat-scroller">
+
+                    <div class="db_messages-user clearfix"
+                         ng-repeat="conversation in conversations | searchField: 'User.FirstName': 'User.LastName' | filter: search"
+                         ng-class="{active: activeConversation === conversation}"
+                         ng-click="SelectConversation(conversation)">
+                        
+                        <div ng-if="currentUser.IsAgent">
+                            <div class="db_messages-user-ava">
+                                <span user-pic="{{conversation.Estimate.Pictures[0].URL}}" user-pic-placeholder="img/no-home.jpg"></span>
+                            </div>
+
+                            <span class="db_messages-user-name">{{conversation.Estimate.Address}}, {{conversation.Estimate.City}}, {{conversation.Estimate.State}}, {{conversation.Estimate.PostalCode}}</span>
+                        </div>
+                        
+                        <div ng-if="!currentUser.IsAgent">
+                            <div class="db_messages-user-ava">
+                                <span user-pic="{{conversation.User.Picture.URL}}"></span>
+                            </div>
+
+                            <span class="db_messages-user-name">{{conversation.User.FirstName}} {{conversation.User.LastName}}</span>
+                        </div>
+
+                    </div>
+                    
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- END Messages Users -->
+
+        <!-- Messages Subject -->
+        <div class="db_messages-subj clearfix">
+            <div class="db_messages-subj_img" style="background: url({{activeConversation.Estimate.Pictures.length ? activeConversation.Estimate.Pictures[0].URL : 'img/no-home-wide.jpg'}}) no-repeat; background-size: cover;">
+            </div>
+            <div class="db_messages-subj_address">
+                {{activeConversation.Estimate.Address}}, {{activeConversation.Estimate.City}}, {{activeConversation.Estimate.State}}, {{activeConversation.Estimate.PostalCode}}
+            </div>
+
+            <div class="db_messages-subj_date">
+                <h6>Created on</h6>
+                <span>{{activeConversation.Estimate.CreatedOn | date: "MM/dd/yyyy @ h:ma"}}</span>
+            </div>
+        </div>
+        <!-- END Messages Subject -->
+
+        <!-- Messages Chat -->
+        <div class="db_messages-chat clearfix">
+
+            <ul class="chat-wrapper chat-scroller clearfix">
+
+                <li class="chat-msg clearfix" ng-repeat="message in activeConversation.Messages" ng-class="message.IsMy ? 'right' : 'left'">
+
+                    <div class="clearfix">
+
+                        <div class="chat-msg-ava">
+                            
+                            <span user-pic="{{activeConversation.User.Picture.URL}}" ng-if="!message.IsMy"></span>
+                            <span user-pic="{{currentUser.Picture.URL}}" ng-if="message.IsMy"></span>
+                        </div>
+
+                        <p>{{message.Body}}</p>
+
+                    </div>
+
+                    <div class="chat-msg-info">{{message.Date | date : "M/d/yy 'at' hh:mma" }}</div>
+
+                </li>
+
+                <li ng-if="!activeConversation.Messages.length" class="chat-error">There are no messages in this conversation</li>
+               
+            </ul>
+
+            <div class="messages_in clearfix">
+                <form ng-submit="SendMessage()">
+                    <input type="text" placeholder="Send Message" ng-model="userMessage" id="user-message-input">
+                    <button type="submit" class="btn">Send</button>
+                </form>
+            </div>
+
+        </div>
+        <!-- END Messages Chat -->
+
+
+    </main>
+    <!-- END Dashboard Content -->
+</div>
+<!-- END Dashboard -->

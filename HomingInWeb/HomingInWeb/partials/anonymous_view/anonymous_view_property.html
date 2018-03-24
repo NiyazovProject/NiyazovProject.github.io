@@ -1,0 +1,115 @@
+﻿
+    <!-- Dashboard Content -->
+    <main class="db-content">
+
+        <div class="db_top-panel clearfix">
+            <h2 class="db_title"><span class="pe-7s-home"></span> My Property</h2>
+
+            <button class="btn pull-right" ng-click="ClaimPage()" ng-show="isAnonymousValuation">Claim this page</button>
+        </div>
+
+        <!-- House Card -->
+        <div class="house-card clearfix">
+
+            <div class="house-card_photo">
+                <img src="img/no-home-wide.jpg" ng-if="estimate.Pictures.length < 1">
+                <img ng-src="{{estimate.Pictures[0].URL}}" ng-if="estimate.Pictures.length > 0">
+            </div>
+
+            <div class="house-card_items clearfix">
+                <div class="house-card_address house-card_item">
+                    <h4 class="house-card_title">Address</h4>
+                    <span class="house-card_info">{{estimate.Address}}, {{estimate.City}}, {{estimate.State}}, {{estimate.PostalCode}}</span>
+                </div>
+
+                <div class="house-card_requests house-card_item">
+                    <h4 class="house-card_title">Responses</h4>
+                    <span class="house-card_info">{{agentCount}} Agents</span>
+                </div>
+
+                <div class="house-card_address house-card_item">
+                    <h4 class="house-card_title">Average Price</h4>
+                    <span class="house-card_info">{{averagePrice | currency:undefined:0}}</span>
+                </div>
+            </div>
+
+        </div>
+        <!-- END House Card -->
+        <!-- Agents Table -->
+        <div class="agents-table_wrap">
+
+            <table class="agents-table">
+
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Agent name</th>
+                        <th>Company name</th>
+                        <th>Phone number</th>
+                        <th>Estimate</th>
+                        <th>Responded</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr ng-repeat="response in estimate.Responses | orderBy : '-User.IsPremium'" ng-click="showResponse(response)">
+                        <td>
+                            <div>
+                                <id ng-if="!response.User.Picture.URL"> <img src="img/no-avatar.jpg" height="88"> </id>
+                                <id ng-if="response.User.Picture.URL"> <img ng-src="{{response.User.Picture.URL}}" height="88"> </id>
+
+                            </div>
+                        </td>
+
+                        <td>
+                            <div>
+                                <span class="agent-name">{{response.User.FirstName}} {{response.User.LastName}}</span>
+                                <span class="agent-bage" ng-if="response.User.IsPremium">Premium</span>
+
+                                <!-- TODO: Uncomment this and replace it with the cloud cma graphic when we have it-->
+                                <!--<span class="agent-bage" ng-if="response.CloudCMALink != null">CloudCMA</span>-->
+                            </div>
+                        </td>
+
+                        <td>
+                            <div>
+                                <span>{{response.User.Company}}</span>
+                            </div>
+                        </td>
+
+                        <td>
+                            <div>
+                                <span>{{response.User.PhoneNumber}}</span>
+                            </div>
+                        </td>
+
+                        <td>
+                            <div>
+                                <span>{{response.EstimateValue | currency:undefined:0}}</span>
+                            </div>
+                        </td>
+
+                        <td>
+                            <div>
+                                <span class="request-date">{{response.CreatedOn | date:"MM/dd/yyyy @ h:mma"}}</span>
+                            </div>
+                        </td>
+
+                        <td>
+                            <div>
+                                <a href="mailto:{{response.User.Email}}"><span class="pe-7s-mail"></span></a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p ng-if="!estimate.Responses.length" class="text-msg">Agents are still working on your home value</p>
+
+        </div>
+        <!-- END Agents Table -->
+
+
+    </main>
+    <!-- END Dashboard Content -->

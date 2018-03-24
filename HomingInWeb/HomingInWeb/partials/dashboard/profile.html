@@ -1,0 +1,199 @@
+﻿<!-- Dashboard -->
+<div class="db-container clearfix">
+
+    <id ng-include="'/partials/dashboard/sidebar.html'"></id>
+    <!-- Dashboard Content -->
+    <main class="db-content">
+
+        <div class="db_top-panel clearfix">
+            <h2 class="db_title"><span class="pe-7s-display2"></span> Profile</h2>
+
+            <a href="#" class="edit-profile" ng-click="SaveProfile()"><span class="pe-7s-config"></span> Save</a>
+        </div>
+
+        <!-- Profile -->
+        <div class="db-profile clearfix">
+
+            <!-- Avatar -->
+            <div class="db-profile_avatar">
+                <label>
+                    <div class="db-profile_avatar-pic">
+                        <span user-pic="{{currentUser.Picture.URL}}"></span>
+                    </div>
+                    <input type="file"
+                           accept="image/*"
+                           ng-model="agentPic"
+                           ngf-select="SelectPicture()"
+                           ngf-max-height="2000"
+                           ngf-max-size="3MB"
+                           ngf-multiple="false"
+                           style="display: none"/>
+                </label>
+            </div>
+            <!-- END Avatar -->
+
+            <div class="db-profile_info clearfix">
+
+                <input type="text" placeholder="First Name" ng-model="currentUser.FirstName">
+                <input type="text" placeholder="Last Name" ng-model="currentUser.LastName">
+                <input type="email" placeholder="Email" ng-model="currentUser.Email">
+                <input type="text" ng-model="currentUser.PhoneNumber" intl-tel-input>
+                <input type="password"  placeholder="Password" ng-model="newPassword">
+                <input type="password" placeholder="Confirm Password" ng-model="confirmationPassword">
+                <br />
+
+                <!-- Is Agent -->
+                <div class="db-isagent clearfix"  ng-show="currentUser.IsAgent">
+                    <h3 class="db-isagent_title">Agent Info</h3>
+                    <div class="clearfix">
+                        <input type="text" placeholder="Company Name" ng-model="currentUser.Company">
+                        <!-- TODO: Implement this -->
+                        <input type="text" placeholder="License #" ng-model="currentUser.AgentLicense">
+                    </div>
+                </div>
+                <!-- END Is Agent -->
+                
+                <!-- Notifications -->
+                <div class="db-isagent clearfix">
+                    <h3 class="db-isagent_title">Notifications</h3>
+                    <div class="clearfix">
+                        <div class="group">
+                            <span class="group-caption">Send Notification emails</span>
+                            <switch ng-model="currentUser.CanReceiveEmail" switch-true="On" switch-false="Off"></switch>
+                        </div>
+                    </div>
+                </div>
+                <!-- END Notifications -->
+
+                <!-- Is Premium Agent -->
+                <div class="db-isagent clearfix" ng-show="currentUser.IsPremium">
+
+                    <h3 class="db-isagent_title">Real Estate Agents</h3>
+                    
+                    <p>
+                        <button class="btn btn-text" ng-click="showAdditionalContacts = !showAdditionalContacts;">{{showAdditionalContacts ? 'Hide' : 'Show'}} additional contacts</button>
+                    </p>
+
+                    <div class="db-profile_switch clearfix" ng-show="showAdditionalContacts">
+                        <input type="text" placeholder="Work Address" ng-model="currentUser.PremiumInfo.WorkAddress">
+                        <switch ng-model="currentUser.PremiumInfo.WorkAddressIsPublic" switch-true="Public" switch-false="Private"></switch>                        
+
+                        <input type="text" placeholder="Mailing Address" ng-model="currentUser.PremiumInfo.MailingAddress">
+                        <switch ng-model="currentUser.PremiumInfo.MailingAddressIsPublic" switch-true="Public" switch-false="Private"></switch>
+
+                        <input type="text" placeholder="Mobile Phone" ng-model="currentUser.PremiumInfo.MobilePhone">
+                        <switch ng-model="currentUser.PremiumInfo.MobilePhoneIsPublic" switch-true="Public" switch-false="Private"></switch>
+
+                        <input type="text" placeholder="Office Phone" ng-model="currentUser.PremiumInfo.OfficePhone">
+                        <switch ng-model="currentUser.PremiumInfo.OfficePhoneIsPublic" switch-true="Public" switch-false="Private"></switch>
+
+                        <input type="text" placeholder="Email" ng-model="currentUser.PremiumInfo.Email">
+                        <switch ng-model="currentUser.PremiumInfo.EmailIsPublic" switch-true="Public" switch-false="Private"></switch>
+
+                        <input type="text" placeholder="Alt Email" ng-model="currentUser.PremiumInfo.AltEmail">
+                        <switch ng-model="currentUser.PremiumInfo.AltEmailIsPublic" switch-true="Public" switch-false="Private"></switch>
+
+                        <input type="text" placeholder="Date of Birth" ng-model="currentUser.PremiumInfo.DateOfBirth">
+                        <switch ng-model="currentUser.PremiumInfo.DateOfBirthIsPublic" switch-true="Public" switch-false="Private"></switch>
+
+                        <input type="text" placeholder="Years Licensed" ng-model="currentUser.PremiumInfo.YearsLicensed">
+                        <switch ng-model="currentUser.PremiumInfo.YearsLicensedIsPublic" switch-true="Public" switch-false="Private"></switch>
+
+                        <input type="text" placeholder="Bio" ng-model="currentUser.PremiumInfo.Bio">
+                        <switch ng-model="currentUser.PremiumInfo.BioIsPublic" switch-true="Public" switch-false="Private"></switch>
+
+                        <input type="text" placeholder="Video" ng-model="currentUser.PremiumInfo.Video">
+                        <switch ng-model="currentUser.PremiumInfo.VideoIsPublic" switch-true="Public" switch-false="Private"></switch>
+
+                        <input type="text" placeholder="Website" ng-model="currentUser.PremiumInfo.Website">
+                        <switch ng-model="currentUser.PremiumInfo.WebsiteIsPublic" switch-true="Public" switch-false="Private"></switch>
+
+                        <input type="text" placeholder="Linked In" ng-model="currentUser.PremiumInfo.LinkedIn">
+                        <switch ng-model="currentUser.PremiumInfo.LinkedInIsPublic" switch-true="Public" switch-false="Private"></switch>
+
+                        <input type="text" placeholder="Yelp Reviews" ng-model="currentUser.PremiumInfo.YelpReviews">
+                        <switch ng-model="currentUser.PremiumInfo.YelpReviewsIsPublic" switch-true="Public" switch-false="Private"></switch>
+
+                        <input type="text" placeholder="Zillow Reviews" ng-model="currentUser.PremiumInfo.ZillowReviews">
+                        <switch ng-model="currentUser.PremiumInfo.ZillowReviewsIsPublic" switch-true="Public" switch-false="Private"></switch>
+
+                        <input type="text" placeholder="Other Reviews" ng-model="currentUser.PremiumInfo.OtherReviews">
+                        <switch ng-model="currentUser.PremiumInfo.OtherReviewsIsPublic" switch-true="Public" switch-false="Private"></switch>
+
+                        <input type="text" placeholder="Facebook Page" ng-model="currentUser.PremiumInfo.Facebook">
+                        <switch ng-model="currentUser.PremiumInfo.FacebookIsPublic" switch-true="Public" switch-false="Private"></switch>
+
+                        <input type="text" placeholder="YouTube Channel" ng-model="currentUser.PremiumInfo.Youtube">
+                        <switch ng-model="currentUser.PremiumInfo.YoutubeIsPublic" switch-true="Public" switch-false="Private"></switch>
+
+                        <input type="text" placeholder="Twitter" ng-model="currentUser.PremiumInfo.Twitter">
+                        <switch ng-model="currentUser.PremiumInfo.TwitterIsPublic" switch-true="Public" switch-false="Private"></switch>
+
+                        <input type="text" placeholder="Instagram" ng-model="currentUser.PremiumInfo.Instagram">
+                        <switch ng-model="currentUser.PremiumInfo.InstagramIsPublic" switch-true="Public" switch-false="Private"></switch>
+
+                        <input type="text" placeholder="Snapchat" ng-model="currentUser.PremiumInfo.Snapchat">
+                        <switch ng-model="currentUser.PremiumInfo.SnapchatIsPublic" switch-true="Public" switch-false="Private"></switch>
+                    </div>
+
+
+                    <div class="clearfix">
+                        <p ng-show="premiumAgentIdError" class="text-left text-danger">{{premiumAgentIdError}}</p>
+                        <form name="premiumAgentForm">
+                            <div class="input input-prefix">
+                                <label>
+                                    https://homingin.co/u/
+                                    <input ng-model="currentUser.PremiumAgentId" name="id" />
+                                </label>
+                            </div>
+                            <button class="btn" style="margin-left: 20px;" ng-click="CopyPremiumAgentIdToClipboard()">Copy</button>
+                            <button class="btn" style="margin-left: 20px;" ng-click="UpdatePremiumAgentId()" ng-show="premiumAgentForm.id.$dirty">Update</button>
+                        </form>
+                    </div>
+
+                    <p>
+                        Premium Expiration: {{currentUser.PremiumExpirationDate | parseSqlDate | date: 'medium'}}
+                    </p>
+                    <p>
+                        <button ng-click="CancelSubscription()" class="btn-link" ng-show="currentUser.IsHasSubscription">Cancel Subscription</button>
+                        {{currentUser.IsHasSubscription ? "" : "No Subscription"}}
+                    </p>
+
+                </div>
+                <!-- END Is Premium Agent -->
+            </div>
+            <!-- END Profile -->
+        </div>
+
+        <!-- Postal Code -->
+        <div class="db-postal-code" ng-show="currentUser.IsAgent">
+
+            <h3 class="db-postal-code_title">Enter a Postal Code to add your service area</h3>
+            <h3 class="db-postal-code_title">(Example: 92101 in the US or V2B in Canada)</h3>
+            <form ng-submit="AddPostalCode()">
+                <div class="postal-code_field clearfix">
+                    <input type="text" placeholder="Add Postal code" ng-model="newPostalCode">
+                    <button type="submit" class="btn">Add</button>
+                </div>
+            </form>
+
+            <h3 class="db-postal-code_title">Service area list</h3>
+            <ul class="service-area-list">
+                
+                
+                <li class="service-area-list_item" ng-repeat="postalCode in currentUser.PostalCodes">
+                    <span>{{postalCode}}</span>
+                    <span class="pe-7s-trash delete-list-item" ng-click="RemovePostalCode(postalCode)"></span>
+                </li>
+
+            </ul>
+
+        </div>
+        <!-- END Postal Code -->
+
+
+    </main>
+    <!-- END Dashboard Content -->
+
+</div>
+<!-- END Dashboard -->
