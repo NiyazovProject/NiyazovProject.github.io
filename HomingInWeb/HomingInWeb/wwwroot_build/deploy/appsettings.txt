@@ -1,4 +1,0 @@
-# Release App Settings
-
-DebugMode false
-DefaultContentType = MimeTypes.Json
