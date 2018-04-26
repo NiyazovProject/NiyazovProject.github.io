@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru-ru" dir="ltr">
+<meta name="viewport" content="width=1170">
+	<head>
+		<link rel="stylesheet" property="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" property="stylesheet" href="css/template.css">
+		<link rel="stylesheet" property="stylesheet" href="css/adaptive.css">
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script src="js/template.js" type="text/javascript" async></script>
+	</head>
+	<body>
+		<?php
+			session_start();
+			if(isset($_GET['screen'])){$_SESSION['screen']=$_GET['screen'];}
+		?>
+		<main class="content">
+			<div class="map">
+			<section class="page page-1">
+				<div>
+					<div class="logo"></div>
+				</div>
+				<div>
+					<div class="chel"></div>
+				</div>
+				<div>
+					<a href="#" class="button action_view_page-2"></a>
+				<div>
+			</section>
+			<section class="page page-2">
+				<a href="#" class="button action_view_page-3"></a>
+			</section>
+			<section class="page page-3">
+				<a href="#" class="icon_info action_view_window_i"></a>
+				<div class="icon_chel"></div>
+				<div class="contic">
+					<div class="dash-dot"></div>
+					<a href="#" class="item item-1 phone" data-id="1"></a>
+					<a href="#" class="item item-2 smart" data-id="2"></a>
+					<a href="#" class="item item-3 phone" data-id="3"></a>
+					<a href="#" class="item item-4 smart" data-id="4"></a>
+					<a href="#" class="item item-5 phone" data-id="5"></a>
+					<a href="#" class="item item-6 smart" data-id="6"></a>
+
+					<div class="guide-arm"></div>
+
+					<div class="guide guide-1"></div>
+					<div class="guide guide-2"></div>
+					<div class="guide guide-3"></div>
+					<div class="guide guide-4"></div>
+					<div class="guide guide-5"></div>
+					<div class="guide guide-6"></div>
+
+					<div class="line line-1"></div>
+					<div class="line line-2"></div>
+					<div class="line line-3"></div>
+					<div class="line line-4"></div>
+					<div class="line line-5"></div>
+					<div class="line line-6"></div>
+				</div>
+				<div class="info-window">
+					<a href="#" class="button action_view_helper"></a>
+				</div>
+				<div class="result-window">
+					<a href="#" class="button action_closed_result"></a>
+				</div>
+				<div class="result-window-button"></div>
+				<div class="guide-arm-number"></div>
+				<div class="info-vibro">
+					<a href="#" class="button action_view_helper2"></a>
+				</div>
+				<div class="info-vibro2">
+					<a href="#" class="button action_view_helper3"></a>
+				</div>
+				<div class="info-window2">
+					<a href="#" class="button action_view_page-4"></a>
+				</div>
+				<div class="info-window-i">
+					<a href="#" class="button action_closed_i"></a>
+				</div>
+			</section>
+			<section class="page page-4">
+				<a href="#" class="icon_info action_view_window_i2"></a>
+				<a href="https://www.businessclub-mts.ru/touchpad/?<?=isset($_SESSION['screen']) ? $_SESSION['screen'] : ''?>" class="button action_reboot"></a>
+
+				<div class="info-window-i2">
+					<a href="#" class="button action_closed_i2"></a>
+				</div>
+			</section>
+			</div>
+		</main>
+	</body>
+</html>
