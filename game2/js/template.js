@@ -90,19 +90,12 @@ $(function()
 
 		$( ".content .page-3 .contic .item" ).each(function( index ) {
 			var id = $(this).attr("data-id");
-			document.querySelector(".content .page-3 .contic .item-"+id).addEventListener("touchstart", function(event){
+			$(".content .page-3 .contic .item-" + id).on("touchstart mousedown", function (event) {
 				$(".content .page-3 .contic .item-"+id).addClass("click");
 				func_smart_active_red(this);
 				//console.log(event);
 				//if (event.which == 1)
-					{addEventListener("touchmove", function(event){moved(event,id)});event.preventDefault();}
-			});
-						document.querySelector(".content .page-3 .contic .item-"+id).addEventListener("dragstart", function(event){
-				$(".content .page-3 .contic .item-"+id).addClass("click");
-				// func_smart_active_red(this);
-				//console.log(event);
-				//if (event.which == 1)
-					{addEventListener("dragmove", function(event){moved(event,id)});event.preventDefault();}
+					{$(document).on("touchmove mousemove", function (event) { moved(event, id) }); event.preventDefault();}
 			});
 		});
 	});
@@ -300,9 +293,9 @@ function moved(event,item)
 						//console.log(".content .page-3 .contic .item-"+i_next);
 						//console.log("next",position_next.top,position_next.left);
 						//console.log("active",event.changedTouches[0].pageY,event.changedTouches[0].pageX);
-						console.log(event.changedTouches[0].pageY, event.target);
 						//var touch = event.originalEvent.touches[0] || event.originalEvent.changedTouches[0] || event.changedTouches[0];
-						var touch = event.changedTouches[0];
+						var touch = event.changedTouches && event.changedTouches[0] || event;
+						console.log(touch.pageY, event.target);
 						if(
 							touch.pageY > position_next.top &&
 							touch.pageY < position_next.top+102 &&
