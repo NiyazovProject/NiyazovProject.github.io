@@ -64,7 +64,7 @@ body {
 	opacity: .7;
 }
 .icon-download{
-	max-width: 100px;
+	max-width: 110px;
 	height: auto;
 	margin: 20px 0px 10px 0px;
 }
@@ -105,8 +105,12 @@ section.target {
 	display: block;
   margin: 0 auto;
 }
+.last-images-list h2{
+	
+	margin: 15px 0px;
+}
 .last-images-list img{
-	max-width: 100px;
+	max-width: 120px;
 	height: auto;
 	border-radius:  5px;
 }
