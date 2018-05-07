@@ -41,7 +41,21 @@
   -webkit-background-size: cover;
   background-size: cover;
   border-radius: 50%;
+  z-index: 999;
 }
+.radial-progress .inset::before{
+
+     content: '';
+    background-color: rgba(0,0,0,.7);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    border-radius: 50%;
+    left: 0;
+}
+
+
 .radial-progress .inset .percentage {
  height: 22px;
  width: 57px;
