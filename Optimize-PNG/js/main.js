@@ -1,34 +1,34 @@
-$(document).ready(function () {
-	var pie1 = $('.pie-1'),
-	pie2 = $('.pie-2'),
-	pie3 = $('.pie-3');
-	progressBarUpdate(35, 100, pie1);
-	progressBarUpdate(65, 100, pie2);
+document.addEventListener('DOMContentLoaded', function(){ 
+    var pie1 = $('.pie-1'),
+    pie2 = $('.pie-2'),
+    pie3 = $('.pie-3');
+    progressBarUpdate(0, 100, pie1);
+    progressBarUpdate(65, 100, pie2);
 
 
-	function rotate(element, degree) {
-		element.css({
-			'-webkit-transform': 'rotate(' + degree + 'deg)',
-			'-moz-transform': 'rotate(' + degree + 'deg)',
-			'-ms-transform': 'rotate(' + degree + 'deg)',
-			'-o-transform': 'rotate(' + degree + 'deg)',
-			'transform': 'rotate(' + degree + 'deg)',
-			'zoom': 1
-		});
-	}
+    function rotate(element, degree) {
+        element.css({
+            '-webkit-transform': 'rotate(' + degree + 'deg)',
+            '-moz-transform': 'rotate(' + degree + 'deg)',
+            '-ms-transform': 'rotate(' + degree + 'deg)',
+            '-o-transform': 'rotate(' + degree + 'deg)',
+            'transform': 'rotate(' + degree + 'deg)',
+            'zoom': 1
+        });
+    }
 
-	function progressBarUpdate(x, outOf, elem) {
-		var firstHalfAngle = 180;
-		var secondHalfAngle = 0;
+    function progressBarUpdate(x, outOf, elem) {
+        var firstHalfAngle = 180;
+        var secondHalfAngle = 0;
 
     // caluclate the angle
     var drawAngle = x / outOf * 360;
 
     // calculate the angle to be displayed if each half
     if (drawAngle <= 180) {
-    	firstHalfAngle = drawAngle;
+        firstHalfAngle = drawAngle;
     } else {
-    	secondHalfAngle = drawAngle - 180;
+        secondHalfAngle = drawAngle - 180;
     }
 
     // set the transition
@@ -38,79 +38,162 @@ $(document).ready(function () {
     // set the values on the text
 
     elem.find(".procent").html(x + "<span>%</span>");
-  }
+};
 
 
-//Загрузка файла при нажатии на область
-var dropZone = document.querySelector('.target').addEventListener('click', function () {
-	document.querySelector('.input-file').click();
+// Загрузка файла при нажатии на область
+document.querySelector('.target').addEventListener('click', function (e) {
+    document.querySelector('.input-file').click();
+        var dt = e.dataTransfer; 
+    if(!dt && !dt.files) { return false ; } 
+
+    // Получить список загружаемых файлов 
+    var files = dt.files; 
+
+    // Fix для Internet Explorer 
+    dt.dropEffect="copy"; 
+
+    // Загрузить файлы по очереди, проверив их размер 
+    for (var i = 0; i < files.length; i++) { 
+        if (files[i].size<15000000) {  
+            // Отправить файл в AJAX-загрузчик 
+            ajax_upload(files[i]); 
+        } 
+        else { 
+            alert('Размер файла превышает допустимое значение'); 
+        } 
+    } 
+
+    // Подавить событие перетаскивания файла 
+    e.stopPropagation(); 
+    e.preventDefault(); 
+    return false; 
+
 });
 
 
-//Изменение поля
-var input = document.querySelector('.input-file');
-var preview = document.querySelector('.preview-input');
 
-input.style.opacity = 0;input.addEventListener('change', updateImageDisplay);function updateImageDisplay() {
-	while(preview.firstChild) {
-		preview.removeChild(preview.firstChild);
-	}
-
-	var curFiles = input.files;
-	if(curFiles.length === 0) {
-		var para = document.createElement('p');
-		para.textContent = 'No files currently selected for upload';
-		preview.appendChild(para);
-	} else {
-		var list = document.createElement('ul');
-		list.className = "after-list";
-		preview.appendChild(list);
-		for(var i = 0; i < curFiles.length; i++) {
-			var listItem = document.createElement('li');
-			listItem.className = "after-list-item";
-			var para = document.createElement('p');
-			para.className = "after-input-text";
-			if(validFileType(curFiles[i])) {
-				para.textContent =  curFiles[i].name + ', file size ' + returnFileSize(curFiles[i].size) + '.';
-				var image = document.createElement('img');
-				image.className = "after-img";
-				image.src = window.URL.createObjectURL(curFiles[i]);
-
-				listItem.appendChild(para);
-				listItem.appendChild(image);
+});
 
 
-			} else {
-				para.textContent = 'File name ' + curFiles[i].name + ': Not a valid file type. Update your selection.';
-				listItem.appendChild(para);
-			}
+//Начинаем драг-эн-дроп
+var tmp=document.getElementById('drag');
 
-			list.appendChild(listItem);
-		}
-	}
-}var fileTypes = [
-'image/jpeg',
-'image/pjpeg',
-'image/png'
-]
+// Эффект при наведении курсора с файлами на зону выгрузки
+function dropenter(e) {
+    // Подавить событие
+    e.stopPropagation();
+    e.preventDefault();
+    // Визуальный эффект "зоны выгрузки" при заходе на нее курсора
+    var tmp=document.getElementById('drag');
+    tmp.style.border='.2rem dashed #fff';
+}
 
-function validFileType(file) {
-	for(var i = 0; i < fileTypes.length; i++) {
-		if(file.type === fileTypes[i]) {
-			return true;
-		}
-	}
+// Эффект при отпускании файлов или выходе из зоны выгрузки
+function dropleave() {
+    // Привести "зону выгрузки" в первоначальный вид
+    var tmp=document.getElementById('drag');
+    tmp.style.border='.2rem dashed #616778';
+}
 
-	return false;
-}function returnFileSize(number) {
-	if(number < 1024) {
-		return number + 'bytes';
-	} else if(number >= 1024 && number < 1048576) {
-		return (number/1024).toFixed(1) + 'KB';
-	} else if(number >= 1048576) {
-		return (number/1048576).toFixed(1) + 'MB';
-	}
+// Проверка и отправка файлов на загрузку 
+function dodrop(e) { 
+    var dt = e.dataTransfer; 
+    if(!dt && !dt.files) { return false ; } 
+
+    // Получить список загружаемых файлов 
+    var files = dt.files; 
+
+    // Fix для Internet Explorer 
+    dt.dropEffect="copy"; 
+
+    // Загрузить файлы по очереди, проверив их размер 
+    for (var i = 0; i < files.length; i++) { 
+        if (files[i].size<15000000) {  
+            // Отправить файл в AJAX-загрузчик 
+            ajax_upload(files[i]); 
+        } 
+        else { 
+            alert('Размер файла превышает допустимое значение'); 
+        } 
+    } 
+
+    // Подавить событие перетаскивания файла 
+    e.stopPropagation(); 
+    e.preventDefault(); 
+    return false; 
 } 
 
-});
+
+// AJAX-загрузчик файлов
+function ajax_upload(file) {
+    // Mozilla, Safari, Opera, Chrome
+    if (window.XMLHttpRequest) {
+        var http_request = new XMLHttpRequest();
+    }
+    // Internet Explorer
+    else if (window.ActiveXObject) {
+        try {
+            http_request = new ActiveXObject("Msxml2.XMLHTTP");
+        }
+        catch (e) {
+            try {
+                http_request = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            catch (e) {
+                // Браузер не поддерживает эту технологию
+                return false;
+            }
+        }
+    }
+    else {
+        // Браузер не поддерживает эту технологию
+        return false;
+    }
+    var name = file.fileName || file.name;
+
+    // Добавить файлы
+    var tmp=document.getElementById('upload_overall');
+    var div_circle = document.getElementById('radialC');
+    var new_div = div_circle.cloneNode(true);
+    new_div.className='percent_div';
+    var stback = document.querySelector(' .status');
+    stback.style.backgroundImage = "url('https://cs7062.vk.me/c540107/v540107359/2729/fYQlS_23QdA.jpg')";
+
+    
+    tmp.appendChild(new_div);
+
+
+    // Отправить файл на загрузку
+    http_request.open('POST', 'upload.php?fname='+name,true);
+    http_request.setRequestHeader("Referer", location.href);
+    http_request.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+    http_request.setRequestHeader("X-File-Name", encodeURIComponent(name));
+    http_request.setRequestHeader("Content-Type", "application/octet-stream");
+    http_request.onreadystatechange=ajax_callback(http_request,new_div,name);
+    http_request.send(file);
+}
+
+// Callback-фунция для отработки AJAX
+function ajax_callback(http_request, obj, name) {
+    return function() {
+        if (http_request.readyState == 4) {
+            if (http_request.status==200) {
+                // Вернулся javascript
+                if (http_request.getResponseHeader("Content-Type")
+                    .indexOf("application/x-javascript")>=0) {
+                    eval(http_request.responseText);
+            }
+                // Файл загружен успешно
+                else {
+                    obj.style.backgroundPosition='0px 0px';
+                    obj.innerHTML=(name + ': 100%');
+                }
+            }
+            else {
+                // Ошибка загрузки файла
+            }
+        }
+    }
+}
 

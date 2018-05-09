@@ -81,7 +81,6 @@ section.target {
 	position: relative;
 	z-index: 16;
 	max-width: 38rem;
-	height: 17rem;
 	margin: 1rem auto;
 	padding: 0 0 1.6rem;
 	color: #40444f;
@@ -105,6 +104,7 @@ border: .2rem dashed #fff;
 	display: block;
 	margin: 10px	 auto;
 	visibility: hidden;
+
 }
 .preview-input{
 	position: relative;
@@ -132,6 +132,14 @@ border: .2rem dashed #fff;
 	border-radius: 3px;
 	border:1px solid white;
 	vertical-align: middle;
+}
+
+#gallery img {
+  width: 80px;
+	display: inline-block;
+}
+#progress-bar{
+	display: none;
 }
 
 

@@ -4,6 +4,8 @@
 	<meta charset="UTF-8">
 	<title>Optimize PNG</title>
 	<meta name="description" content=" ">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="keywords" content=" ">
 	<link rel="stylesheet" href="css/fonts.css">
 	<link rel="stylesheet" href="css/bootstrap.css">
@@ -28,11 +30,12 @@
 	</header>
 	<main role="main" class="inner cover">
 		<h1 class="cover-heading">Optimize your PNG</h1>
-		<section class="target">
-			<img  class="icon-download" src="img/galleryIcon.png">
+		<section class="target"  id="drag"    ondragenter="dropenter(event);" ondragover="dropenter(event);"
+     ondragleave="dropleave(event);" ondrop="return dodrop(event);" >
+			<img  class="icon-download" src="img/galleryIcon.png" >
 			<p>Drop your .png or .jpg files here!</p>
 			<p><small>Up to 20 images, max 5 MB each.</small></p>
-			<input class="input-file" type="file" multiple="multiple">
+    <input class="input-file" type="file" id="fileElem" multiple accept="image/*" ">
 			<div class="preview-input">
 				<p>No files currently selected for upload</p>
 			</div>
@@ -43,9 +46,10 @@
 
 		<div class="last-images-list">
 			<h2>Last optimized</h2>
-			<ul>
+	
+			<ul id="upload_overall">
 
-			<li>
+			<li id="radialC">
 				<div class="pie pie-1">
 					<div class="clip1">
 						<div class="slice1"></div>
@@ -71,15 +75,6 @@
 					</div>
 				</div>
 		</li>
-				<li><a href="#" class="img-link"></a></li>
-				<li><a href="#" class="img-link"></a></li>
-				<li><a href="#" class="img-link"></a></li>
-				<li><a href="#" class="img-link"></a></li>
-				<li><a href="#" class="img-link"></a></li>
-				<li><a href="#" class="img-link"></a></li>
-				<li><a href="#" class="img-link"></a></li>
-				<li><a href="#" class="img-link"></a></li>
-				<li><a href="#" class="img-link"></a></li>
 				<li><a href="#" class="img-link"></a></li>
 			</ul>
 		</div>
