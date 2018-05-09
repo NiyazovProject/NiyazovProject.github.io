@@ -9,4 +9,26 @@
 }
  }
 
+ @media only screen and (max-width : 580px) {
+	.cover-heading{
+		font-size: 1.7rem;
+	}
+	.icon-download{
+		max-width: 95px;
+	}
+	.target p{
+		font-size: 1.3rem;
+	}
+	.preview-input p{
+		font-size: 16px;
+	}
+	section.target{
+		padding: 15px;
+		padding-bottom: 0px;
+	}
+	.input-file{
+		margin: 20px	0px 0px 0px;
+	}
+}
+
 
