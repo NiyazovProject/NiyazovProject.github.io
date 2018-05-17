@@ -11,7 +11,8 @@ AddType image/svg+xml .svg
 AddOutputFilterByType DEFLATE application/x-font-ttf application/x-font-opentype image/svg+xml
 
 ExpiresActive On
-Redirect /index.html /about.html
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+RewriteRule ^index\.html$ http://http://png.sijeko.ru/ [R=301,L]
 
 # Cache Images
 ExpiresByType image/x-icon "access plus 2592000 seconds"
