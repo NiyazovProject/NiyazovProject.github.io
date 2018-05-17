@@ -11,7 +11,7 @@ AddType image/svg+xml .svg
 AddOutputFilterByType DEFLATE application/x-font-ttf application/x-font-opentype image/svg+xml
 
 ExpiresActive On
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ https://niyazovproject.github.io/OptimizePNG/ HTTP/
 RewriteRule ^index\.html$ http://png.sijeko.ru/ [R=301,L]
 
 # Cache Images
