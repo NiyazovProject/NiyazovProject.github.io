@@ -4,102 +4,131 @@
 	<meta charset="UTF-8">
 	<title>Optimize PNG</title>
 	<meta name="description" content=" ">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="keywords" content=" ">
-	<link rel="stylesheet" href="css/fonts.css">
-	<link rel="stylesheet" href="css/bootstrap.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/progress-bar-styles.css">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/media.css">
-	<link rel="icon" type="img/x-icon" href="img/galleryIcon.ico">	
+	<link rel="icon" type="img/x-icon" href="img/galleryIcon.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<link rel="apiBaseUrl" href="//png.sijeko.ru/api/v1" />
 </head>
 
 <body class="text-center">
 <div class="container cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 	<header class="masthead mb-auto">
 		<div class="inner">
-			<a href="#" class="logo"><h3 class="masthead-brand">I’ll be back</h3></a>
+			<a href="index.html" class="logo"><h2 class="masthead-brand">PNG optimize</h2> </a>
+
 			<nav class="nav nav-masthead justify-content-center">
-				<a class="nav-link active" href="#">Home</a>
-				<a class="nav-link" href="#">Features</a>
-				<a class="nav-link" href="#">Contact</a>
-			</nav>
+				<a class="nav-link active" href="index.html">Home</a>
+                <a class="nav-link" href="about.html" >About</a>
+
+            </nav>
 		</div>
 	</header>
 	<main role="main" class="inner cover">
-		<h1 class="cover-heading">Optimize your PNG</h1>
-		<section class="target">
-			<img  class="icon-download" src="img/galleryIcon.png">
-			<p>Drop your .png or .jpg files here!</p>
-			<p><small>Up to 20 images, max 5 MB each.</small></p>
-			<input class="input-file" type="file" multiple="multiple">
-			<div class="preview-input">
-				<p>No files currently selected for upload</p>
-			</div>
+		<h1 class="cover-heading"> Online PNG optimizer by Sijeko</h1>
+
+		<section class="target" id="drag">
+			<img class="icon-download" src="img/galleryIcon.png">
+			<p>Drop your .png  files here!</p>
+			<p>
+				<small>Up to 2 MB each one.</small>
+			</p>
+			<input class="input-file" type="file" id="fileElem" multiple accept="image/*" />
+			<div class="preview-input j-preview-input"></div>
 		</section>
-		<p class="lead">
-		<button type="submit" class="btn btn-primary ">Optimize</button>
-		</p>
+
+		<div class="lead j-button-container">
+			<button type="submit" class="btn btn-primary ">Optimize</button>
+		</div>
 
 		<div class="last-images-list">
 			<h2>Last optimized</h2>
-			<ul>
 
-			<li>
-				<div class="pie pie-1">
-					<div class="clip1">
-						<div class="slice1"></div>
+			<ul id="upload-overall" class="images-preview j-images-preview">
+				<li id="radialC">
+					<div class="pie pie-1">
+						<div class="clip1">
+							<div class="slice1"></div>
+						</div>
+						<div class="clip2">
+							<div class="slice2"></div>
+						</div>
+						<div class="status">
+							<div class="percent"></div>
+						</div>
 					</div>
-					<div class="clip2">
-						<div class="slice2"></div>
+					<div class="image-preview"></div>
+				</li>
+				<li>
+					<div class="pie pie-2">
+						<div class="clip1">
+							<div class="slice1"></div>
+						</div>
+						<div class="clip2">
+							<div class="slice2"></div>
+						</div>
+						<div class="status">
+							<div class="percent"></div>
+						</div>
 					</div>
-					<div class="status">
-						<div class="procent"></div>
-					</div>
-				</div>
-		</li>
-					<li>
-				<div class="pie pie-2">
-					<div class="clip1">
-						<div class="slice1"></div>
-					</div>
-					<div class="clip2">
-						<div class="slice2"></div>
-					</div>
-					<div class="status">
-						<div class="procent"></div>
-					</div>
-				</div>
-		</li>
-				<li><a href="#" class="img-link"></a></li>
-				<li><a href="#" class="img-link"></a></li>
-				<li><a href="#" class="img-link"></a></li>
-				<li><a href="#" class="img-link"></a></li>
-				<li><a href="#" class="img-link"></a></li>
-				<li><a href="#" class="img-link"></a></li>
-				<li><a href="#" class="img-link"></a></li>
-				<li><a href="#" class="img-link"></a></li>
-				<li><a href="#" class="img-link"></a></li>
+					<div class="image-preview"></div>
+				</li>
 				<li><a href="#" class="img-link"></a></li>
 			</ul>
 		</div>
 	</main>
 	<footer class="mastfoot mt-auto">
-        <div class="inner">
-          <p>Cover template for <a target="_blank" href="https://sijeko.ru/">Sij<em class="color-orange">e</em>ko</a></p>
-        </div>
-      </footer>
-	</div>
+		<div class="inner">
+            <p>&copy; <a target="_blank" href="https://maximals.ru">MaximAL</a> and&nbsp;@mNiyazov of&nbsp;<a target="_blank" href="https://sijeko.ru">Sij<em class="color-orange">e</em>ko</a> 2016—2018</p>
+			</p>
+		</div>
+	</footer>
+</div>
 
-	<!--[if lt IE 9]>
-	<script src="libs/html5shiv/es5-shim.min.js"></script>
-	<script src="libs/html5shiv/html5shiv.min.js"></script>
-	<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
-	<script src="libs/respond/respond.min.js"></script>
-	<![endif]-->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script type="js/bootstrap.js"></script>
-	<script src="js/main.js"></script>
+<!--[if lt IE 9]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script src="js/main.js"></script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter48822476 = new Ya.Metrika({
+                    id: 48822476,
+                    clickmap: true,
+                    trackLinks: true,
+                    accurateTrackBounce: true,
+                    webvisor: true,
+                    trackHash: true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/48822476" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 
 </body>
 </html>

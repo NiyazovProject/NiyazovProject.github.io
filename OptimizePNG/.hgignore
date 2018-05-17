@@ -1,0 +1,16 @@
+#### Glob syntax
+syntax: glob
+
+# phpstorm project files
+.idea
+
+Thumbs.db
+
+
+
+#### Regex syntax
+syntax: regexp
+
+## ignore all except .placeholder
+
+runtime/(?!.*\.placeholder$).+
