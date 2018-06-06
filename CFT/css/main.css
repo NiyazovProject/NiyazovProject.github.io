@@ -1,0 +1,131 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	background-color: #ffffff;
+	font-family: "Roboto", "Arial", sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	margin: 0;
+	color: #3A3A3A;
+}
+
+button, input {
+	outline: none;
+}
+
+a {
+	text-decoration: none;
+	outline: none;
+}
+
+a:hover {
+	text-decoration: underline; }
+
+
+img {
+	outline: none;
+}
+
+li {
+	list-style: none;
+}
+
+ul {
+	list-style: none;
+	/*убираем маркеры списка*/
+	margin: 0;
+	/*убираем верхнее и нижнее поле, равное 1em*/
+	padding-left: 0;
+	/*убираем левый отступ, равный 40px*/
+}
+
+.header-sect {
+	background-color: #F0F4F5;
+}
+
+.header-sect .logo, .logo img {
+	max-width: 100px;
+	height: auto;
+}
+
+.nav li{
+	padding-right: 2rem;
+	display: inline-block;
+}
+
+.nav .info-site{
+	font-weight: bold;
+}
+
+.header-content{
+	padding: 10px 0px;
+	border-bottom: 1px solid #e2e5e6;
+}
+
+.main-sect {
+	height: 536px;
+	background-color: #F0F4F5;
+}
+.main-content{
+	background: url("../img/title-background@2x.jpg")  bottom;
+	min-height: 697px;
+	background-color: #F0F4F5;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+.text-block {
+
+}
+.p-slogan{
+	max-width: 400px;
+	font-size: 18px;
+
+}
+
+@media (max-width: 1200px) {
+	.nav li{
+		padding-bottom: 0.2rem;
+		padding-right: 0px;
+		display:block;
+	}
+}
+@media (max-width: 991px) {
+	.main-content {
+		min-height: 500px;
+	}
+	.main-sect {
+		height: 384px;
+	}
+
+	.h1 {
+		font-size: 1.6rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.h1 {
+		font-size: 1.3rem;
+	}
+	.p-slogan {
+		font-size: 16px;
+		background-color: #f0f4f5d4;
+		padding: 10px 0px;
+		border-radius: 10px;
+	}
+	.main-sect {
+		height: 284px;
+	}
+	.main-content {
+		min-height: 370px;
+	}
+}
+
+
+
+
