@@ -135,7 +135,7 @@ ul {
 @media (max-width: 400px) {
 	.main-content {
 		min-height: 430px;
-		background: url(../img/title-background@2x.jpg) no-repeat 0px 160px;
+		background: url(../img/title-background@2x.jpg) no-repeat 0px 168px;
 		-webkit-background-size: contain;
 		background-size: contain;
 	}
