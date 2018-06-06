@@ -108,7 +108,7 @@ ul {
 	}
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 	.h1 {
 		font-size: 1.3rem;
 	}
@@ -116,19 +116,30 @@ ul {
 		font-size: 16px;
 	}
 	.main-sect {
-		height: 284px;
+		height: 376px;
 	}
 	.main-content {
-		min-height: 370px;
+		min-height: 430px;
+		background: url(../img/title-background@2x.jpg) no-repeat 0px 100px;
+		-webkit-background-size: contain;
+		background-size: contain;
 	}
 	.text-block {
 		padding-top: 10px;
-		background-color: #f0f4f5d4;
+		/*background-color: #f0f4f5d4;*/
 		border-radius: 10px;
 		padding: 1px;
 	}
 }
 
+@media (max-width: 400px) {
+	.main-content {
+		min-height: 430px;
+		background: url(../img/title-background@2x.jpg) no-repeat 0px 160px;
+		-webkit-background-size: contain;
+		background-size: contain;
+	}
+}
 
 
 
