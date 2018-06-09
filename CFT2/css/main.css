@@ -8,8 +8,8 @@ html {
 
 body {
 	background-color: #ffffff;
-	font-family: "ProximaNovaRegular", "Arial", sans-serif;
-	font-weight: normal;
+	font-family: "Roboto", "Arial", sans-serif;
+	font-weight: 400;
 	font-size: 16px;
 	margin: 0;
 	color: #3A3A3A;
@@ -59,12 +59,7 @@ ul {
 	display: inline-block;
 }
 
-.nav .phone-link, .mail-link {
-	color: #2c4891;
-}
-
 .nav .info-site{
-	font-family: "ProximaNovaBold", "Arial", sans-serif;
 	font-weight: bold;
 }
 
@@ -73,19 +68,12 @@ ul {
 	border-bottom: 1px solid #e2e5e6;
 }
 
+
 .main-sect {
-	height: 536px;
-	background-color: #F0F4F5;
-}
-.main-sect .h1{
-	font-family: "ProximaNovaBold", "Arial", sans-serif;
-}
-.main-content{
-	background: url("../img/title-background@2x.jpg")  bottom;
-	min-height: 697px;
-	background-color: #F0F4F5;
-	-webkit-background-size: cover;
-	background-size: cover;
+	background-color: #f0f4f5;
+	background: url(../img/title-background@2x.jpg) center top repeat-x;
+	height: 100vh;
+	background-size: contain;
 }
 .text-block {
 
@@ -104,12 +92,7 @@ ul {
 	}
 }
 @media (max-width: 991px) {
-	.main-content {
-		min-height: 500px;
-	}
-	.main-sect {
-		height: 384px;
-	}
+
 
 	.h1 {
 		font-size: 1.6rem;
@@ -118,34 +101,52 @@ ul {
 
 @media (max-width: 767px) {
 	.h1 {
-		font-size: 1.4rem;
+		font-size: 1.3rem;
 	}
 	.p-slogan {
 		font-size: 16px;
 	}
-	.main-sect {
-		height: 376px;
-	}
-	.main-content {
-		min-height: 430px;
-		background: url(../img/title-background@2x.jpg) no-repeat 0px 100px;
-		-webkit-background-size: contain;
-		background-size: contain;
-	}
+
 	.text-block {
 		padding-top: 10px;
 		/*background-color: #f0f4f5d4;*/
 		border-radius: 10px;
 		padding: 1px;
 	}
+
+	.main-sect {
+
+		background: url(../img/title-background@2x.jpg) center top 90px repeat-x;
+		background-color: #f0f4f5;
+
+	height: 100vh;
+	background-size: contain;
+
+	}
 }
 
+@media (max-width: 480px) {
+	.main-sect {
+
+		background: url(../img/title-background@2x.jpg) center top 120px repeat-x;
+		background-color: #f0f4f5;
+
+	height: 100vh;
+	background-size: contain;
+
+	}
+}
+
+
 @media (max-width: 400px) {
-	.main-content {
-		min-height: 430px;
-		background: url(../img/title-background@2x.jpg) no-repeat 0px 168px;
-		-webkit-background-size: contain;
-		background-size: contain;
+	.main-sect {
+
+		background: url(../img/title-background@2x.jpg) center top 170px repeat-x;
+		background-color: #f0f4f5;
+
+	height: 100vh;
+	background-size: contain;
+
 	}
 }
 
