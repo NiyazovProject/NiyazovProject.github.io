@@ -59,6 +59,10 @@ ul {
 	display: inline-block;
 }
 
+.nav .phone-link, .mail-link {
+	color: #4461AB;
+}
+
 .nav .info-site{
 	font-weight: bold;
 }
