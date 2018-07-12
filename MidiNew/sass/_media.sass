@@ -1,0 +1,94 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
++media-breakpoint-down(lg)
+
+
+
+// ≥992px
++media-breakpoint-down(md)
+
+// ≥768px
++media-breakpoint-down(sm)
+
+  .menu-btn
+    display: inline-block!important
+
+  .nav-list
+    display: none
+
+  .nav
+    flex-direction: column
+    text-align: center
+    text-transform: uppercase
+    display: flex
+    margin: 0 auto
+    position: absolute
+    right: 0
+    z-index: 1099
+    position: absolute
+    top: 69px
+    background: url(../img/background.png)
+    width: 180px
+    border: 4px solid #c8c8c8
+    display: none
+
+  .nav-item
+    display: block!important
+
+  .nav-link
+    border: 1px solid #c8c8c8
+    display: block!important
+    font-size: 14px!important
+    &:hover
+      color: #333
+      background: #ffffffe8
+
+
+// ≥576px
++media-breakpoint-down(xs)
+  html
+    font-size: 13px
+
+  .img-logo
+    max-width: 200px!important
+
+  .top-slider .slick-slider img
+    height: 13rem
+
+  .top-slider
+    background: url("../img/bg-dark.png") repeat
+    padding-bottom: 50px!important
+
+  .img-fluid-mini, .img-fluid-micro
+    max-width: 35%
+
+  .v-slider .slider-item
+  margin: 15px
+
+.slick-slider
+  padding: 0px 0px
+
+.arrow-next
+  right: 5px
+
+.arrow-prev
+  left: 5px
+
+/*==========  Mobile First  ==========*/
+
+// ≤576px
++media-breakpoint-up(sm)
+
+// ≤768px
++media-breakpoint-up(md)
+
+// ≤992px
++media-breakpoint-up(lg)
+
+// ≤1200px
++media-breakpoint-up(xl)
+

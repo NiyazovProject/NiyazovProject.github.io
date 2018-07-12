@@ -1,0 +1,253 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	color: #000000
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+a
+	text-decoration: none
+	&:hover
+		text-decoration: none
+
+.img-logo
+	max-width: 216px
+
+.main-header
+	background: url("../img/bg-dark.png") repeat
+	padding: 10px 0px
+	ul
+		list-style: none /*убираем маркеры списка*/
+		margin: 0 /*убираем верхнее и нижнее поле, равное 1em*/
+		padding-left: 0 /*убираем левый отступ, равный 40px*/
+
+
+	.nav-item
+		display: inline-block
+
+	.nav-link
+		font-size: 18px
+		text-transform: uppercase
+		padding: 10px
+		color: #fff
+		&:hover
+			background-color: white
+			color: #000000
+	.menu-btn
+		display: none
+		margin-left: 10px
+
+	.btn_mnu
+		width: 40px
+		height: 40px
+		padding-left: 1px
+		padding-right: 1px
+		display: -webkit-box
+		display: -ms-flexbox
+		display: flex
+		-webkit-box-orient: vertical
+		-webkit-box-direction: normal
+		-ms-flex-direction: column
+		flex-direction: column
+		-webkit-box-align: center
+		-ms-flex-align: center
+		align-items: center
+		-webkit-box-pack: center
+		-ms-flex-pack: center
+		justify-content: center
+		background-color: transparent
+		cursor: pointer
+		position: relative
+
+	.btn_row
+		height: 2px
+		width: 72%
+		margin: 4px 0
+		background-color: #fff
+		position: relative
+		-webkit-transition: all .5s
+		transition: all .5s
+
+	.btn_mnu.active .btn_row
+		&:first-child
+			-webkit-transform: rotate(-135deg)
+			transform: rotate(-135deg)
+			top: 10px
+		&:last-child
+			-webkit-transform: rotate(-225deg)
+			transform: rotate(-225deg)
+			top: -10px
+		&:nth-child(2)
+			opacity: 0
+
+
+.top-slider
+	background: url("../img/bg-dark.png") repeat
+	padding-bottom: 100px
+
+.micro-content
+	background-color: #fff
+	position: relative
+	&__text
+		font-size: 16px
+		font-family: $light-font
+
+	.micro-background
+		background: url(" ../img/carpet_top.png") repeat-x center bottom
+		-webkit-background-size: contain
+		background-size: contain
+		height: 94px
+
+.mini-content
+	background: url("../img/bg-dark.png") repeat
+	color: #ffffff
+	position: relative
+
+	.mini-top-bg
+		background: url("../img/mini-top-bg.png") repeat-x center top
+		-webkit-background-size: contain
+		background-size: contain
+		height: 70px
+
+	.mini-bottom-bg
+		background: url("../img/mini-bottom-bg.png") repeat-x center bottom
+		-webkit-background-size: contain
+		background-size: contain
+		height: 70px
+
+.pro-content
+	position: relative
+	.ornament-decor
+		background: url("../img/ornament.png") repeat-x center bottom
+		-webkit-background-size: contain
+		background-size: contain
+		height: 90px
+
+.img-fluid-micro
+	position: absolute
+	top: -50px
+	right: 0px
+	z-index: 10!important
+	max-width: 30%
+
+.img-fluid-mini
+	position: absolute
+	top: -50px
+	left: 0px
+	z-index: 10!important
+	max-width: 30%
+.img-fluid-pro
+	position: absolute
+	top: -50px
+	right: 0px
+	z-index: 10!important
+	max-width: 30%
+
+
+
+.v-slider
+	.slick-slider
+		padding: 0px 50px
+
+.v-slider
+	margin: 20px 0px
+
+.arrow-next
+	right: 15px
+
+.arrow-prev
+	left: 15px
+	transform: rotate(180deg)
+
+.arrow-next, .arrow-prev
+	width: 30px
+	cursor: pointer
+	position: absolute
+	top: 50%
+	z-index: 22
+
+.video
+	position: relative
+	padding-bottom: 56.25%
+	/*пропорции видео 16:9
+	padding-top: 25px
+	height: 0
+	iframe
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		border: 0px
+		height: 100%
+
+.v-slider .slider-item
+	margin: 0px 10px
+
+.ytp-title-text
+	display: none
+
+
+
+.footer
+	background: url("../img/bg-dark.png")
+	font-family: $default-font
+	font-size: 20px
+	text-align: center
+	padding: 10px 0px
+	a
+		color: white
+		&:hover
+
+	.social
+		width: 45px
+		color: #7f7f7f
+		margin-right: 10px
+
+	.footer-text
+		color: #fff
+
+	.mail
+		font-family: $light-font
+
+	.red
+		color: #de0304
+h1
+	text-transform: uppercase
+	font-size: 5.0rem
+	font-family: $bold-font
+	margin-bottom: 0px
+
+@import "media" // Always at the end
+
